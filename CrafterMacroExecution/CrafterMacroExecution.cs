@@ -33,5 +33,9 @@ namespace CrafterMacroExecution
             pluginStatusText.Text = "テスト用Starts";
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
