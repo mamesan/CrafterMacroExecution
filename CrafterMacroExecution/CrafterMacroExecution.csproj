@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACTInitSetting.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CrafterMacroExecution.cs">
       <SubType>UserControl</SubType>
