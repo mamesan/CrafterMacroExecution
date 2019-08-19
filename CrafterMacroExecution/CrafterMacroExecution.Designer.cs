@@ -75,6 +75,7 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -128,6 +129,7 @@
             // 
             this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.label43);
             this.tabPage1.Controls.Add(this.label42);
             this.tabPage1.Controls.Add(this.label37);
             this.tabPage1.Controls.Add(this.label33);
@@ -597,6 +599,16 @@
             this.label42.TabIndex = 0;
             this.label42.Text = "せりかー";
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("MS UI Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label43.Location = new System.Drawing.Point(182, 267);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(339, 97);
+            this.label43.TabIndex = 0;
+            this.label43.Text = "せりかー";
+            // 
             // CrafterMacroExecution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -665,5 +677,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label43;
     }
 }
