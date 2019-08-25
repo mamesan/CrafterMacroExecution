@@ -19,6 +19,12 @@ namespace CrafterMacroExecution.Common
         bool RoenaFlg { get; set; }
         int FoodTime { get; set; }
         int MedicineTime { get; set; }
+
+
+
+
+
+
     }
     class GlobalVariables : IGlobalVariables
     {
@@ -33,6 +39,8 @@ namespace CrafterMacroExecution.Common
         private bool roenaFlg;
         private int foodTime;
         private int medicineTime;
+
+
 
         public int Count
         {

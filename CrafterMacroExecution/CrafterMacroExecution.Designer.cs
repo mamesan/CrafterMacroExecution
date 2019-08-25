@@ -86,6 +86,7 @@
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.タブALL = new System.Windows.Forms.TabControl();
             this.タブ_詳細 = new System.Windows.Forms.TabPage();
+            this.label47 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.マクロ編集ボタン = new System.Windows.Forms.Button();
@@ -110,9 +111,63 @@
             this.label15 = new System.Windows.Forms.Label();
             this.キャラ一覧 = new System.Windows.Forms.ListBox();
             this.タブ_作成品設定 = new System.Windows.Forms.TabPage();
+            this.HQ使用6Y座標_初期読込 = new System.Windows.Forms.GroupBox();
+            this.HQ座標用button6 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.HQ使用6X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.HQ座標用button5 = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.HQ使用5X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.HQ使用5Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.HQ座標用button4 = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.HQ使用4X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.HQ使用4Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.HQ座標用button3 = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.HQ使用3X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.HQ使用3Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.HQ座標用button2 = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.HQ使用2X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.HQ使用2Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.HQ座標用button1 = new System.Windows.Forms.Button();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.HQ使用1X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.HQ使用1Y座標_初期読込 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.作成座標用button10 = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.作成10X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.作成10Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.作成座標用button9 = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.作成9X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.作成9Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.作成座標用button8 = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.作成8X座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.作成8Y座標_初期読込 = new System.Windows.Forms.TextBox();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.作成座標用button7 = new System.Windows.Forms.Button();
             this.label49 = new System.Windows.Forms.Label();
@@ -149,7 +204,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.作成2X座標_初期読込 = new System.Windows.Forms.TextBox();
             this.作成2Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.キャラリストボックス = new System.Windows.Forms.ComboBox();
             this.タブ_基本設定 = new System.Windows.Forms.TabPage();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.作成開始座標用button = new System.Windows.Forms.Button();
@@ -198,61 +252,7 @@
             this.飯X座標_初期読込 = new System.Windows.Forms.TextBox();
             this.飯Y座標_初期読込 = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.作成座標用button8 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.作成8X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.作成8Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.作成座標用button9 = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.作成9X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.作成9Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.作成座標用button10 = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.作成10X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.作成10Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.HQ使用6Y座標_初期読込 = new System.Windows.Forms.GroupBox();
-            this.HQ座標用button6 = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.HQ使用6X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.HQ座標用button5 = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.HQ使用5X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.HQ使用5Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.HQ座標用button4 = new System.Windows.Forms.Button();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.HQ使用4X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.HQ使用4Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.HQ座標用button3 = new System.Windows.Forms.Button();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.HQ使用3X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.HQ使用3Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.HQ座標用button2 = new System.Windows.Forms.Button();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.HQ使用2X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.HQ使用2Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.HQ座標用button1 = new System.Windows.Forms.Button();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.HQ使用1X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.HQ使用1Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
+            this.キャラリストボックス = new System.Windows.Forms.ComboBox();
             this.groupBox4.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -261,7 +261,16 @@
             this.タブ_キャラクター.SuspendLayout();
             this.panel1.SuspendLayout();
             this.タブ_作成品設定.SuspendLayout();
+            this.HQ使用6Y座標_初期読込.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -273,15 +282,6 @@
             this.groupBox34.SuspendLayout();
             this.groupBox35.SuspendLayout();
             this.groupBox36.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.HQ使用6Y座標_初期読込.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox18.SuspendLayout();
-            this.groupBox15.SuspendLayout();
             this.SuspendLayout();
             // 
             // 作成座標用button1
@@ -380,6 +380,7 @@
             this.飯チェックボックス_init.TabIndex = 121;
             this.飯チェックボックス_init.Text = "飯";
             this.飯チェックボックス_init.UseVisualStyleBackColor = true;
+            this.飯チェックボックス_init.CheckedChanged += new System.EventHandler(this.飯チェックボックス_init_CheckedChanged);
             // 
             // label6
             // 
@@ -871,8 +872,8 @@
             // 
             // タブALL
             // 
-            this.タブALL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.タブALL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.タブALL.Controls.Add(this.タブ_詳細);
             this.タブALL.Controls.Add(this.タブ_キャラクター);
@@ -908,6 +909,16 @@
             this.タブ_詳細.Size = new System.Drawing.Size(642, 685);
             this.タブ_詳細.TabIndex = 0;
             this.タブ_詳細.Text = "詳細";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label47.Location = new System.Drawing.Point(329, 240);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(56, 14);
+            this.label47.TabIndex = 20;
+            this.label47.Text = "マクロ編集";
             // 
             // textBox1
             // 
@@ -1113,7 +1124,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.button6);
@@ -1181,6 +1192,378 @@
             this.タブ_作成品設定.TabIndex = 2;
             this.タブ_作成品設定.Text = "作成品設定";
             // 
+            // HQ使用6Y座標_初期読込
+            // 
+            this.HQ使用6Y座標_初期読込.Controls.Add(this.HQ座標用button6);
+            this.HQ使用6Y座標_初期読込.Controls.Add(this.label24);
+            this.HQ使用6Y座標_初期読込.Controls.Add(this.label30);
+            this.HQ使用6Y座標_初期読込.Controls.Add(this.HQ使用6X座標_初期読込);
+            this.HQ使用6Y座標_初期読込.Controls.Add(this.textBox15);
+            this.HQ使用6Y座標_初期読込.Location = new System.Drawing.Point(378, 385);
+            this.HQ使用6Y座標_初期読込.Name = "HQ使用6Y座標_初期読込";
+            this.HQ使用6Y座標_初期読込.Size = new System.Drawing.Size(213, 58);
+            this.HQ使用6Y座標_初期読込.TabIndex = 124;
+            this.HQ使用6Y座標_初期読込.TabStop = false;
+            this.HQ使用6Y座標_初期読込.Text = "HQ使用6";
+            // 
+            // HQ座標用button6
+            // 
+            this.HQ座標用button6.BackColor = System.Drawing.Color.Transparent;
+            this.HQ座標用button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HQ座標用button6.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ座標用button6.Location = new System.Drawing.Point(25, 22);
+            this.HQ座標用button6.Name = "HQ座標用button6";
+            this.HQ座標用button6.Size = new System.Drawing.Size(38, 23);
+            this.HQ座標用button6.TabIndex = 94;
+            this.HQ座標用button6.Text = "座標";
+            this.HQ座標用button6.UseVisualStyleBackColor = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label24.Location = new System.Drawing.Point(141, 24);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(15, 14);
+            this.label24.TabIndex = 98;
+            this.label24.Text = "Y";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label30.Location = new System.Drawing.Point(79, 24);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(15, 14);
+            this.label30.TabIndex = 97;
+            this.label30.Text = "X";
+            // 
+            // HQ使用6X座標_初期読込
+            // 
+            this.HQ使用6X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用6X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.HQ使用6X座標_初期読込.Name = "HQ使用6X座標_初期読込";
+            this.HQ使用6X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用6X座標_初期読込.TabIndex = 95;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox15.Location = new System.Drawing.Point(157, 24);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(35, 18);
+            this.textBox15.TabIndex = 96;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.HQ座標用button5);
+            this.groupBox11.Controls.Add(this.label35);
+            this.groupBox11.Controls.Add(this.label36);
+            this.groupBox11.Controls.Add(this.HQ使用5X座標_初期読込);
+            this.groupBox11.Controls.Add(this.HQ使用5Y座標_初期読込);
+            this.groupBox11.Location = new System.Drawing.Point(378, 320);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(213, 58);
+            this.groupBox11.TabIndex = 128;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "HQ使用5";
+            // 
+            // HQ座標用button5
+            // 
+            this.HQ座標用button5.BackColor = System.Drawing.Color.Transparent;
+            this.HQ座標用button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HQ座標用button5.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ座標用button5.Location = new System.Drawing.Point(25, 22);
+            this.HQ座標用button5.Name = "HQ座標用button5";
+            this.HQ座標用button5.Size = new System.Drawing.Size(38, 23);
+            this.HQ座標用button5.TabIndex = 94;
+            this.HQ座標用button5.Text = "座標";
+            this.HQ座標用button5.UseVisualStyleBackColor = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label35.Location = new System.Drawing.Point(141, 24);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(15, 14);
+            this.label35.TabIndex = 98;
+            this.label35.Text = "Y";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label36.Location = new System.Drawing.Point(79, 24);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(15, 14);
+            this.label36.TabIndex = 97;
+            this.label36.Text = "X";
+            // 
+            // HQ使用5X座標_初期読込
+            // 
+            this.HQ使用5X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用5X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.HQ使用5X座標_初期読込.Name = "HQ使用5X座標_初期読込";
+            this.HQ使用5X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用5X座標_初期読込.TabIndex = 95;
+            // 
+            // HQ使用5Y座標_初期読込
+            // 
+            this.HQ使用5Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用5Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
+            this.HQ使用5Y座標_初期読込.Name = "HQ使用5Y座標_初期読込";
+            this.HQ使用5Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用5Y座標_初期読込.TabIndex = 96;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.HQ座標用button4);
+            this.groupBox12.Controls.Add(this.label39);
+            this.groupBox12.Controls.Add(this.label40);
+            this.groupBox12.Controls.Add(this.HQ使用4X座標_初期読込);
+            this.groupBox12.Controls.Add(this.HQ使用4Y座標_初期読込);
+            this.groupBox12.Location = new System.Drawing.Point(378, 255);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(213, 58);
+            this.groupBox12.TabIndex = 127;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "HQ使用4";
+            // 
+            // HQ座標用button4
+            // 
+            this.HQ座標用button4.BackColor = System.Drawing.Color.Transparent;
+            this.HQ座標用button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HQ座標用button4.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ座標用button4.Location = new System.Drawing.Point(25, 22);
+            this.HQ座標用button4.Name = "HQ座標用button4";
+            this.HQ座標用button4.Size = new System.Drawing.Size(38, 23);
+            this.HQ座標用button4.TabIndex = 94;
+            this.HQ座標用button4.Text = "座標";
+            this.HQ座標用button4.UseVisualStyleBackColor = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label39.Location = new System.Drawing.Point(141, 24);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(15, 14);
+            this.label39.TabIndex = 98;
+            this.label39.Text = "Y";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label40.Location = new System.Drawing.Point(79, 24);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(15, 14);
+            this.label40.TabIndex = 97;
+            this.label40.Text = "X";
+            // 
+            // HQ使用4X座標_初期読込
+            // 
+            this.HQ使用4X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用4X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.HQ使用4X座標_初期読込.Name = "HQ使用4X座標_初期読込";
+            this.HQ使用4X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用4X座標_初期読込.TabIndex = 95;
+            // 
+            // HQ使用4Y座標_初期読込
+            // 
+            this.HQ使用4Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用4Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
+            this.HQ使用4Y座標_初期読込.Name = "HQ使用4Y座標_初期読込";
+            this.HQ使用4Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用4Y座標_初期読込.TabIndex = 96;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.HQ座標用button3);
+            this.groupBox13.Controls.Add(this.label41);
+            this.groupBox13.Controls.Add(this.label42);
+            this.groupBox13.Controls.Add(this.HQ使用3X座標_初期読込);
+            this.groupBox13.Controls.Add(this.HQ使用3Y座標_初期読込);
+            this.groupBox13.Location = new System.Drawing.Point(378, 190);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(213, 58);
+            this.groupBox13.TabIndex = 126;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "HQ使用3";
+            // 
+            // HQ座標用button3
+            // 
+            this.HQ座標用button3.BackColor = System.Drawing.Color.Transparent;
+            this.HQ座標用button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HQ座標用button3.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ座標用button3.Location = new System.Drawing.Point(25, 22);
+            this.HQ座標用button3.Name = "HQ座標用button3";
+            this.HQ座標用button3.Size = new System.Drawing.Size(38, 23);
+            this.HQ座標用button3.TabIndex = 94;
+            this.HQ座標用button3.Text = "座標";
+            this.HQ座標用button3.UseVisualStyleBackColor = false;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label41.Location = new System.Drawing.Point(141, 24);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(15, 14);
+            this.label41.TabIndex = 98;
+            this.label41.Text = "Y";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label42.Location = new System.Drawing.Point(79, 24);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(15, 14);
+            this.label42.TabIndex = 97;
+            this.label42.Text = "X";
+            // 
+            // HQ使用3X座標_初期読込
+            // 
+            this.HQ使用3X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用3X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.HQ使用3X座標_初期読込.Name = "HQ使用3X座標_初期読込";
+            this.HQ使用3X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用3X座標_初期読込.TabIndex = 95;
+            // 
+            // HQ使用3Y座標_初期読込
+            // 
+            this.HQ使用3Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用3Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
+            this.HQ使用3Y座標_初期読込.Name = "HQ使用3Y座標_初期読込";
+            this.HQ使用3Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用3Y座標_初期読込.TabIndex = 96;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.HQ座標用button2);
+            this.groupBox18.Controls.Add(this.label43);
+            this.groupBox18.Controls.Add(this.label44);
+            this.groupBox18.Controls.Add(this.HQ使用2X座標_初期読込);
+            this.groupBox18.Controls.Add(this.HQ使用2Y座標_初期読込);
+            this.groupBox18.Location = new System.Drawing.Point(378, 125);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(213, 58);
+            this.groupBox18.TabIndex = 125;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "HQ使用2";
+            // 
+            // HQ座標用button2
+            // 
+            this.HQ座標用button2.BackColor = System.Drawing.Color.Transparent;
+            this.HQ座標用button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HQ座標用button2.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ座標用button2.Location = new System.Drawing.Point(25, 22);
+            this.HQ座標用button2.Name = "HQ座標用button2";
+            this.HQ座標用button2.Size = new System.Drawing.Size(38, 23);
+            this.HQ座標用button2.TabIndex = 94;
+            this.HQ座標用button2.Text = "座標";
+            this.HQ座標用button2.UseVisualStyleBackColor = false;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label43.Location = new System.Drawing.Point(141, 24);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(15, 14);
+            this.label43.TabIndex = 98;
+            this.label43.Text = "Y";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label44.Location = new System.Drawing.Point(79, 24);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(15, 14);
+            this.label44.TabIndex = 97;
+            this.label44.Text = "X";
+            // 
+            // HQ使用2X座標_初期読込
+            // 
+            this.HQ使用2X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用2X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.HQ使用2X座標_初期読込.Name = "HQ使用2X座標_初期読込";
+            this.HQ使用2X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用2X座標_初期読込.TabIndex = 95;
+            // 
+            // HQ使用2Y座標_初期読込
+            // 
+            this.HQ使用2Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用2Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
+            this.HQ使用2Y座標_初期読込.Name = "HQ使用2Y座標_初期読込";
+            this.HQ使用2Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用2Y座標_初期読込.TabIndex = 96;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.HQ座標用button1);
+            this.groupBox15.Controls.Add(this.label45);
+            this.groupBox15.Controls.Add(this.label46);
+            this.groupBox15.Controls.Add(this.HQ使用1X座標_初期読込);
+            this.groupBox15.Controls.Add(this.HQ使用1Y座標_初期読込);
+            this.groupBox15.Location = new System.Drawing.Point(378, 60);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(213, 58);
+            this.groupBox15.TabIndex = 123;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "HQ使用1";
+            // 
+            // HQ座標用button1
+            // 
+            this.HQ座標用button1.BackColor = System.Drawing.Color.Transparent;
+            this.HQ座標用button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HQ座標用button1.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ座標用button1.Location = new System.Drawing.Point(25, 22);
+            this.HQ座標用button1.Name = "HQ座標用button1";
+            this.HQ座標用button1.Size = new System.Drawing.Size(38, 23);
+            this.HQ座標用button1.TabIndex = 94;
+            this.HQ座標用button1.Text = "座標";
+            this.HQ座標用button1.UseVisualStyleBackColor = false;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label45.Location = new System.Drawing.Point(141, 24);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(15, 14);
+            this.label45.TabIndex = 98;
+            this.label45.Text = "Y";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label46.Location = new System.Drawing.Point(79, 24);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(15, 14);
+            this.label46.TabIndex = 97;
+            this.label46.Text = "X";
+            // 
+            // HQ使用1X座標_初期読込
+            // 
+            this.HQ使用1X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用1X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.HQ使用1X座標_初期読込.Name = "HQ使用1X座標_初期読込";
+            this.HQ使用1X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用1X座標_初期読込.TabIndex = 95;
+            // 
+            // HQ使用1Y座標_初期読込
+            // 
+            this.HQ使用1Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HQ使用1Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
+            this.HQ使用1Y座標_初期読込.Name = "HQ使用1Y座標_初期読込";
+            this.HQ使用1Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.HQ使用1Y座標_初期読込.TabIndex = 96;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1203,7 +1586,7 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.AutoScroll = true;
             this.panel2.AutoScrollMargin = new System.Drawing.Size(0, 20);
@@ -1222,6 +1605,192 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 468);
             this.panel2.TabIndex = 110;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.作成座標用button10);
+            this.groupBox3.Controls.Add(this.label33);
+            this.groupBox3.Controls.Add(this.label34);
+            this.groupBox3.Controls.Add(this.作成10X座標_初期読込);
+            this.groupBox3.Controls.Add(this.作成10Y座標_初期読込);
+            this.groupBox3.Location = new System.Drawing.Point(16, 595);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(213, 58);
+            this.groupBox3.TabIndex = 104;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "作成10";
+            // 
+            // 作成座標用button10
+            // 
+            this.作成座標用button10.BackColor = System.Drawing.Color.Transparent;
+            this.作成座標用button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.作成座標用button10.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成座標用button10.Location = new System.Drawing.Point(25, 22);
+            this.作成座標用button10.Name = "作成座標用button10";
+            this.作成座標用button10.Size = new System.Drawing.Size(38, 23);
+            this.作成座標用button10.TabIndex = 94;
+            this.作成座標用button10.Text = "座標";
+            this.作成座標用button10.UseVisualStyleBackColor = false;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label33.Location = new System.Drawing.Point(141, 24);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(15, 14);
+            this.label33.TabIndex = 98;
+            this.label33.Text = "Y";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label34.Location = new System.Drawing.Point(79, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(15, 14);
+            this.label34.TabIndex = 97;
+            this.label34.Text = "X";
+            // 
+            // 作成10X座標_初期読込
+            // 
+            this.作成10X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成10X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.作成10X座標_初期読込.Name = "作成10X座標_初期読込";
+            this.作成10X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.作成10X座標_初期読込.TabIndex = 95;
+            // 
+            // 作成10Y座標_初期読込
+            // 
+            this.作成10Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成10Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
+            this.作成10Y座標_初期読込.Name = "作成10Y座標_初期読込";
+            this.作成10Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.作成10Y座標_初期読込.TabIndex = 96;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.作成座標用button9);
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.label29);
+            this.groupBox2.Controls.Add(this.作成9X座標_初期読込);
+            this.groupBox2.Controls.Add(this.作成9Y座標_初期読込);
+            this.groupBox2.Location = new System.Drawing.Point(16, 530);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(213, 58);
+            this.groupBox2.TabIndex = 104;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "作成9";
+            // 
+            // 作成座標用button9
+            // 
+            this.作成座標用button9.BackColor = System.Drawing.Color.Transparent;
+            this.作成座標用button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.作成座標用button9.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成座標用button9.Location = new System.Drawing.Point(25, 22);
+            this.作成座標用button9.Name = "作成座標用button9";
+            this.作成座標用button9.Size = new System.Drawing.Size(38, 23);
+            this.作成座標用button9.TabIndex = 94;
+            this.作成座標用button9.Text = "座標";
+            this.作成座標用button9.UseVisualStyleBackColor = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label22.Location = new System.Drawing.Point(141, 24);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(15, 14);
+            this.label22.TabIndex = 98;
+            this.label22.Text = "Y";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label29.Location = new System.Drawing.Point(79, 24);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(15, 14);
+            this.label29.TabIndex = 97;
+            this.label29.Text = "X";
+            // 
+            // 作成9X座標_初期読込
+            // 
+            this.作成9X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成9X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.作成9X座標_初期読込.Name = "作成9X座標_初期読込";
+            this.作成9X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.作成9X座標_初期読込.TabIndex = 95;
+            // 
+            // 作成9Y座標_初期読込
+            // 
+            this.作成9Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成9Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
+            this.作成9Y座標_初期読込.Name = "作成9Y座標_初期読込";
+            this.作成9Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.作成9Y座標_初期読込.TabIndex = 96;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.作成座標用button8);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.作成8X座標_初期読込);
+            this.groupBox1.Controls.Add(this.作成8Y座標_初期読込);
+            this.groupBox1.Location = new System.Drawing.Point(16, 465);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(213, 58);
+            this.groupBox1.TabIndex = 104;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "作成8";
+            // 
+            // 作成座標用button8
+            // 
+            this.作成座標用button8.BackColor = System.Drawing.Color.Transparent;
+            this.作成座標用button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.作成座標用button8.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成座標用button8.Location = new System.Drawing.Point(25, 22);
+            this.作成座標用button8.Name = "作成座標用button8";
+            this.作成座標用button8.Size = new System.Drawing.Size(38, 23);
+            this.作成座標用button8.TabIndex = 94;
+            this.作成座標用button8.Text = "座標";
+            this.作成座標用button8.UseVisualStyleBackColor = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label20.Location = new System.Drawing.Point(141, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(15, 14);
+            this.label20.TabIndex = 98;
+            this.label20.Text = "Y";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label21.Location = new System.Drawing.Point(79, 24);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(15, 14);
+            this.label21.TabIndex = 97;
+            this.label21.Text = "X";
+            // 
+            // 作成8X座標_初期読込
+            // 
+            this.作成8X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成8X座標_初期読込.Location = new System.Drawing.Point(100, 24);
+            this.作成8X座標_初期読込.Name = "作成8X座標_初期読込";
+            this.作成8X座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.作成8X座標_初期読込.TabIndex = 95;
+            // 
+            // 作成8Y座標_初期読込
+            // 
+            this.作成8Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成8Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
+            this.作成8Y座標_初期読込.Name = "作成8Y座標_初期読込";
+            this.作成8Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
+            this.作成8Y座標_初期読込.TabIndex = 96;
             // 
             // groupBox19
             // 
@@ -1594,17 +2163,6 @@
             this.作成2Y座標_初期読込.Name = "作成2Y座標_初期読込";
             this.作成2Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
             this.作成2Y座標_初期読込.TabIndex = 96;
-            // 
-            // キャラリストボックス
-            // 
-            this.キャラリストボックス.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.キャラリストボックス.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.キャラリストボックス.FormattingEnabled = true;
-            this.キャラリストボックス.Location = new System.Drawing.Point(18, 40);
-            this.キャラリストボックス.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.キャラリストボックス.Name = "キャラリストボックス";
-            this.キャラリストボックス.Size = new System.Drawing.Size(219, 23);
-            this.キャラリストボックス.TabIndex = 130;
             // 
             // タブ_基本設定
             // 
@@ -2117,573 +2675,16 @@
             this.label102.TabIndex = 123;
             this.label102.Text = "●キー設定";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.作成座標用button8);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.作成8X座標_初期読込);
-            this.groupBox1.Controls.Add(this.作成8Y座標_初期読込);
-            this.groupBox1.Location = new System.Drawing.Point(16, 465);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 58);
-            this.groupBox1.TabIndex = 104;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "作成8";
-            // 
-            // 作成座標用button8
-            // 
-            this.作成座標用button8.BackColor = System.Drawing.Color.Transparent;
-            this.作成座標用button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.作成座標用button8.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成座標用button8.Location = new System.Drawing.Point(25, 22);
-            this.作成座標用button8.Name = "作成座標用button8";
-            this.作成座標用button8.Size = new System.Drawing.Size(38, 23);
-            this.作成座標用button8.TabIndex = 94;
-            this.作成座標用button8.Text = "座標";
-            this.作成座標用button8.UseVisualStyleBackColor = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label20.Location = new System.Drawing.Point(141, 24);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(15, 14);
-            this.label20.TabIndex = 98;
-            this.label20.Text = "Y";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label21.Location = new System.Drawing.Point(79, 24);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(15, 14);
-            this.label21.TabIndex = 97;
-            this.label21.Text = "X";
-            // 
-            // 作成8X座標_初期読込
-            // 
-            this.作成8X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成8X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.作成8X座標_初期読込.Name = "作成8X座標_初期読込";
-            this.作成8X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.作成8X座標_初期読込.TabIndex = 95;
-            // 
-            // 作成8Y座標_初期読込
-            // 
-            this.作成8Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成8Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
-            this.作成8Y座標_初期読込.Name = "作成8Y座標_初期読込";
-            this.作成8Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.作成8Y座標_初期読込.TabIndex = 96;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.作成座標用button9);
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.label29);
-            this.groupBox2.Controls.Add(this.作成9X座標_初期読込);
-            this.groupBox2.Controls.Add(this.作成9Y座標_初期読込);
-            this.groupBox2.Location = new System.Drawing.Point(16, 530);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 58);
-            this.groupBox2.TabIndex = 104;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "作成9";
-            // 
-            // 作成座標用button9
-            // 
-            this.作成座標用button9.BackColor = System.Drawing.Color.Transparent;
-            this.作成座標用button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.作成座標用button9.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成座標用button9.Location = new System.Drawing.Point(25, 22);
-            this.作成座標用button9.Name = "作成座標用button9";
-            this.作成座標用button9.Size = new System.Drawing.Size(38, 23);
-            this.作成座標用button9.TabIndex = 94;
-            this.作成座標用button9.Text = "座標";
-            this.作成座標用button9.UseVisualStyleBackColor = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label22.Location = new System.Drawing.Point(141, 24);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(15, 14);
-            this.label22.TabIndex = 98;
-            this.label22.Text = "Y";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label29.Location = new System.Drawing.Point(79, 24);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(15, 14);
-            this.label29.TabIndex = 97;
-            this.label29.Text = "X";
-            // 
-            // 作成9X座標_初期読込
-            // 
-            this.作成9X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成9X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.作成9X座標_初期読込.Name = "作成9X座標_初期読込";
-            this.作成9X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.作成9X座標_初期読込.TabIndex = 95;
-            // 
-            // 作成9Y座標_初期読込
-            // 
-            this.作成9Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成9Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
-            this.作成9Y座標_初期読込.Name = "作成9Y座標_初期読込";
-            this.作成9Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.作成9Y座標_初期読込.TabIndex = 96;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.作成座標用button10);
-            this.groupBox3.Controls.Add(this.label33);
-            this.groupBox3.Controls.Add(this.label34);
-            this.groupBox3.Controls.Add(this.作成10X座標_初期読込);
-            this.groupBox3.Controls.Add(this.作成10Y座標_初期読込);
-            this.groupBox3.Location = new System.Drawing.Point(16, 595);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(213, 58);
-            this.groupBox3.TabIndex = 104;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "作成10";
-            // 
-            // 作成座標用button10
-            // 
-            this.作成座標用button10.BackColor = System.Drawing.Color.Transparent;
-            this.作成座標用button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.作成座標用button10.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成座標用button10.Location = new System.Drawing.Point(25, 22);
-            this.作成座標用button10.Name = "作成座標用button10";
-            this.作成座標用button10.Size = new System.Drawing.Size(38, 23);
-            this.作成座標用button10.TabIndex = 94;
-            this.作成座標用button10.Text = "座標";
-            this.作成座標用button10.UseVisualStyleBackColor = false;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label33.Location = new System.Drawing.Point(141, 24);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(15, 14);
-            this.label33.TabIndex = 98;
-            this.label33.Text = "Y";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label34.Location = new System.Drawing.Point(79, 24);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(15, 14);
-            this.label34.TabIndex = 97;
-            this.label34.Text = "X";
-            // 
-            // 作成10X座標_初期読込
-            // 
-            this.作成10X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成10X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.作成10X座標_初期読込.Name = "作成10X座標_初期読込";
-            this.作成10X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.作成10X座標_初期読込.TabIndex = 95;
-            // 
-            // 作成10Y座標_初期読込
-            // 
-            this.作成10Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成10Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
-            this.作成10Y座標_初期読込.Name = "作成10Y座標_初期読込";
-            this.作成10Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.作成10Y座標_初期読込.TabIndex = 96;
-            // 
-            // HQ使用6Y座標_初期読込
-            // 
-            this.HQ使用6Y座標_初期読込.Controls.Add(this.HQ座標用button6);
-            this.HQ使用6Y座標_初期読込.Controls.Add(this.label24);
-            this.HQ使用6Y座標_初期読込.Controls.Add(this.label30);
-            this.HQ使用6Y座標_初期読込.Controls.Add(this.HQ使用6X座標_初期読込);
-            this.HQ使用6Y座標_初期読込.Controls.Add(this.textBox15);
-            this.HQ使用6Y座標_初期読込.Location = new System.Drawing.Point(378, 385);
-            this.HQ使用6Y座標_初期読込.Name = "HQ使用6Y座標_初期読込";
-            this.HQ使用6Y座標_初期読込.Size = new System.Drawing.Size(213, 58);
-            this.HQ使用6Y座標_初期読込.TabIndex = 124;
-            this.HQ使用6Y座標_初期読込.TabStop = false;
-            this.HQ使用6Y座標_初期読込.Text = "HQ使用6";
-            // 
-            // HQ座標用button6
-            // 
-            this.HQ座標用button6.BackColor = System.Drawing.Color.Transparent;
-            this.HQ座標用button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HQ座標用button6.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ座標用button6.Location = new System.Drawing.Point(25, 22);
-            this.HQ座標用button6.Name = "HQ座標用button6";
-            this.HQ座標用button6.Size = new System.Drawing.Size(38, 23);
-            this.HQ座標用button6.TabIndex = 94;
-            this.HQ座標用button6.Text = "座標";
-            this.HQ座標用button6.UseVisualStyleBackColor = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label24.Location = new System.Drawing.Point(141, 24);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(15, 14);
-            this.label24.TabIndex = 98;
-            this.label24.Text = "Y";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label30.Location = new System.Drawing.Point(79, 24);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(15, 14);
-            this.label30.TabIndex = 97;
-            this.label30.Text = "X";
-            // 
-            // HQ使用6X座標_初期読込
-            // 
-            this.HQ使用6X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用6X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.HQ使用6X座標_初期読込.Name = "HQ使用6X座標_初期読込";
-            this.HQ使用6X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用6X座標_初期読込.TabIndex = 95;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox15.Location = new System.Drawing.Point(157, 24);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(35, 18);
-            this.textBox15.TabIndex = 96;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.HQ座標用button5);
-            this.groupBox11.Controls.Add(this.label35);
-            this.groupBox11.Controls.Add(this.label36);
-            this.groupBox11.Controls.Add(this.HQ使用5X座標_初期読込);
-            this.groupBox11.Controls.Add(this.HQ使用5Y座標_初期読込);
-            this.groupBox11.Location = new System.Drawing.Point(378, 320);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(213, 58);
-            this.groupBox11.TabIndex = 128;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "HQ使用5";
-            // 
-            // HQ座標用button5
-            // 
-            this.HQ座標用button5.BackColor = System.Drawing.Color.Transparent;
-            this.HQ座標用button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HQ座標用button5.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ座標用button5.Location = new System.Drawing.Point(25, 22);
-            this.HQ座標用button5.Name = "HQ座標用button5";
-            this.HQ座標用button5.Size = new System.Drawing.Size(38, 23);
-            this.HQ座標用button5.TabIndex = 94;
-            this.HQ座標用button5.Text = "座標";
-            this.HQ座標用button5.UseVisualStyleBackColor = false;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label35.Location = new System.Drawing.Point(141, 24);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(15, 14);
-            this.label35.TabIndex = 98;
-            this.label35.Text = "Y";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label36.Location = new System.Drawing.Point(79, 24);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(15, 14);
-            this.label36.TabIndex = 97;
-            this.label36.Text = "X";
-            // 
-            // HQ使用5X座標_初期読込
-            // 
-            this.HQ使用5X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用5X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.HQ使用5X座標_初期読込.Name = "HQ使用5X座標_初期読込";
-            this.HQ使用5X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用5X座標_初期読込.TabIndex = 95;
-            // 
-            // HQ使用5Y座標_初期読込
-            // 
-            this.HQ使用5Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用5Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
-            this.HQ使用5Y座標_初期読込.Name = "HQ使用5Y座標_初期読込";
-            this.HQ使用5Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用5Y座標_初期読込.TabIndex = 96;
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.HQ座標用button4);
-            this.groupBox12.Controls.Add(this.label39);
-            this.groupBox12.Controls.Add(this.label40);
-            this.groupBox12.Controls.Add(this.HQ使用4X座標_初期読込);
-            this.groupBox12.Controls.Add(this.HQ使用4Y座標_初期読込);
-            this.groupBox12.Location = new System.Drawing.Point(378, 255);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(213, 58);
-            this.groupBox12.TabIndex = 127;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "HQ使用4";
-            // 
-            // HQ座標用button4
-            // 
-            this.HQ座標用button4.BackColor = System.Drawing.Color.Transparent;
-            this.HQ座標用button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HQ座標用button4.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ座標用button4.Location = new System.Drawing.Point(25, 22);
-            this.HQ座標用button4.Name = "HQ座標用button4";
-            this.HQ座標用button4.Size = new System.Drawing.Size(38, 23);
-            this.HQ座標用button4.TabIndex = 94;
-            this.HQ座標用button4.Text = "座標";
-            this.HQ座標用button4.UseVisualStyleBackColor = false;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label39.Location = new System.Drawing.Point(141, 24);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(15, 14);
-            this.label39.TabIndex = 98;
-            this.label39.Text = "Y";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label40.Location = new System.Drawing.Point(79, 24);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(15, 14);
-            this.label40.TabIndex = 97;
-            this.label40.Text = "X";
-            // 
-            // HQ使用4X座標_初期読込
-            // 
-            this.HQ使用4X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用4X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.HQ使用4X座標_初期読込.Name = "HQ使用4X座標_初期読込";
-            this.HQ使用4X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用4X座標_初期読込.TabIndex = 95;
-            // 
-            // HQ使用4Y座標_初期読込
-            // 
-            this.HQ使用4Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用4Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
-            this.HQ使用4Y座標_初期読込.Name = "HQ使用4Y座標_初期読込";
-            this.HQ使用4Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用4Y座標_初期読込.TabIndex = 96;
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.HQ座標用button3);
-            this.groupBox13.Controls.Add(this.label41);
-            this.groupBox13.Controls.Add(this.label42);
-            this.groupBox13.Controls.Add(this.HQ使用3X座標_初期読込);
-            this.groupBox13.Controls.Add(this.HQ使用3Y座標_初期読込);
-            this.groupBox13.Location = new System.Drawing.Point(378, 190);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(213, 58);
-            this.groupBox13.TabIndex = 126;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "HQ使用3";
-            // 
-            // HQ座標用button3
-            // 
-            this.HQ座標用button3.BackColor = System.Drawing.Color.Transparent;
-            this.HQ座標用button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HQ座標用button3.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ座標用button3.Location = new System.Drawing.Point(25, 22);
-            this.HQ座標用button3.Name = "HQ座標用button3";
-            this.HQ座標用button3.Size = new System.Drawing.Size(38, 23);
-            this.HQ座標用button3.TabIndex = 94;
-            this.HQ座標用button3.Text = "座標";
-            this.HQ座標用button3.UseVisualStyleBackColor = false;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label41.Location = new System.Drawing.Point(141, 24);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(15, 14);
-            this.label41.TabIndex = 98;
-            this.label41.Text = "Y";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label42.Location = new System.Drawing.Point(79, 24);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(15, 14);
-            this.label42.TabIndex = 97;
-            this.label42.Text = "X";
-            // 
-            // HQ使用3X座標_初期読込
-            // 
-            this.HQ使用3X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用3X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.HQ使用3X座標_初期読込.Name = "HQ使用3X座標_初期読込";
-            this.HQ使用3X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用3X座標_初期読込.TabIndex = 95;
-            // 
-            // HQ使用3Y座標_初期読込
-            // 
-            this.HQ使用3Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用3Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
-            this.HQ使用3Y座標_初期読込.Name = "HQ使用3Y座標_初期読込";
-            this.HQ使用3Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用3Y座標_初期読込.TabIndex = 96;
-            // 
-            // groupBox18
-            // 
-            this.groupBox18.Controls.Add(this.HQ座標用button2);
-            this.groupBox18.Controls.Add(this.label43);
-            this.groupBox18.Controls.Add(this.label44);
-            this.groupBox18.Controls.Add(this.HQ使用2X座標_初期読込);
-            this.groupBox18.Controls.Add(this.HQ使用2Y座標_初期読込);
-            this.groupBox18.Location = new System.Drawing.Point(378, 125);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(213, 58);
-            this.groupBox18.TabIndex = 125;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "HQ使用2";
-            // 
-            // HQ座標用button2
-            // 
-            this.HQ座標用button2.BackColor = System.Drawing.Color.Transparent;
-            this.HQ座標用button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HQ座標用button2.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ座標用button2.Location = new System.Drawing.Point(25, 22);
-            this.HQ座標用button2.Name = "HQ座標用button2";
-            this.HQ座標用button2.Size = new System.Drawing.Size(38, 23);
-            this.HQ座標用button2.TabIndex = 94;
-            this.HQ座標用button2.Text = "座標";
-            this.HQ座標用button2.UseVisualStyleBackColor = false;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label43.Location = new System.Drawing.Point(141, 24);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(15, 14);
-            this.label43.TabIndex = 98;
-            this.label43.Text = "Y";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label44.Location = new System.Drawing.Point(79, 24);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(15, 14);
-            this.label44.TabIndex = 97;
-            this.label44.Text = "X";
-            // 
-            // HQ使用2X座標_初期読込
-            // 
-            this.HQ使用2X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用2X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.HQ使用2X座標_初期読込.Name = "HQ使用2X座標_初期読込";
-            this.HQ使用2X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用2X座標_初期読込.TabIndex = 95;
-            // 
-            // HQ使用2Y座標_初期読込
-            // 
-            this.HQ使用2Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用2Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
-            this.HQ使用2Y座標_初期読込.Name = "HQ使用2Y座標_初期読込";
-            this.HQ使用2Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用2Y座標_初期読込.TabIndex = 96;
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.HQ座標用button1);
-            this.groupBox15.Controls.Add(this.label45);
-            this.groupBox15.Controls.Add(this.label46);
-            this.groupBox15.Controls.Add(this.HQ使用1X座標_初期読込);
-            this.groupBox15.Controls.Add(this.HQ使用1Y座標_初期読込);
-            this.groupBox15.Location = new System.Drawing.Point(378, 60);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(213, 58);
-            this.groupBox15.TabIndex = 123;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "HQ使用1";
-            // 
-            // HQ座標用button1
-            // 
-            this.HQ座標用button1.BackColor = System.Drawing.Color.Transparent;
-            this.HQ座標用button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HQ座標用button1.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ座標用button1.Location = new System.Drawing.Point(25, 22);
-            this.HQ座標用button1.Name = "HQ座標用button1";
-            this.HQ座標用button1.Size = new System.Drawing.Size(38, 23);
-            this.HQ座標用button1.TabIndex = 94;
-            this.HQ座標用button1.Text = "座標";
-            this.HQ座標用button1.UseVisualStyleBackColor = false;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label45.Location = new System.Drawing.Point(141, 24);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(15, 14);
-            this.label45.TabIndex = 98;
-            this.label45.Text = "Y";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label46.Location = new System.Drawing.Point(79, 24);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(15, 14);
-            this.label46.TabIndex = 97;
-            this.label46.Text = "X";
-            // 
-            // HQ使用1X座標_初期読込
-            // 
-            this.HQ使用1X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用1X座標_初期読込.Location = new System.Drawing.Point(100, 24);
-            this.HQ使用1X座標_初期読込.Name = "HQ使用1X座標_初期読込";
-            this.HQ使用1X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用1X座標_初期読込.TabIndex = 95;
-            // 
-            // HQ使用1Y座標_初期読込
-            // 
-            this.HQ使用1Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HQ使用1Y座標_初期読込.Location = new System.Drawing.Point(157, 24);
-            this.HQ使用1Y座標_初期読込.Name = "HQ使用1Y座標_初期読込";
-            this.HQ使用1Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.HQ使用1Y座標_初期読込.TabIndex = 96;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label47.Location = new System.Drawing.Point(329, 240);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(56, 14);
-            this.label47.TabIndex = 20;
-            this.label47.Text = "マクロ編集";
+            // キャラリストボックス
+            // 
+            this.キャラリストボックス.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.キャラリストボックス.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.キャラリストボックス.FormattingEnabled = true;
+            this.キャラリストボックス.Location = new System.Drawing.Point(18, 40);
+            this.キャラリストボックス.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.キャラリストボックス.Name = "キャラリストボックス";
+            this.キャラリストボックス.Size = new System.Drawing.Size(219, 23);
+            this.キャラリストボックス.TabIndex = 130;
             // 
             // CrafterMacroExecution
             // 
@@ -2719,7 +2720,25 @@
             this.panel1.ResumeLayout(false);
             this.タブ_作成品設定.ResumeLayout(false);
             this.タブ_作成品設定.PerformLayout();
+            this.HQ使用6Y座標_初期読込.ResumeLayout(false);
+            this.HQ使用6Y座標_初期読込.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             this.groupBox9.ResumeLayout(false);
@@ -2742,24 +2761,6 @@
             this.groupBox35.PerformLayout();
             this.groupBox36.ResumeLayout(false);
             this.groupBox36.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.HQ使用6Y座標_初期読込.ResumeLayout(false);
-            this.HQ使用6Y座標_初期読込.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
