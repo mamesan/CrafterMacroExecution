@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using ACT_CrafterSimulator.Bean;
+using CrafterMacroExecution.Bean;
 using System;
 using System.IO;
 using Advanced_Combat_Tracker;
 using System.Text;
+using static CrafterMacroExecution.Utils.Const;
 
 namespace CrafterMacroExecution.Utils
 {
@@ -80,9 +81,9 @@ namespace CrafterMacroExecution.Utils
                 playMacroInfoBean = new PlayMacroInfoBean();
 
                 // No
-                playMacroInfoBean.No = element.GetAttribute(ACT_CrafterSimulatorConst.NO);
+                playMacroInfoBean.No = element.GetAttribute(NO);
                 // Wait
-                playMacroInfoBean.Wait = element.GetAttribute(ACT_CrafterSimulatorConst.WAIT);
+                playMacroInfoBean.Wait = element.GetAttribute(WAIT);
                 // Text
                 playMacroInfoBean.Text = element.InnerText;
 
@@ -165,17 +166,17 @@ namespace CrafterMacroExecution.Utils
                 // スキル名
                 skilInfoBean.SkillName = element.InnerText;
                 // SkillType
-                skilInfoBean.SkillTypeV = element.GetAttribute(ACT_CrafterSimulatorConst.SKILLTYPE_V);
+                skilInfoBean.SkillTypeV = element.GetAttribute(SKILLTYPE_V);
                 // CP
-                skilInfoBean.CPV = element.GetAttribute(ACT_CrafterSimulatorConst.CP_V);
+                skilInfoBean.CPV = element.GetAttribute(CP_V);
                 // 作業
-                skilInfoBean.CraftSmanshipV = element.GetAttribute(ACT_CrafterSimulatorConst.CRAFT_SMANSHIP_V);
+                skilInfoBean.CraftSmanshipV = element.GetAttribute(CRAFT_SMANSHIP_V);
                 // 加工
-                skilInfoBean.CraftControlV = element.GetAttribute(ACT_CrafterSimulatorConst.CRAFT_CONTROL_V);
+                skilInfoBean.CraftControlV = element.GetAttribute(CRAFT_CONTROL_V);
                 // 成功率
-                skilInfoBean.SuccessRateV = element.GetAttribute(ACT_CrafterSimulatorConst.SUCCESS_RATE_V);
+                skilInfoBean.SuccessRateV = element.GetAttribute(SUCCESS_RATE_V);
                 // タブタイプ
-                skilInfoBean.TabType = element.GetAttribute(ACT_CrafterSimulatorConst.TAB_TYPE_V);
+                skilInfoBean.TabType = element.GetAttribute(TAB_TYPE_V);
 
                 // リストに格納を行う
                 list.Add(skilInfoBean);
@@ -358,7 +359,7 @@ namespace CrafterMacroExecution.Utils
         {
 
             // 設定ファイル保存先パス
-            string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, ACT_CrafterSimulatorConst.FILE_PATH_CHARAINFO);
+            string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, FILE_PATH_CHARAINFO);
 
             // 返却用Beanクラスを生成する
             ICharacterBean characterBean = new CharacterBean();
@@ -370,37 +371,37 @@ namespace CrafterMacroExecution.Utils
             if (element != null)
             {
                 // CP
-                characterBean.CP = element.GetAttribute(ACT_CrafterSimulatorConst.CP);
+                characterBean.CP = element.GetAttribute(CP);
                 // 作業精度
-                characterBean.CraftSmanship = element.GetAttribute(ACT_CrafterSimulatorConst.CRAFT_SMANSHIP);
+                characterBean.CraftSmanship = element.GetAttribute(CRAFT_SMANSHIP);
                 // 加工精度
-                characterBean.CraftControl = element.GetAttribute(ACT_CrafterSimulatorConst.CRAFT_CONTROL);
+                characterBean.CraftControl = element.GetAttribute(CRAFT_CONTROL);
                 // 木工師
-                characterBean.Carpenter = element.GetAttribute(ACT_CrafterSimulatorConst.CARPENTER);
+                characterBean.Carpenter = element.GetAttribute(CARPENTER);
                 // 鍛冶師
-                characterBean.Blacksmith = element.GetAttribute(ACT_CrafterSimulatorConst.BLACKSMITH);
+                characterBean.Blacksmith = element.GetAttribute(BLACKSMITH);
                 // 甲冑師
-                characterBean.Armorer = element.GetAttribute(ACT_CrafterSimulatorConst.ARMORER);
+                characterBean.Armorer = element.GetAttribute(ARMORER);
                 // 彫金師
-                characterBean.Goldsmith = element.GetAttribute(ACT_CrafterSimulatorConst.GOLDSMITH);
+                characterBean.Goldsmith = element.GetAttribute(GOLDSMITH);
                 // 革細工師
-                characterBean.Leatherworker = element.GetAttribute(ACT_CrafterSimulatorConst.LEATHERWORKER);
+                characterBean.Leatherworker = element.GetAttribute(LEATHERWORKER);
                 // 裁縫師
-                characterBean.Weaver = element.GetAttribute(ACT_CrafterSimulatorConst.WEAVER);
+                characterBean.Weaver = element.GetAttribute(WEAVER);
                 // 錬金術師
-                characterBean.Alchemist = element.GetAttribute(ACT_CrafterSimulatorConst.ALCHEMIST);
+                characterBean.Alchemist = element.GetAttribute(ALCHEMIST);
                 // 調理師
-                characterBean.Culinarian = element.GetAttribute(ACT_CrafterSimulatorConst.CULINARIAN);
+                characterBean.Culinarian = element.GetAttribute(CULINARIAN);
                 // チョコボ師
-                characterBean.ChocoboMeister = element.GetAttribute(ACT_CrafterSimulatorConst.CHOCOBO);
+                characterBean.ChocoboMeister = element.GetAttribute(CHOCOBO);
                 // 例のあの人
-                characterBean.AwayukiKusushi = element.GetAttribute(ACT_CrafterSimulatorConst.AWAYUKIKUSUSHI);
+                characterBean.AwayukiKusushi = element.GetAttribute(AWAYUKIKUSUSHI);
                 // マイスター1
-                characterBean.Meister1 = element.GetAttribute(ACT_CrafterSimulatorConst.MEISTER1);
+                characterBean.Meister1 = element.GetAttribute(MEISTER1);
                 // マイスター2
-                characterBean.Meister2 = element.GetAttribute(ACT_CrafterSimulatorConst.MEISTER2);
+                characterBean.Meister2 = element.GetAttribute(MEISTER2);
                 // マイスター3
-                characterBean.Meister3 = element.GetAttribute(ACT_CrafterSimulatorConst.MEISTER3);
+                characterBean.Meister3 = element.GetAttribute(MEISTER3);
 
                 // 返却する
                 return characterBean;
@@ -417,7 +418,7 @@ namespace CrafterMacroExecution.Utils
         public static IMacroInfoBean ReadMacroInfo(string key)
         {
             // 設定ファイル保存先パス
-            string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, ACT_CrafterSimulatorConst.FILE_PATH_MACROINFO);
+            string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, FILE_PATH_MACROINFO);
 
             // 返却用Beanクラスを生成する
             IMacroInfoBean macroInfoBean = new MacroInfoBean();
@@ -429,13 +430,13 @@ namespace CrafterMacroExecution.Utils
             if (element != null)
             {
                 // 必要工数
-                macroInfoBean.NecessaryManHours = element.GetAttribute(ACT_CrafterSimulatorConst.NECESSARY_MAN_HOURS);
+                macroInfoBean.NecessaryManHours = element.GetAttribute(NECESSARY_MAN_HOURS);
                 // 星数
-                macroInfoBean.StarCount = element.GetAttribute(ACT_CrafterSimulatorConst.STAR_COUNT);
+                macroInfoBean.StarCount = element.GetAttribute(STAR_COUNT);
                 // 必要品質
-                macroInfoBean.CraftControlCount = element.GetAttribute(ACT_CrafterSimulatorConst.CRAFTCONTROL_COUNT);
+                macroInfoBean.CraftControlCount = element.GetAttribute(CRAFTCONTROL_COUNT);
                 // 作るもの
-                macroInfoBean.WhatMakes = element.GetAttribute(ACT_CrafterSimulatorConst.WHAT_MAKES);
+                macroInfoBean.WhatMakes = element.GetAttribute(WHAT_MAKES);
 
                 // 返却する
                 return macroInfoBean;
@@ -549,7 +550,7 @@ namespace CrafterMacroExecution.Utils
             string Meister3)
         {
             // 設定ファイル保存先パス
-            string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, ACT_CrafterSimulatorConst.FILE_PATH_CHARAINFO);
+            string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, FILE_PATH_CHARAINFO);
 
             // インスタンス生成
             XmlDocument xml = new XmlDocument();
@@ -606,7 +607,7 @@ namespace CrafterMacroExecution.Utils
         public static void EditMacroInfo(string key, string NecessaryManHours, string StarCount, string CraftControlCount, string WhatMakes)
         {
             // 設定ファイル保存先パス
-            string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, ACT_CrafterSimulatorConst.FILE_PATH_MACROINFO);
+            string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, FILE_PATH_MACROINFO);
 
             // インスタンス生成
             XmlDocument xml = new XmlDocument();

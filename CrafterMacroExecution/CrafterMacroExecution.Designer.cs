@@ -380,7 +380,7 @@
             this.飯チェックボックス_init.TabIndex = 121;
             this.飯チェックボックス_init.Text = "飯";
             this.飯チェックボックス_init.UseVisualStyleBackColor = true;
-            this.飯チェックボックス_init.CheckedChanged += new System.EventHandler(this.飯チェックボックス_init_CheckedChanged);
+            //this.飯チェックボックス_init.CheckedChanged += new System.EventHandler(this.飯チェックボックス_init_CheckedChanged);
             // 
             // label6
             // 

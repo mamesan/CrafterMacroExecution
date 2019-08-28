@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
+using static CrafterMacroExecution.Utils.Const;
 
 namespace CrafterMacroExecution.Utils
 {
@@ -93,15 +94,15 @@ namespace CrafterMacroExecution.Utils
         {
             if (flg == 1)
             {
-                return ACT_CrafterSimulatorConst.CHARA_INFO;
+                return CHARA_INFO;
             }
             else if (flg == 2)
             {
-                return ACT_CrafterSimulatorConst.MACRO_INFO;
+                return MACRO_INFO;
             }
             else if (flg == 3)
             {
-                return ACT_CrafterSimulatorConst.MACRO_DETAIL_INFO;
+                return MACRO_DETAIL_INFO;
             }
             else
             {

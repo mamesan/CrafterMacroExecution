@@ -19,7 +19,7 @@ namespace CrafterMacroExecution
                  && createSettingBean.I修理チェック)
             {
                 // ログ中断フラグを立てる
-                this.RepairingFlg = true;
+                //this.RepairingFlg = true;
             }
 
             // 強化薬を使ったときの秒数を取得するイベント
@@ -27,7 +27,7 @@ namespace CrafterMacroExecution
                 && createSettingBean.I薬チェック)
             {
                 // 格納する
-                this.MedicineTime = int.Parse(logInfo.Substring(logInfo.Length - 15, 3));
+                //this.MedicineTime = int.Parse(logInfo.Substring(logInfo.Length - 15, 3));
             }
 
             // 飯を使ったときの秒数を取得するイベント
@@ -35,19 +35,19 @@ namespace CrafterMacroExecution
                 && createSettingBean.I飯チェック)
             {
                 // 格納する
-                this.FoodTime = int.Parse(logInfo.Substring(logInfo.Length - 16, 4));
+                //this.FoodTime = int.Parse(logInfo.Substring(logInfo.Length - 16, 4));
             }
 
             // ろえな作成用蒐集品つけたときのイベントフラグ
             if (logInfo.Contains(createSettingBean.Iキャラ名 + " gains the effect of 蒐集品製作 from " + createSettingBean.Iキャラ名 + " for 9999.00 Seconds."))
             {
-                this.roenaFlg = true;
+                //this.roenaFlg = true;
             }
 
             // ろえな作成用蒐集品消えたときのイベントフラグ
             if (logInfo.Contains(createSettingBean.Iキャラ名 + " loses the effect of 蒐集品製作 from " + createSettingBean.Iキャラ名 + "."))
             {
-                this.roenaFlg = false;
+                //this.roenaFlg = false;
             }
         }
     }

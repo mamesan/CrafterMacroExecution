@@ -149,30 +149,15 @@ namespace CrafterMacroExecution
                 this.キャラリストボックス.Items.Add(str);
                 this.キャラ一覧.Items.Add(str);
                 // Hiddenが一致した場合
+                /**
                 if (this.hiddenキャラ名textBox_初期読込.Text.Equals(str))
                 {
                     this.キャラリストボックス.SelectedItem = str;
                 }
+                */
             }
 
             string selectCharacter = this.キャラリストボックス.Text;
-            // 初期表示時のキャラクター情報を取得し、空欄でなければCPなどの項目を取得、設定する
-            if (String.IsNullOrWhiteSpace(selectCharacter))
-            {
-                // 僕のキャラクター情報を設定する
-                this.label3.Text = "CP：***";
-                this.label4.Text = "加工精度：***";
-                this.label5.Text = "作業精度：***";
-            }
-            else
-            {
-                // 対象キャラクター情報を取得する
-                ICharacterBean characterBean = FileController.ReadCharacterInfo(selectCharacter);
-                // 僕のキャラクター情報を設定する
-                this.label3.Text = "CP：" + characterBean.CP;
-                this.label4.Text = "加工精度：" + characterBean.CraftSmanship;
-                this.label5.Text = "作業精度：" + characterBean.CraftControl;
-            }
 
             // マクロ一覧を取得する
             List<string> list = Utils.Utils.FindFile(FILE_PATH_TEMPMACRO, FILEEXTENSION_XML);
@@ -1690,6 +1675,7 @@ namespace CrafterMacroExecution
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            /**
             // 空だった場合、返却
             if (String.IsNullOrWhiteSpace(this.textBox6.Text)
                 || String.IsNullOrWhiteSpace(this.textBox4.Text)
@@ -1751,6 +1737,7 @@ namespace CrafterMacroExecution
             this.キャラ一覧.Items.Add(this.textBox6.Text);
 
             MessageBox.Show("例のあの人が増殖しちゃった☆", "分身");
+            */
         }
 
         /// <summary>
@@ -1762,7 +1749,7 @@ namespace CrafterMacroExecution
         {
 
             // Hiddenのテキストボックスに、一時値を格納する
-            this.hiddenキャラ名textBox_初期読込.Text = this.キャラリストボックス.Text;
+            // this.hiddenキャラ名textBox_初期読込.Text = this.キャラリストボックス.Text;
 
             // 対象キャラクター情報を取得する
             ICharacterBean characterBean = FileController.ReadCharacterInfo(this.キャラリストボックス.Text);
@@ -1810,12 +1797,6 @@ namespace CrafterMacroExecution
 
                 // キャラ名
                 this.textBox6.Text = "";
-                // CP
-                this.textBox4.Text = "";
-                // 作業精度
-                this.textBox5.Text = "";
-                // 加工精度
-                this.textBox3.Text = "";
 
                 this.木工師_textBox.Text = "";
                 this.鍛冶師_textBox.Text = "";
@@ -1827,9 +1808,9 @@ namespace CrafterMacroExecution
                 this.調理師_textBox.Text = "";
                 this.チョコボ師_textBox.Text = "";
                 this.例のあの人_textBox.Text = "";
-                this.マイスター1_comboBox.SelectedIndex = -1;
-                this.マイスター2_comboBox.SelectedIndex = -1;
-                this.マイスター3_comboBox.SelectedIndex = -1;
+                // this.マイスター1_comboBox.SelectedIndex = -1;
+                // this.マイスター2_comboBox.SelectedIndex = -1;
+                // this.マイスター3_comboBox.SelectedIndex = -1;
             }
         }
 
@@ -1854,12 +1835,6 @@ namespace CrafterMacroExecution
 
             // キャラ名
             this.textBox6.Text = listBox.Text;
-            // CP
-            this.textBox4.Text = characterBean.CP;
-            // 作業精度
-            this.textBox5.Text = characterBean.CraftSmanship;
-            // 加工精度
-            this.textBox3.Text = characterBean.CraftControl;
 
             this.木工師_textBox.Text = characterBean.Carpenter;
             this.鍛冶師_textBox.Text = characterBean.Blacksmith;
@@ -1871,9 +1846,9 @@ namespace CrafterMacroExecution
             this.調理師_textBox.Text = characterBean.Culinarian;
             this.チョコボ師_textBox.Text = characterBean.ChocoboMeister;
             this.例のあの人_textBox.Text = characterBean.AwayukiKusushi;
-            this.マイスター1_comboBox.Text = characterBean.Meister1;
-            this.マイスター2_comboBox.Text = characterBean.Meister2;
-            this.マイスター3_comboBox.Text = characterBean.Meister3;
+            // this.マイスター1_comboBox.Text = characterBean.Meister1;
+            // this.マイスター2_comboBox.Text = characterBean.Meister2;
+            // this.マイスター3_comboBox.Text = characterBean.Meister3;
 
         }
 
@@ -1887,9 +1862,9 @@ namespace CrafterMacroExecution
 
             // 空だった場合、返却
             if (String.IsNullOrWhiteSpace(this.textBox6.Text)
-                || String.IsNullOrWhiteSpace(this.textBox4.Text)
-                || String.IsNullOrWhiteSpace(this.textBox5.Text)
-                || String.IsNullOrWhiteSpace(this.textBox3.Text)
+                // || String.IsNullOrWhiteSpace(this.textBox4.Text)
+                // || String.IsNullOrWhiteSpace(this.textBox5.Text)
+                // || String.IsNullOrWhiteSpace(this.textBox3.Text)
                 || String.IsNullOrWhiteSpace(this.木工師_textBox.Text)
                 || String.IsNullOrWhiteSpace(this.革細工師_textBox.Text)
                 || String.IsNullOrWhiteSpace(this.鍛冶師_textBox.Text)
@@ -1900,15 +1875,16 @@ namespace CrafterMacroExecution
                 || String.IsNullOrWhiteSpace(this.調理師_textBox.Text)
                 || String.IsNullOrWhiteSpace(this.チョコボ師_textBox.Text)
                 || String.IsNullOrWhiteSpace(this.例のあの人_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.マイスター1_comboBox.Text)
-                || String.IsNullOrWhiteSpace(this.マイスター2_comboBox.Text)
-                || String.IsNullOrWhiteSpace(this.マイスター3_comboBox.Text)
+                // || String.IsNullOrWhiteSpace(this.マイスター1_comboBox.Text)
+                // || String.IsNullOrWhiteSpace(this.マイスター2_comboBox.Text)
+                // || String.IsNullOrWhiteSpace(this.マイスター3_comboBox.Text)
                 )
             {
                 MessageBox.Show("ちゃんと入力終わってから押せな？");
                 return;
             }
 
+            /**
             // キャラ情報を編集する
             FileController.EditCharacterInfo(
                 this.textBox6.Text,
@@ -1928,13 +1904,14 @@ namespace CrafterMacroExecution
                 this.マイスター1_comboBox.Text,
                 this.マイスター2_comboBox.Text,
                 this.マイスター3_comboBox.Text);
+            */
 
             if (this.キャラ一覧.Text.Equals(this.キャラリストボックス.Text))
             {
                 // 僕のキャラクター情報を設定する
-                this.label3.Text = "CP：" + this.textBox4.Text;
-                this.label5.Text = "加工精度：" + this.textBox5.Text;
-                this.label4.Text = "作業精度：" + this.textBox3.Text;
+                // this.label3.Text = "CP：" + this.textBox4.Text;
+                // this.label5.Text = "加工精度：" + this.textBox5.Text;
+                // this.label4.Text = "作業精度：" + this.textBox3.Text;
             }
 
             MessageBox.Show("例のあの人の形が変わりました。", "更新完了");
@@ -1950,9 +1927,10 @@ namespace CrafterMacroExecution
             // 空だった場合、返却
             if (String.IsNullOrWhiteSpace(this.textBox8.Text)
                 || String.IsNullOrWhiteSpace(this.textBox1.Text)
-                || String.IsNullOrWhiteSpace(this.comboBox1.Text)
-                || String.IsNullOrWhiteSpace(this.textBox2.Text)
-                || String.IsNullOrWhiteSpace(this.comboBox3.Text))
+            // || String.IsNullOrWhiteSpace(this.comboBox1.Text)
+            // || String.IsNullOrWhiteSpace(this.textBox2.Text)
+            // || String.IsNullOrWhiteSpace(this.comboBox3.Text))
+            )
             {
                 MessageBox.Show("ちゃんと入力終わってから押せな？");
                 return;
@@ -1970,7 +1948,7 @@ namespace CrafterMacroExecution
 
             // リストを一時作成する
             List<string[]> dclist = new List<string[]>();
-            dclist.Add(new string[] { this.textBox1.Text, this.comboBox1.Text, this.textBox2.Text, this.comboBox3.Text });
+            // dclist.Add(new string[] { this.textBox1.Text, this.comboBox1.Text, this.textBox2.Text, this.comboBox3.Text });
 
             // マクロ情報を保存する
             FileController.SaveInfo(new List<string> { this.textBox8.Text }, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_INFO), FILE_PATH_MACROINFO);
@@ -1979,7 +1957,7 @@ namespace CrafterMacroExecution
             this.Macro一覧.Items.Add(this.textBox8.Text);
 
             // スキル一覧を取得する
-            List<ISkilInfoBean> skilInfoBean = Utils.FileController.GetSkilInfo(FILE_PATH_SKILLINFO);
+            // List<ISkilInfoBean> skilInfoBean = Utils.FileController.GetSkilInfo(FILE_PATH_SKILLINFO);
 
             // リストを一時作成する
             dclist = new List<string[]>();
@@ -1991,6 +1969,7 @@ namespace CrafterMacroExecution
             foreach (string str in this.listBox1.Items)
             {
                 keylist.Add("/ac " + str);
+                /**
                 // スキル一覧より、判定を行う
                 foreach (ISkilInfoBean tmpBean in skilInfoBean)
                 {
@@ -2021,6 +2000,7 @@ namespace CrafterMacroExecution
                         }
                     }
                 }
+                */
                 dclist.Add(new string[] { i.ToString(), wait });
                 i++;
             }
@@ -2066,8 +2046,8 @@ namespace CrafterMacroExecution
 
                 this.textBox8.Text = "";
                 this.textBox1.Text = "";
-                this.comboBox1.SelectedIndex = -1;
-                this.textBox2.Text = "";
+                // this.comboBox1.SelectedIndex = -1;
+                // this.textBox2.Text = "";
                 this.comboBox3.SelectedIndex = -1;
                 this.listBox1.Items.Clear();
 
@@ -2086,8 +2066,8 @@ namespace CrafterMacroExecution
             // 空だった場合、返却
             if (String.IsNullOrWhiteSpace(this.textBox8.Text)
                 || String.IsNullOrWhiteSpace(this.textBox1.Text)
-                || String.IsNullOrWhiteSpace(this.comboBox1.Text)
-                || String.IsNullOrWhiteSpace(this.textBox2.Text)
+                // || String.IsNullOrWhiteSpace(this.comboBox1.Text)
+                // || String.IsNullOrWhiteSpace(this.textBox2.Text)
                 || String.IsNullOrWhiteSpace(this.comboBox3.Text))
             {
                 MessageBox.Show("ちゃんと入力終わってから押せな？");
@@ -2096,10 +2076,10 @@ namespace CrafterMacroExecution
 
 
             // 対象マクロ情報を修正する
-            FileController.EditMacroInfo(this.Macro一覧.Text, this.textBox1.Text, this.comboBox1.Text, this.textBox2.Text, this.comboBox3.Text);
+            // FileController.EditMacroInfo(this.Macro一覧.Text, this.textBox1.Text, this.comboBox1.Text, this.textBox2.Text, this.comboBox3.Text);
 
             // スキル一覧を取得する
-            List<ISkilInfoBean> skilInfoBean = Utils.FileController.GetSkilInfo(FILE_PATH_SKILLINFO);
+            // List<ISkilInfoBean> skilInfoBean = Utils.FileController.GetSkilInfo(FILE_PATH_SKILLINFO);
 
             // リストを一時作成する
             List<string[]> dclist = new List<string[]>();
@@ -2111,6 +2091,7 @@ namespace CrafterMacroExecution
             foreach (string str in this.listBox1.Items)
             {
                 keylist.Add("/ac " + str);
+                /*
                 // スキル一覧より、判定を行う
                 foreach (ISkilInfoBean tmpBean in skilInfoBean)
                 {
@@ -2141,6 +2122,7 @@ namespace CrafterMacroExecution
                         }
                     }
                 }
+                */
                 dclist.Add(new string[] { i.ToString(), wait });
                 i++;
             }
@@ -2180,9 +2162,9 @@ namespace CrafterMacroExecution
                 // 必要工数
                 this.textBox1.Text = macroInfoBean.NecessaryManHours;
                 // 星数
-                this.comboBox1.Text = macroInfoBean.StarCount;
+                // this.comboBox1.Text = macroInfoBean.StarCount;
                 // 必要品質
-                this.textBox2.Text = macroInfoBean.CraftControlCount;
+                // this.textBox2.Text = macroInfoBean.CraftControlCount;
                 // 作るもの
                 this.comboBox3.Text = macroInfoBean.WhatMakes;
 
@@ -2211,18 +2193,12 @@ namespace CrafterMacroExecution
 
                     // マクロ名
                     this.textBox8.Text = listBox.Text;
-                    // 必要工数
-                    this.textBox1.Text = "0";
-                    // 星数
-                    this.comboBox1.Text = "0";
-                    // 必要品質
-                    this.textBox2.Text = "0";
                     // 作るもの
                     this.comboBox3.Text = "HQ";
 
                     // リストを一時作成する
                     List<string[]> dclist = new List<string[]>();
-                    dclist.Add(new string[] { this.textBox1.Text, this.comboBox1.Text, this.textBox2.Text, this.comboBox3.Text });
+                    // dclist.Add(new string[] { this.textBox1.Text, this.comboBox1.Text, this.textBox2.Text, this.comboBox3.Text });
 
                     // マクロ情報を保存する
                     FileController.SaveInfo(new List<string> { this.textBox8.Text }, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_INFO), FILE_PATH_MACROINFO);
@@ -2267,6 +2243,7 @@ namespace CrafterMacroExecution
         /// <param name="e"></param>
         private async void button7_Click(object sender, EventArgs e)
         {
+            /**
             // 空白チェック
             if (String.IsNullOrWhiteSpace(this.実行回数_textBox.Text) && this.マクロ一回実行_radioButton.Checked)
             {
@@ -2417,6 +2394,7 @@ namespace CrafterMacroExecution
                     }
                 }
             }
+            */
         }
 
         /// <summary>
@@ -2441,6 +2419,7 @@ namespace CrafterMacroExecution
             // 作るものに、対象のものを入れる
             this.作るものcomboBox.Text = macroInfoBean.WhatMakes;
 
+            /**
             // HQ作成
             if ("HQ".Equals(macroInfoBean.WhatMakes))
             {
@@ -2478,6 +2457,7 @@ namespace CrafterMacroExecution
                 this.ディレイ_textBox.Enabled = true;
                 this.ディレイ_textBox.Text = "";
             }
+            */
         }
 
         /// <summary>
@@ -2546,6 +2526,7 @@ namespace CrafterMacroExecution
                 // 1秒停止する
                 this.WaitTime(1000);
 
+                /**
                 // アディッショナルの設定有無を判定する
                 if (this.checkBox5.Checked)
                 {
@@ -2594,6 +2575,7 @@ namespace CrafterMacroExecution
                     // 中断処理
                     this.StopAndInterruptionAction();
                 }
+                */
 
                 /*
                 // FF14プラグイン取得処理
@@ -2647,6 +2629,7 @@ namespace CrafterMacroExecution
                 }
 
 
+                /**
                 // 飯
                 if (this.checkBox3.Checked)
                 {
@@ -2664,6 +2647,7 @@ namespace CrafterMacroExecution
                     // 現在日時を取得し、薬の秒数を加算する
                     this.MedicineDateTime = DateTime.Now.AddSeconds(this.MedicineTime - 120);
                 }
+                */
 
                 // チョコボを押下する
                 this.SendChocoboExecutionKey(chocoboInfoBean);
@@ -2734,6 +2718,7 @@ namespace CrafterMacroExecution
                     // 中断処理
                     this.StopAndInterruptionAction();
 
+                    /**
                     // ここで、飯の中断フラグを確認する
                     if (this.checkBox3.Checked)
                     {
@@ -2757,10 +2742,12 @@ namespace CrafterMacroExecution
                             this.label27.Text = str;
                         }
                     }
+                    */
 
                     // 中断処理
                     this.StopAndInterruptionAction();
 
+                    /**
                     // ここで、薬の中断フラグを確認する 
                     if (this.checkBox4.Checked)
                     {
@@ -2784,6 +2771,7 @@ namespace CrafterMacroExecution
                             this.label27.Text = str;
                         }
                     }
+                    */
                     this._count--;
                     this._AllCount--;
                 }
@@ -2812,6 +2800,7 @@ namespace CrafterMacroExecution
             // 待機する
             this.WaitTime(500);
 
+            /**
             // アディッショナルの設定有無を判定する
             if (this.checkBox5.Checked == true)
             {
@@ -2839,6 +2828,7 @@ namespace CrafterMacroExecution
                 // 中断処理
                 this.StopAndInterruptionAction();
             }
+            */
 
             // 終了処理
             this.実行ボタン.Enabled = true;
@@ -2872,6 +2862,7 @@ namespace CrafterMacroExecution
                 return;
             }
 
+            /**
             // 装備が壊れた時のログを挿入する
             if (logInfo.logLine.Contains("の耐久度が10%以下になった。")
                  && this.checkBox7.Checked)
@@ -2907,6 +2898,7 @@ namespace CrafterMacroExecution
             {
                 this.roenaFlg = false;
             }
+            */
         }
 
         /// <summary>
@@ -3038,6 +3030,7 @@ namespace CrafterMacroExecution
         /// <param name="e"></param>
         private void 作るものcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /**
             if (sender != null)
             {
                 ComboBox cb = (ComboBox)sender;
@@ -3077,6 +3070,7 @@ namespace CrafterMacroExecution
                     this.ディレイ_textBox.Text = "10";
                 }
             }
+            */
         }
 
         /// <summary>
@@ -3227,6 +3221,7 @@ namespace CrafterMacroExecution
         /// </summary>
         private void SendCreatingExecutionKey()
         {
+            /**
             // 作成実行キーを押下するか判定を行う
             if (this.作成開始KeyRadio_初期読込.Checked)
             {
@@ -3242,6 +3237,7 @@ namespace CrafterMacroExecution
                 // マウスイベントを実施する
                 Utils.Utils.mouse_Click(this.作成開始X座標_初期読込.Text, this.作成開始Y座標_初期読込.Text);
             }
+            */
 
             // 作成を少しだけ待つ
             this.WaitTime(1500);
@@ -3267,6 +3263,7 @@ namespace CrafterMacroExecution
             // 遅延を挿入する
             this.WaitTime(1000);
 
+            /**
             // 作成実行キーを押下するか判定を行う
             if (this.作成開始KeyRadio_初期読込.Checked)
             {
@@ -3275,6 +3272,7 @@ namespace CrafterMacroExecution
                 // 遅延を挿入する
                 this.WaitTime(1000);
             }
+            */
         }
 
         /// <summary>
@@ -3287,6 +3285,7 @@ namespace CrafterMacroExecution
             // ESC
             Utils.Utils.KeySim(VK_ESCAPE);
             this.WaitTime(2000);
+            /**
             // 作成実行キーを押下するか判定を行う
             if (this.修理KeyRadio_初期読込.Checked)
             {
@@ -3313,6 +3312,7 @@ namespace CrafterMacroExecution
                 this.WaitTime(1000);
                 Utils.Utils.mouse_Click(this.修理_はいX座標_初期読込.Text, this.修理_はいY座標_初期読込.Text);
             }
+            */
             // 修理中の待機時間
             this.WaitTime(4000);
             // ESCキーを送信する
@@ -3340,6 +3340,7 @@ namespace CrafterMacroExecution
         /// </summary>
         private void MedicineStartEvent()
         {
+            /**
             this.WaitTime(1000);
             if (this.薬KeyRadio_初期読込.Checked)
             {
@@ -3352,6 +3353,7 @@ namespace CrafterMacroExecution
                 Utils.Utils.mouse_Click(this.薬X座標_初期読込.Text, this.薬Y座標_初期読込.Text);
             }
             this.WaitTime(4000);
+            */
         }
 
         /// <summary>
@@ -3365,6 +3367,7 @@ namespace CrafterMacroExecution
             // ESC
             Utils.Utils.KeySim(VK_ESCAPE);
             this.WaitTime(2000);
+            /**
             if (this.薬KeyRadio_初期読込.Checked)
             {
                 // キーを送信する
@@ -3375,6 +3378,7 @@ namespace CrafterMacroExecution
                 // マウスイベントを実施する
                 Utils.Utils.mouse_Click(this.薬X座標_初期読込.Text, this.薬Y座標_初期読込.Text);
             }
+            */
             // 停止処理を挿入する
             this.WaitTime(4000);
             // 作成実行に移行する
@@ -3401,6 +3405,7 @@ namespace CrafterMacroExecution
         private void FoodStartEvent()
         {
             this.WaitTime(1000);
+            /**
             if (this.飯KeyRadio_初期読込.Checked)
             {
                 // キーを送信する
@@ -3411,6 +3416,7 @@ namespace CrafterMacroExecution
                 // マウスイベントを実施する
                 Utils.Utils.mouse_Click(this.飯X座標_初期読込.Text, this.飯Y座標_初期読込.Text);
             }
+            */
             this.WaitTime(4000);
         }
 
@@ -3424,7 +3430,7 @@ namespace CrafterMacroExecution
             // ESC
             Utils.Utils.KeySim(VK_ESCAPE);
             this.WaitTime(2000);
-
+            /**
             if (this.飯KeyRadio_初期読込.Checked)
             {
                 // キーを送信する
@@ -3435,6 +3441,7 @@ namespace CrafterMacroExecution
                 // マウスイベントを実施する
                 Utils.Utils.mouse_Click(this.飯X座標_初期読込.Text, this.飯Y座標_初期読込.Text);
             }
+            */
             this.WaitTime(4000);
             // 作成実行に移行する
             // 作成実行キーを押下するか判定を行う
@@ -3513,7 +3520,7 @@ namespace CrafterMacroExecution
                 {
                     this.label27.Text = "残り" + this._count + "回\r\n5秒後に処理が再開します。";
 
-                    CraSimu.AutoClosingMessageBox.Show("5秒後に処理が再開します。", "再開", 5000);
+                    // CraSimu.AutoClosingMessageBox.Show("5秒後に処理が再開します。", "再開", 5000);
                     this.中断ボタン.Enabled = true;
                     this.loopFlg = true;
                     // 停止処理を確認
