@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bean\CharacterFormBean.cs" />
     <Compile Include="Bean\CharacterBean.cs" />
     <Compile Include="Bean\ChocoboInfoBean.cs" />
     <Compile Include="Bean\CreateSettingBean.cs" />
@@ -60,8 +61,12 @@
       <DependentUpon>CrafterMacroExecution.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\KeyCodeList.cs" />
+    <Compile Include="Events\FormEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Events\ReadLogEvents.cs" />
     <Compile Include="Exceptions\StopInterruptionException.cs" />
+    <Compile Include="Impl\EditCharacter.cs" />
     <Compile Include="Model\Coordinate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +94,7 @@
     <Compile Include="Utils\ACTInitSetting.cs" />
     <Compile Include="Utils\Const.cs" />
     <Compile Include="Utils\FileController.cs" />
+    <Compile Include="Utils\MessageProperty.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="ちょこぼ.cs">
       <SubType>Form</SubType>
