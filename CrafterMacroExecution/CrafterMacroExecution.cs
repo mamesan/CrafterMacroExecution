@@ -17,8 +17,6 @@ using System.Diagnostics;
 
 namespace CrafterMacroExecution
 {
-
-
     public partial class CrafterMacroExecution : UserControl, IActPluginV1
     {
         // ACTを参照設定に追加する
@@ -55,6 +53,7 @@ namespace CrafterMacroExecution
         // 薬の時間
         private int MedicineTime = 0;
 
+        private ICharacterFormBean characterFormBean = new CharacterFormBean();
 
         [DllImport("user32")]
         public static extern void shortGetAsyncKeyState(Keys vKey);
@@ -350,6 +349,9 @@ namespace CrafterMacroExecution
                 this.マクロ編集ボタン.Enabled = false;
             };
             */
+
+            // インスタンスの初期化
+            characterFormBean = new CharacterFormBean();
 
             // 数値チェック
             this.NumCheckEvents();
@@ -1792,11 +1794,11 @@ namespace CrafterMacroExecution
                     this.label5.Text = "作業精度：***";
                 }
 
-                this.キャラリストボックス.Items.Remove(this.textBox6.Text);
-                this.キャラ一覧.Items.Remove(this.textBox6.Text);
+                this.キャラリストボックス.Items.Remove(this.キャラクターのお名前.Text);
+                this.キャラ一覧.Items.Remove(this.キャラクターのお名前.Text);
 
                 // キャラ名
-                this.textBox6.Text = "";
+                this.キャラクターのお名前.Text = "";
 
                 this.木工師_textBox.Text = "";
                 this.鍛冶師_textBox.Text = "";
@@ -1806,8 +1808,8 @@ namespace CrafterMacroExecution
                 this.裁縫師_textBox.Text = "";
                 this.錬金術師_textBox.Text = "";
                 this.調理師_textBox.Text = "";
-                this.チョコボ師_textBox.Text = "";
-                this.例のあの人_textBox.Text = "";
+                this.予備1_textBox.Text = "";
+                this.予備2_textBox.Text = "";
                 // this.マイスター1_comboBox.SelectedIndex = -1;
                 // this.マイスター2_comboBox.SelectedIndex = -1;
                 // this.マイスター3_comboBox.SelectedIndex = -1;
@@ -1834,7 +1836,7 @@ namespace CrafterMacroExecution
             ICharacterBean characterBean = FileController.ReadCharacterInfo(listBox.Text);
 
             // キャラ名
-            this.textBox6.Text = listBox.Text;
+            this.キャラクターのお名前.Text = listBox.Text;
 
             this.木工師_textBox.Text = characterBean.Carpenter;
             this.鍛冶師_textBox.Text = characterBean.Blacksmith;
@@ -1844,8 +1846,8 @@ namespace CrafterMacroExecution
             this.裁縫師_textBox.Text = characterBean.Weaver;
             this.錬金術師_textBox.Text = characterBean.Alchemist;
             this.調理師_textBox.Text = characterBean.Culinarian;
-            this.チョコボ師_textBox.Text = characterBean.ChocoboMeister;
-            this.例のあの人_textBox.Text = characterBean.AwayukiKusushi;
+            this.予備1_textBox.Text = characterBean.ChocoboMeister;
+            this.予備2_textBox.Text = characterBean.AwayukiKusushi;
             // this.マイスター1_comboBox.Text = characterBean.Meister1;
             // this.マイスター2_comboBox.Text = characterBean.Meister2;
             // this.マイスター3_comboBox.Text = characterBean.Meister3;
@@ -1861,7 +1863,7 @@ namespace CrafterMacroExecution
         {
 
             // 空だった場合、返却
-            if (String.IsNullOrWhiteSpace(this.textBox6.Text)
+            if (String.IsNullOrWhiteSpace(this.キャラクターのお名前.Text)
                 // || String.IsNullOrWhiteSpace(this.textBox4.Text)
                 // || String.IsNullOrWhiteSpace(this.textBox5.Text)
                 // || String.IsNullOrWhiteSpace(this.textBox3.Text)
@@ -1873,8 +1875,8 @@ namespace CrafterMacroExecution
                 || String.IsNullOrWhiteSpace(this.錬金術師_textBox.Text)
                 || String.IsNullOrWhiteSpace(this.彫金師_textBox.Text)
                 || String.IsNullOrWhiteSpace(this.調理師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.チョコボ師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.例のあの人_textBox.Text)
+                || String.IsNullOrWhiteSpace(this.予備1_textBox.Text)
+                || String.IsNullOrWhiteSpace(this.予備2_textBox.Text)
                 // || String.IsNullOrWhiteSpace(this.マイスター1_comboBox.Text)
                 // || String.IsNullOrWhiteSpace(this.マイスター2_comboBox.Text)
                 // || String.IsNullOrWhiteSpace(this.マイスター3_comboBox.Text)
@@ -3097,8 +3099,8 @@ namespace CrafterMacroExecution
                     this.彫金師_label.Text = "彫金師";
                     this.調理師_label.Text = "調理師";
 
-                    this.チョコボ師_label.Text = "ちょこぼ師";
-                    this.例のあの人_label.Text = "例のあの人";
+                    this.予備1_label.Text = "ちょこぼ師";
+                    this.予備2_label.Text = "例のあの人";
                 }
                 else if (cb.Text.Equals("英語"))
                 {
@@ -3111,8 +3113,8 @@ namespace CrafterMacroExecution
                     this.彫金師_label.Text = "Goldsmith";
                     this.調理師_label.Text = "Culinarian";
 
-                    this.チョコボ師_label.Text = "ChocoboMeister";
-                    this.例のあの人_label.Text = "Awayuki Kusushi";
+                    this.予備1_label.Text = "ChocoboMeister";
+                    this.予備2_label.Text = "Awayuki Kusushi";
                 }
                 else
                 {
@@ -3125,8 +3127,8 @@ namespace CrafterMacroExecution
                     this.彫金師_label.Text = "くぇっくぇ";
                     this.調理師_label.Text = "くぇ♪";
 
-                    this.チョコボ師_label.Text = "Chocobooooooooo";
-                    this.例のあの人_label.Text = "Althea Torres";
+                    this.予備1_label.Text = "Chocobooooooooo";
+                    this.予備2_label.Text = "Althea Torres";
                 }
 
 

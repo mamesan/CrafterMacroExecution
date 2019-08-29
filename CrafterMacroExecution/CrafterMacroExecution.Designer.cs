@@ -63,8 +63,8 @@
             this.HQ1チェックボックス_init = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.調理師_label = new System.Windows.Forms.Label();
-            this.例のあの人_label = new System.Windows.Forms.Label();
-            this.チョコボ師_label = new System.Windows.Forms.Label();
+            this.予備2_label = new System.Windows.Forms.Label();
+            this.予備1_label = new System.Windows.Forms.Label();
             this.彫金師_label = new System.Windows.Forms.Label();
             this.錬金術師_label = new System.Windows.Forms.Label();
             this.裁縫師_label = new System.Windows.Forms.Label();
@@ -72,10 +72,10 @@
             this.革細工師_label = new System.Windows.Forms.Label();
             this.鍛冶師_label = new System.Windows.Forms.Label();
             this.木工師_label = new System.Windows.Forms.Label();
-            this.例のあの人_textBox = new System.Windows.Forms.TextBox();
+            this.予備2_textBox = new System.Windows.Forms.TextBox();
             this.調理師_textBox = new System.Windows.Forms.TextBox();
             this.錬金術師_textBox = new System.Windows.Forms.TextBox();
-            this.チョコボ師_textBox = new System.Windows.Forms.TextBox();
+            this.予備1_textBox = new System.Windows.Forms.TextBox();
             this.彫金師_textBox = new System.Windows.Forms.TextBox();
             this.裁縫師_textBox = new System.Windows.Forms.TextBox();
             this.甲冑師_textBox = new System.Windows.Forms.TextBox();
@@ -101,10 +101,10 @@
             this.Macro一覧 = new System.Windows.Forms.ListBox();
             this.タブ_キャラクター = new System.Windows.Forms.TabPage();
             this.例のあの人削除ボタン = new System.Windows.Forms.Button();
-            this.例のあの人更新ボタン = new System.Windows.Forms.Button();
-            this.例のあの人追加ボタン = new System.Windows.Forms.Button();
+            this.キャラクター情報更新ボタン = new System.Windows.Forms.Button();
+            this.キャラクター追加ボタン = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.キャラクターのお名前 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -380,7 +380,6 @@
             this.飯チェックボックス_init.TabIndex = 121;
             this.飯チェックボックス_init.Text = "飯";
             this.飯チェックボックス_init.UseVisualStyleBackColor = true;
-            //this.飯チェックボックス_init.CheckedChanged += new System.EventHandler(this.飯チェックボックス_init_CheckedChanged);
             // 
             // label6
             // 
@@ -670,23 +669,23 @@
             this.調理師_label.TabIndex = 35;
             this.調理師_label.Text = "調理師";
             // 
-            // 例のあの人_label
+            // 予備2_label
             // 
-            this.例のあの人_label.AutoSize = true;
-            this.例のあの人_label.Location = new System.Drawing.Point(398, 88);
-            this.例のあの人_label.Name = "例のあの人_label";
-            this.例のあの人_label.Size = new System.Drawing.Size(59, 14);
-            this.例のあの人_label.TabIndex = 35;
-            this.例のあの人_label.Text = "例のあの人";
+            this.予備2_label.AutoSize = true;
+            this.予備2_label.Location = new System.Drawing.Point(398, 88);
+            this.予備2_label.Name = "予備2_label";
+            this.予備2_label.Size = new System.Drawing.Size(36, 14);
+            this.予備2_label.TabIndex = 35;
+            this.予備2_label.Text = "予備2";
             // 
-            // チョコボ師_label
+            // 予備1_label
             // 
-            this.チョコボ師_label.AutoSize = true;
-            this.チョコボ師_label.Location = new System.Drawing.Point(398, 52);
-            this.チョコボ師_label.Name = "チョコボ師_label";
-            this.チョコボ師_label.Size = new System.Drawing.Size(53, 14);
-            this.チョコボ師_label.TabIndex = 35;
-            this.チョコボ師_label.Text = "ちょこぼ師";
+            this.予備1_label.AutoSize = true;
+            this.予備1_label.Location = new System.Drawing.Point(398, 52);
+            this.予備1_label.Name = "予備1_label";
+            this.予備1_label.Size = new System.Drawing.Size(36, 14);
+            this.予備1_label.TabIndex = 35;
+            this.予備1_label.Text = "予備1";
             // 
             // 彫金師_label
             // 
@@ -751,13 +750,13 @@
             this.木工師_label.TabIndex = 32;
             this.木工師_label.Text = "木工師";
             // 
-            // 例のあの人_textBox
+            // 予備2_textBox
             // 
-            this.例のあの人_textBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.例のあの人_textBox.Location = new System.Drawing.Point(479, 87);
-            this.例のあの人_textBox.Name = "例のあの人_textBox";
-            this.例のあの人_textBox.Size = new System.Drawing.Size(72, 21);
-            this.例のあの人_textBox.TabIndex = 2;
+            this.予備2_textBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.予備2_textBox.Location = new System.Drawing.Point(479, 87);
+            this.予備2_textBox.Name = "予備2_textBox";
+            this.予備2_textBox.Size = new System.Drawing.Size(72, 21);
+            this.予備2_textBox.TabIndex = 2;
             // 
             // 調理師_textBox
             // 
@@ -775,13 +774,13 @@
             this.錬金術師_textBox.Size = new System.Drawing.Size(54, 21);
             this.錬金術師_textBox.TabIndex = 2;
             // 
-            // チョコボ師_textBox
+            // 予備1_textBox
             // 
-            this.チョコボ師_textBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.チョコボ師_textBox.Location = new System.Drawing.Point(479, 51);
-            this.チョコボ師_textBox.Name = "チョコボ師_textBox";
-            this.チョコボ師_textBox.Size = new System.Drawing.Size(72, 21);
-            this.チョコボ師_textBox.TabIndex = 1;
+            this.予備1_textBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.予備1_textBox.Location = new System.Drawing.Point(479, 51);
+            this.予備1_textBox.Name = "予備1_textBox";
+            this.予備1_textBox.Size = new System.Drawing.Size(72, 21);
+            this.予備1_textBox.TabIndex = 1;
             // 
             // 彫金師_textBox
             // 
@@ -844,8 +843,8 @@
             // groupBox17
             // 
             this.groupBox17.Controls.Add(this.調理師_label);
-            this.groupBox17.Controls.Add(this.例のあの人_label);
-            this.groupBox17.Controls.Add(this.チョコボ師_label);
+            this.groupBox17.Controls.Add(this.予備2_label);
+            this.groupBox17.Controls.Add(this.予備1_label);
             this.groupBox17.Controls.Add(this.彫金師_label);
             this.groupBox17.Controls.Add(this.錬金術師_label);
             this.groupBox17.Controls.Add(this.裁縫師_label);
@@ -853,10 +852,10 @@
             this.groupBox17.Controls.Add(this.革細工師_label);
             this.groupBox17.Controls.Add(this.鍛冶師_label);
             this.groupBox17.Controls.Add(this.木工師_label);
-            this.groupBox17.Controls.Add(this.例のあの人_textBox);
+            this.groupBox17.Controls.Add(this.予備2_textBox);
             this.groupBox17.Controls.Add(this.調理師_textBox);
             this.groupBox17.Controls.Add(this.錬金術師_textBox);
-            this.groupBox17.Controls.Add(this.チョコボ師_textBox);
+            this.groupBox17.Controls.Add(this.予備1_textBox);
             this.groupBox17.Controls.Add(this.彫金師_textBox);
             this.groupBox17.Controls.Add(this.裁縫師_textBox);
             this.groupBox17.Controls.Add(this.甲冑師_textBox);
@@ -872,8 +871,8 @@
             // 
             // タブALL
             // 
-            this.タブALL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.タブALL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.タブALL.Controls.Add(this.タブ_詳細);
             this.タブALL.Controls.Add(this.タブ_キャラクター);
@@ -1054,10 +1053,10 @@
             this.タブ_キャラクター.BackColor = System.Drawing.Color.SkyBlue;
             this.タブ_キャラクター.Controls.Add(this.groupBox17);
             this.タブ_キャラクター.Controls.Add(this.例のあの人削除ボタン);
-            this.タブ_キャラクター.Controls.Add(this.例のあの人更新ボタン);
-            this.タブ_キャラクター.Controls.Add(this.例のあの人追加ボタン);
+            this.タブ_キャラクター.Controls.Add(this.キャラクター情報更新ボタン);
+            this.タブ_キャラクター.Controls.Add(this.キャラクター追加ボタン);
             this.タブ_キャラクター.Controls.Add(this.label10);
-            this.タブ_キャラクター.Controls.Add(this.textBox6);
+            this.タブ_キャラクター.Controls.Add(this.キャラクターのお名前);
             this.タブ_キャラクター.Controls.Add(this.panel1);
             this.タブ_キャラクター.Controls.Add(this.label19);
             this.タブ_キャラクター.Controls.Add(this.label15);
@@ -1081,28 +1080,28 @@
             this.例のあの人削除ボタン.Text = "ﾊﾞｲﾊﾞｲ 例のあの人!";
             this.例のあの人削除ボタン.UseVisualStyleBackColor = true;
             // 
-            // 例のあの人更新ボタン
+            // キャラクター情報更新ボタン
             // 
-            this.例のあの人更新ボタン.Enabled = false;
-            this.例のあの人更新ボタン.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.例のあの人更新ボタン.Location = new System.Drawing.Point(480, 33);
-            this.例のあの人更新ボタン.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.例のあの人更新ボタン.Name = "例のあの人更新ボタン";
-            this.例のあの人更新ボタン.Size = new System.Drawing.Size(94, 36);
-            this.例のあの人更新ボタン.TabIndex = 92;
-            this.例のあの人更新ボタン.Text = "例のあの人更新";
-            this.例のあの人更新ボタン.UseVisualStyleBackColor = true;
+            this.キャラクター情報更新ボタン.Enabled = false;
+            this.キャラクター情報更新ボタン.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.キャラクター情報更新ボタン.Location = new System.Drawing.Point(450, 33);
+            this.キャラクター情報更新ボタン.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.キャラクター情報更新ボタン.Name = "キャラクター情報更新ボタン";
+            this.キャラクター情報更新ボタン.Size = new System.Drawing.Size(124, 36);
+            this.キャラクター情報更新ボタン.TabIndex = 92;
+            this.キャラクター情報更新ボタン.Text = "キャラクター情報更新";
+            this.キャラクター情報更新ボタン.UseVisualStyleBackColor = true;
             // 
-            // 例のあの人追加ボタン
+            // キャラクター追加ボタン
             // 
-            this.例のあの人追加ボタン.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.例のあの人追加ボタン.Location = new System.Drawing.Point(324, 33);
-            this.例のあの人追加ボタン.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.例のあの人追加ボタン.Name = "例のあの人追加ボタン";
-            this.例のあの人追加ボタン.Size = new System.Drawing.Size(96, 36);
-            this.例のあの人追加ボタン.TabIndex = 93;
-            this.例のあの人追加ボタン.Text = "例のあの人追加";
-            this.例のあの人追加ボタン.UseVisualStyleBackColor = true;
+            this.キャラクター追加ボタン.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.キャラクター追加ボタン.Location = new System.Drawing.Point(324, 33);
+            this.キャラクター追加ボタン.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.キャラクター追加ボタン.Name = "キャラクター追加ボタン";
+            this.キャラクター追加ボタン.Size = new System.Drawing.Size(96, 36);
+            this.キャラクター追加ボタン.TabIndex = 93;
+            this.キャラクター追加ボタン.Text = "キャラクター追加";
+            this.キャラクター追加ボタン.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -1114,17 +1113,17 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "お名前";
             // 
-            // textBox6
+            // キャラクターのお名前
             // 
-            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox6.Location = new System.Drawing.Point(109, 178);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(149, 21);
-            this.textBox6.TabIndex = 4;
+            this.キャラクターのお名前.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.キャラクターのお名前.Location = new System.Drawing.Point(109, 178);
+            this.キャラクターのお名前.Name = "キャラクターのお名前";
+            this.キャラクターのお名前.Size = new System.Drawing.Size(149, 21);
+            this.キャラクターのお名前.TabIndex = 4;
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.button6);
@@ -1586,7 +1585,7 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.AutoScroll = true;
             this.panel2.AutoScrollMargin = new System.Drawing.Size(0, 20);
@@ -2795,8 +2794,8 @@
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label 調理師_label;
-        private System.Windows.Forms.Label 例のあの人_label;
-        private System.Windows.Forms.Label チョコボ師_label;
+        private System.Windows.Forms.Label 予備2_label;
+        private System.Windows.Forms.Label 予備1_label;
         private System.Windows.Forms.Label 彫金師_label;
         private System.Windows.Forms.Label 錬金術師_label;
         private System.Windows.Forms.Label 裁縫師_label;
@@ -2804,16 +2803,16 @@
         private System.Windows.Forms.Label 革細工師_label;
         private System.Windows.Forms.Label 鍛冶師_label;
         private System.Windows.Forms.Label 木工師_label;
-        private System.Windows.Forms.TextBox 例のあの人_textBox;
-        private System.Windows.Forms.TextBox 調理師_textBox;
-        private System.Windows.Forms.TextBox 錬金術師_textBox;
-        private System.Windows.Forms.TextBox チョコボ師_textBox;
-        private System.Windows.Forms.TextBox 彫金師_textBox;
-        private System.Windows.Forms.TextBox 裁縫師_textBox;
-        private System.Windows.Forms.TextBox 甲冑師_textBox;
-        private System.Windows.Forms.TextBox 革細工師_textBox;
-        private System.Windows.Forms.TextBox 鍛冶師_textBox;
-        private System.Windows.Forms.TextBox 木工師_textBox;
+        public System.Windows.Forms.TextBox 予備2_textBox;
+        public System.Windows.Forms.TextBox 調理師_textBox;
+        public System.Windows.Forms.TextBox 錬金術師_textBox;
+        public System.Windows.Forms.TextBox 予備1_textBox;
+        public System.Windows.Forms.TextBox 彫金師_textBox;
+        public System.Windows.Forms.TextBox 裁縫師_textBox;
+        public System.Windows.Forms.TextBox 甲冑師_textBox;
+        public System.Windows.Forms.TextBox 革細工師_textBox;
+        public System.Windows.Forms.TextBox 鍛冶師_textBox;
+        public System.Windows.Forms.TextBox 木工師_textBox;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.TabControl タブALL;
@@ -2831,15 +2830,11 @@
         private System.Windows.Forms.ListBox Macro一覧;
         private System.Windows.Forms.TabPage タブ_キャラクター;
         private System.Windows.Forms.Button 例のあの人削除ボタン;
-        private System.Windows.Forms.Button 例のあの人更新ボタン;
-        private System.Windows.Forms.Button 例のあの人追加ボタン;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListBox キャラ一覧;
         private System.Windows.Forms.TabPage タブ_作成品設定;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.ComboBox キャラリストボックス;
@@ -2992,5 +2987,9 @@
         public System.Windows.Forms.TextBox HQ使用1X座標_初期読込;
         public System.Windows.Forms.TextBox HQ使用1Y座標_初期読込;
         private System.Windows.Forms.Label label47;
+        public System.Windows.Forms.Button キャラクター情報更新ボタン;
+        public System.Windows.Forms.Button キャラクター追加ボタン;
+        public System.Windows.Forms.TextBox キャラクターのお名前;
+        public System.Windows.Forms.ListBox キャラ一覧;
     }
 }
