@@ -21,9 +21,6 @@ namespace CrafterMacroExecution
 
     public partial class CrafterMacroExecution : UserControl, IActPluginV1
     {
-        // ACTを参照設定に追加する
-        private dynamic ffxivPluginAsDynamic;
-
         // ACTFF14プラグインを取得する
         private SettingsSerializer xmlSettings;
 
@@ -1668,79 +1665,7 @@ namespace CrafterMacroExecution
             */
         }
 
-        /// <summary>
-        /// キャラ情報保存
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
-        {
-            /**
-            // 空だった場合、返却
-            if (String.IsNullOrWhiteSpace(this.textBox6.Text)
-                || String.IsNullOrWhiteSpace(this.textBox4.Text)
-                || String.IsNullOrWhiteSpace(this.textBox5.Text)
-                || String.IsNullOrWhiteSpace(this.textBox3.Text)
-                || String.IsNullOrWhiteSpace(this.木工師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.革細工師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.鍛冶師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.裁縫師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.甲冑師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.錬金術師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.彫金師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.調理師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.チョコボ師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.例のあの人_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.マイスター1_comboBox.Text)
-                || String.IsNullOrWhiteSpace(this.マイスター2_comboBox.Text)
-                || String.IsNullOrWhiteSpace(this.マイスター3_comboBox.Text)
-                )
-            {
-                MessageBox.Show("ちゃんと入力終わってから押せな？");
-                return;
-            }
-
-            // キャラ名重複チェック(簡易)
-            for (int ii = 0; ii < this.キャラ一覧.Items.Count; ii++)
-            {
-                if (this.キャラ一覧.Items[ii].ToString().Equals(this.textBox6.Text))
-                {
-                    MessageBox.Show("名前がね。例のあの人と同じ名前になってるよ？");
-                    return;
-                }
-            }
-
-            // リストを一時作成する
-            List<string[]> dclist = new List<string[]>();
-            dclist.Add(new string[] {
-                this.textBox4.Text,
-                this.textBox5.Text,
-                this.textBox3.Text,
-                this.木工師_textBox.Text,
-                this.鍛冶師_textBox.Text,
-                this.甲冑師_textBox.Text,
-                this.彫金師_textBox.Text,
-                this.革細工師_textBox.Text,
-                this.裁縫師_textBox.Text,
-                this.錬金術師_textBox.Text,
-                this.調理師_textBox.Text,
-                this.チョコボ師_textBox.Text,
-                this.例のあの人_textBox.Text,
-                this.マイスター1_comboBox.Text,
-                this.マイスター2_comboBox.Text,
-                this.マイスター3_comboBox.Text });
-
-            // キャラクター情報を保存する
-            FileController.SaveInfo(new List<string> { this.textBox6.Text }, Utils.Utils.CreateDictionary(dclist, SAVE_CHARACTER_INFO), FILE_PATH_CHARAINFO);
-
-            this.キャラリストボックス.Items.Add(this.textBox6.Text);
-            this.キャラ一覧.Items.Add(this.textBox6.Text);
-
-            MessageBox.Show("例のあの人が増殖しちゃった☆", "分身");
-            */
-        }
-
-        /// <summary>
+         /// <summary>
         /// キャラ読込
         /// </summary>
         /// <param name="sender"></param>
@@ -1754,64 +1679,6 @@ namespace CrafterMacroExecution
             // 対象キャラクター情報を取得する
             ICharacterBean characterBean = FileController.ReadCharacterInfo(this.キャラリストボックス.Text);
 
-            // 僕のキャラクター情報を設定する
-            this.label3.Text = "CP：" + characterBean.CP;
-            this.label4.Text = "加工精度：" + characterBean.CraftSmanship;
-            this.label5.Text = "作業精度：" + characterBean.CraftControl;
-        }
-
-        /// <summary>
-        /// キャラ情報削除
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            // 空だった場合、返却
-            if (String.IsNullOrWhiteSpace(this.キャラ一覧.Text))
-            {
-                MessageBox.Show("なんか選択してから押せな？");
-                return;
-            }
-
-            // メッセージボックスを生成する
-            DialogResult result = MessageBox.Show("以下キャラ名を削除します。よろしいですか？\r\n「" + this.キャラ一覧.Text + "」", "質問", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-
-            //何が選択されたか調べる
-            if (result == DialogResult.Yes)
-            {
-                // 対象キャラクター情報を削除する
-                FileController.RemoveXMLInfo(this.キャラ一覧.Text, FILE_PATH_CHARAINFO);
-
-                if (this.キャラ一覧.Text.Equals(this.キャラリストボックス.Text))
-                {
-                    // 僕のキャラクター情報を設定する
-                    this.label3.Text = "CP：***";
-                    this.label4.Text = "加工精度：***";
-                    this.label5.Text = "作業精度：***";
-                }
-
-                this.キャラリストボックス.Items.Remove(this.textBox6.Text);
-                this.キャラ一覧.Items.Remove(this.textBox6.Text);
-
-                // キャラ名
-                this.textBox6.Text = "";
-
-                this.木工師_textBox.Text = "";
-                this.鍛冶師_textBox.Text = "";
-                this.甲冑師_textBox.Text = "";
-                this.彫金師_textBox.Text = "";
-                this.革細工師_textBox.Text = "";
-                this.裁縫師_textBox.Text = "";
-                this.錬金術師_textBox.Text = "";
-                this.調理師_textBox.Text = "";
-                this.チョコボ師_textBox.Text = "";
-                this.例のあの人_textBox.Text = "";
-                // this.マイスター1_comboBox.SelectedIndex = -1;
-                // this.マイスター2_comboBox.SelectedIndex = -1;
-                // this.マイスター3_comboBox.SelectedIndex = -1;
-            }
         }
 
         /// <summary>
@@ -1850,71 +1717,6 @@ namespace CrafterMacroExecution
             // this.マイスター2_comboBox.Text = characterBean.Meister2;
             // this.マイスター3_comboBox.Text = characterBean.Meister3;
 
-        }
-
-        /// <summary>
-        /// キャラ情報編集
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-            // 空だった場合、返却
-            if (String.IsNullOrWhiteSpace(this.textBox6.Text)
-                // || String.IsNullOrWhiteSpace(this.textBox4.Text)
-                // || String.IsNullOrWhiteSpace(this.textBox5.Text)
-                // || String.IsNullOrWhiteSpace(this.textBox3.Text)
-                || String.IsNullOrWhiteSpace(this.木工師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.革細工師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.鍛冶師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.裁縫師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.甲冑師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.錬金術師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.彫金師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.調理師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.チョコボ師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.例のあの人_textBox.Text)
-                // || String.IsNullOrWhiteSpace(this.マイスター1_comboBox.Text)
-                // || String.IsNullOrWhiteSpace(this.マイスター2_comboBox.Text)
-                // || String.IsNullOrWhiteSpace(this.マイスター3_comboBox.Text)
-                )
-            {
-                MessageBox.Show("ちゃんと入力終わってから押せな？");
-                return;
-            }
-
-            /**
-            // キャラ情報を編集する
-            FileController.EditCharacterInfo(
-                this.textBox6.Text,
-                this.textBox4.Text,
-                this.textBox5.Text,
-                this.textBox3.Text,
-                this.木工師_textBox.Text,
-                this.鍛冶師_textBox.Text,
-                this.甲冑師_textBox.Text,
-                this.彫金師_textBox.Text,
-                this.革細工師_textBox.Text,
-                this.裁縫師_textBox.Text,
-                this.錬金術師_textBox.Text,
-                this.調理師_textBox.Text,
-                this.チョコボ師_textBox.Text,
-                this.例のあの人_textBox.Text,
-                this.マイスター1_comboBox.Text,
-                this.マイスター2_comboBox.Text,
-                this.マイスター3_comboBox.Text);
-            */
-
-            if (this.キャラ一覧.Text.Equals(this.キャラリストボックス.Text))
-            {
-                // 僕のキャラクター情報を設定する
-                // this.label3.Text = "CP：" + this.textBox4.Text;
-                // this.label5.Text = "加工精度：" + this.textBox5.Text;
-                // this.label4.Text = "作業精度：" + this.textBox3.Text;
-            }
-
-            MessageBox.Show("例のあの人の形が変わりました。", "更新完了");
         }
 
         /// <summary>
