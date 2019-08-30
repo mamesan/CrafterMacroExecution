@@ -100,7 +100,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Macro一覧 = new System.Windows.Forms.ListBox();
             this.タブ_キャラクター = new System.Windows.Forms.TabPage();
-            this.例のあの人削除ボタン = new System.Windows.Forms.Button();
+            this.キャラクタ情報削除ボタン = new System.Windows.Forms.Button();
             this.キャラクター情報更新ボタン = new System.Windows.Forms.Button();
             this.キャラクター追加ボタン = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -1052,7 +1052,7 @@
             this.タブ_キャラクター.AutoScroll = true;
             this.タブ_キャラクター.BackColor = System.Drawing.Color.SkyBlue;
             this.タブ_キャラクター.Controls.Add(this.groupBox17);
-            this.タブ_キャラクター.Controls.Add(this.例のあの人削除ボタン);
+            this.タブ_キャラクター.Controls.Add(this.キャラクタ情報削除ボタン);
             this.タブ_キャラクター.Controls.Add(this.キャラクター情報更新ボタン);
             this.タブ_キャラクター.Controls.Add(this.キャラクター追加ボタン);
             this.タブ_キャラクター.Controls.Add(this.label10);
@@ -1069,16 +1069,16 @@
             this.タブ_キャラクター.TabIndex = 1;
             this.タブ_キャラクター.Text = "キャラクター";
             // 
-            // 例のあの人削除ボタン
+            // キャラクタ情報削除ボタン
             // 
-            this.例のあの人削除ボタン.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.例のあの人削除ボタン.Location = new System.Drawing.Point(494, 633);
-            this.例のあの人削除ボタン.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.例のあの人削除ボタン.Name = "例のあの人削除ボタン";
-            this.例のあの人削除ボタン.Size = new System.Drawing.Size(120, 33);
-            this.例のあの人削除ボタン.TabIndex = 94;
-            this.例のあの人削除ボタン.Text = "ﾊﾞｲﾊﾞｲ 例のあの人!";
-            this.例のあの人削除ボタン.UseVisualStyleBackColor = true;
+            this.キャラクタ情報削除ボタン.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.キャラクタ情報削除ボタン.Location = new System.Drawing.Point(494, 633);
+            this.キャラクタ情報削除ボタン.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.キャラクタ情報削除ボタン.Name = "キャラクタ情報削除ボタン";
+            this.キャラクタ情報削除ボタン.Size = new System.Drawing.Size(120, 33);
+            this.キャラクタ情報削除ボタン.TabIndex = 94;
+            this.キャラクタ情報削除ボタン.Text = "ﾊﾞｲﾊﾞｲ 例のあの人!";
+            this.キャラクタ情報削除ボタン.UseVisualStyleBackColor = true;
             // 
             // キャラクター情報更新ボタン
             // 
@@ -2829,7 +2829,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox Macro一覧;
         private System.Windows.Forms.TabPage タブ_キャラクター;
-        private System.Windows.Forms.Button 例のあの人削除ボタン;
+        private System.Windows.Forms.Button キャラクタ情報削除ボタン;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;

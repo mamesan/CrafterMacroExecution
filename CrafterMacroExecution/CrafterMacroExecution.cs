@@ -14,6 +14,8 @@ using static CrafterMacroExecution.Data.KeyCodeList;
 using static CrafterMacroExecution.Utils.Const;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using CrafterMacroExecution.Events;
+using CrafterMacroExecution.Impl;
 
 namespace CrafterMacroExecution
 {
@@ -358,6 +360,25 @@ namespace CrafterMacroExecution
 
             // オプションタブのイベントを呼び出す
             this.OptionEvents();
+
+            // イベントタブの一覧
+            ButtonEventList();
+        }
+
+        private void ButtonEventList()
+        {
+            キャラクター追加ボタン.Click += (s1, e1) =>
+            {
+                EditCharacter.createCharacterInfo(this);
+            };
+            キャラクター情報更新ボタン.Click += (s1, e1) =>
+            {
+                EditCharacter.editCharacterInfo(this);
+            };
+            キャラクタ情報削除ボタン.Click += (s1, e1) =>
+            {
+                EditCharacter.deleteCharacterInfo(this);
+            };
         }
 
         /// <summary>

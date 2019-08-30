@@ -514,9 +514,6 @@ namespace CrafterMacroExecution.Utils
         /// 指定されたXMLのキー項目を編集する(キャラクター情報)
         /// </summary>
         /// <param name="key"></param>
-        /// <param name="cp"></param>
-        /// <param name="CraftSmanship"></param>
-        /// <param name="CraftControl"></param>
         /// <param name="Carpenter"></param>
         /// <param name="Blacksmith"></param>
         /// <param name="Armorer"></param>
@@ -532,9 +529,6 @@ namespace CrafterMacroExecution.Utils
         /// <param name="Meister3"></param>
         public static void EditCharacterInfo(
             string key,
-            string cp,
-            string CraftSmanship,
-            string CraftControl,
             string Carpenter,
             string Blacksmith,
             string Armorer,
@@ -543,11 +537,8 @@ namespace CrafterMacroExecution.Utils
             string Weaver,
             string Alchemist,
             string Culinarian,
-            string ChocoboMeister,
-            string AwayukiKusushi,
-            string Meister1,
-            string Meister2,
-            string Meister3)
+            string sub1,
+            string sub2)
         {
             // 設定ファイル保存先パス
             string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, FILE_PATH_CHARAINFO);
@@ -559,38 +550,26 @@ namespace CrafterMacroExecution.Utils
 
             // xml情報を取得する
             int i = getXmlNodeInfo(key, settingsFile, xml);
-            // cp
-            xml.ChildNodes[1].ChildNodes[i].Attributes[0].InnerText = cp;
-            // 作業精度
-            xml.ChildNodes[1].ChildNodes[i].Attributes[1].InnerText = CraftSmanship;
-            // 加工精度
-            xml.ChildNodes[1].ChildNodes[i].Attributes[2].InnerText = CraftControl;
             // 木工師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[3].InnerText = Carpenter;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[0].InnerText = Carpenter;
             // 鍛冶師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[4].InnerText = Blacksmith;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[1].InnerText = Blacksmith;
             // 甲冑師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[5].InnerText = Armorer;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[2].InnerText = Armorer;
             // 彫金師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[6].InnerText = Goldsmith;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[3].InnerText = Goldsmith;
             // 革細工師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[7].InnerText = Leatherworker;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[4].InnerText = Leatherworker;
             // 裁縫師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[8].InnerText = Weaver;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[5].InnerText = Weaver;
             // 錬金術師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[9].InnerText = Alchemist;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[6].InnerText = Alchemist;
             // 調理師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[10].InnerText = Culinarian;
-            // チョコボ師
-            xml.ChildNodes[1].ChildNodes[i].Attributes[11].InnerText = ChocoboMeister;
-            // 例のあの人
-            xml.ChildNodes[1].ChildNodes[i].Attributes[12].InnerText = AwayukiKusushi;
-            // マイスター1
-            xml.ChildNodes[1].ChildNodes[i].Attributes[13].InnerText = Meister1;
-            // マイスター2
-            xml.ChildNodes[1].ChildNodes[i].Attributes[14].InnerText = Meister2;
-            // マイスター3
-            xml.ChildNodes[1].ChildNodes[i].Attributes[15].InnerText = Meister3;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[7].InnerText = Culinarian;
+            // sub1
+            xml.ChildNodes[1].ChildNodes[i].Attributes[8].InnerText = sub1;
+            // sub2
+            xml.ChildNodes[1].ChildNodes[i].Attributes[9].InnerText = sub2;
 
             // 対象xmlを保存する
             xml.Save(settingsFile);
