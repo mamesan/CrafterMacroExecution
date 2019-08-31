@@ -1688,7 +1688,7 @@ namespace CrafterMacroExecution
             */
         }
 
-         /// <summary>
+        /// <summary>
         /// キャラ読込
         /// </summary>
         /// <param name="sender"></param>
