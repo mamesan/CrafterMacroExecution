@@ -1688,7 +1688,7 @@ namespace CrafterMacroExecution
             */
         }
 
-        /// <summary>
+         /// <summary>
         /// キャラ読込
         /// </summary>
         /// <param name="sender"></param>
@@ -1740,71 +1740,6 @@ namespace CrafterMacroExecution
             // this.マイスター2_comboBox.Text = characterBean.Meister2;
             // this.マイスター3_comboBox.Text = characterBean.Meister3;
 
-        }
-
-        /// <summary>
-        /// キャラ情報編集
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-            // 空だった場合、返却
-            if (String.IsNullOrWhiteSpace(this.textBox6.Text)
-                // || String.IsNullOrWhiteSpace(this.textBox4.Text)
-                // || String.IsNullOrWhiteSpace(this.textBox5.Text)
-                // || String.IsNullOrWhiteSpace(this.textBox3.Text)
-                || String.IsNullOrWhiteSpace(this.木工師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.革細工師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.鍛冶師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.裁縫師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.甲冑師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.錬金術師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.彫金師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.調理師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.チョコボ師_textBox.Text)
-                || String.IsNullOrWhiteSpace(this.例のあの人_textBox.Text)
-                // || String.IsNullOrWhiteSpace(this.マイスター1_comboBox.Text)
-                // || String.IsNullOrWhiteSpace(this.マイスター2_comboBox.Text)
-                // || String.IsNullOrWhiteSpace(this.マイスター3_comboBox.Text)
-                )
-            {
-                MessageBox.Show("ちゃんと入力終わってから押せな？");
-                return;
-            }
-
-            /**
-            // キャラ情報を編集する
-            FileController.EditCharacterInfo(
-                this.textBox6.Text,
-                this.textBox4.Text,
-                this.textBox5.Text,
-                this.textBox3.Text,
-                this.木工師_textBox.Text,
-                this.鍛冶師_textBox.Text,
-                this.甲冑師_textBox.Text,
-                this.彫金師_textBox.Text,
-                this.革細工師_textBox.Text,
-                this.裁縫師_textBox.Text,
-                this.錬金術師_textBox.Text,
-                this.調理師_textBox.Text,
-                this.チョコボ師_textBox.Text,
-                this.例のあの人_textBox.Text,
-                this.マイスター1_comboBox.Text,
-                this.マイスター2_comboBox.Text,
-                this.マイスター3_comboBox.Text);
-            */
-
-            if (this.キャラ一覧.Text.Equals(this.キャラリストボックス.Text))
-            {
-                // 僕のキャラクター情報を設定する
-                // this.label3.Text = "CP：" + this.textBox4.Text;
-                // this.label5.Text = "加工精度：" + this.textBox5.Text;
-                // this.label4.Text = "作業精度：" + this.textBox3.Text;
-            }
-
-            MessageBox.Show("例のあの人の形が変わりました。", "更新完了");
         }
 
         /// <summary>
