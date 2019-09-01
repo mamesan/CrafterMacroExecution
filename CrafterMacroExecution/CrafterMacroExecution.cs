@@ -14,8 +14,8 @@ using static CrafterMacroExecution.Data.KeyCodeList;
 using static CrafterMacroExecution.Utils.Const;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using CrafterMacroExecution.Events;
 using CrafterMacroExecution.Impl;
+using CrafterMacroExecution.Events;
 
 namespace CrafterMacroExecution
 {
@@ -376,6 +376,35 @@ namespace CrafterMacroExecution
             {
                 EditCharacter.deleteCharacterInfo(this);
             };
+            Macro一覧.SelectedIndexChanged += (s1, e1) =>
+            {
+                string listBoxText = ((ListBox)s1).Text;
+                if (String.IsNullOrWhiteSpace(listBoxText)) return;
+                MacroImpl.Macro一覧_click(this, listBoxText);
+            };
+            マクロ削除ボタン.Click += (s1, e1) =>
+            {
+                string listBoxText = ((ListBox)s1).Text;
+                if (String.IsNullOrWhiteSpace(listBoxText)) return;
+                MacroImpl.マクロ削除ボタン_click(this, listBoxText);
+            };
+            マクロ追加ボタン.Click += (s1, e1) =>
+            {
+                MacroImpl.マクロ追加ボタン_click(this);
+            };
+            マクロ編集ボタン.Click += (s1, e1) =>
+            {
+                MacroImpl.マクロ編集ボタン_click(this);
+            };
+            マクロ編集_listBox.TextChanged += (s1, e1) =>
+            {
+
+            };
+        }
+
+        private void マクロ追加ボタン_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -1688,7 +1717,7 @@ namespace CrafterMacroExecution
             */
         }
 
-         /// <summary>
+        /// <summary>
         /// キャラ読込
         /// </summary>
         /// <param name="sender"></param>
@@ -1750,8 +1779,8 @@ namespace CrafterMacroExecution
         private void button4_Click(object sender, EventArgs e)
         {
             // 空だった場合、返却
-            if (String.IsNullOrWhiteSpace(this.textBox8.Text)
-                || String.IsNullOrWhiteSpace(this.textBox1.Text)
+            if (String.IsNullOrWhiteSpace(this.マクロ名_textBox.Text)
+                || String.IsNullOrWhiteSpace(this.マクロ編集_listBox.Text)
             // || String.IsNullOrWhiteSpace(this.comboBox1.Text)
             // || String.IsNullOrWhiteSpace(this.textBox2.Text)
             // || String.IsNullOrWhiteSpace(this.comboBox3.Text))
@@ -1764,7 +1793,7 @@ namespace CrafterMacroExecution
             // マクロ名重複チェック(簡易)
             for (int ii = 0; ii < this.Macro一覧.Items.Count; ii++)
             {
-                if (this.Macro一覧.Items[ii].ToString().Equals(this.textBox8.Text))
+                if (this.Macro一覧.Items[ii].ToString().Equals(this.マクロ名_textBox.Text))
                 {
                     MessageBox.Show("名前がね。例のあの人と同じ名前になってるよ？");
                     return;
@@ -1776,10 +1805,10 @@ namespace CrafterMacroExecution
             // dclist.Add(new string[] { this.textBox1.Text, this.comboBox1.Text, this.textBox2.Text, this.comboBox3.Text });
 
             // マクロ情報を保存する
-            FileController.SaveInfo(new List<string> { this.textBox8.Text }, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_INFO), FILE_PATH_MACROINFO);
+            FileController.SaveInfo(new List<string> { this.マクロ名_textBox.Text }, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_INFO), FILE_PATH_MACROINFO);
 
             // リストボックスに、情報を書き込む
-            this.Macro一覧.Items.Add(this.textBox8.Text);
+            this.Macro一覧.Items.Add(this.マクロ名_textBox.Text);
 
             // スキル一覧を取得する
             // List<ISkilInfoBean> skilInfoBean = Utils.FileController.GetSkilInfo(FILE_PATH_SKILLINFO);
@@ -1791,7 +1820,7 @@ namespace CrafterMacroExecution
             string wait = null;
 
             // リストの中身分回す
-            foreach (string str in this.listBox1.Items)
+            foreach (string str in this.選択中マクロ_listBox.Items)
             {
                 keylist.Add("/ac " + str);
                 /**
@@ -1831,10 +1860,10 @@ namespace CrafterMacroExecution
             }
 
             // ファイルを保存する
-            FileController.SaveInfo(keylist, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_DETAIL_INFO), FILE_PATH_TEMPMACRO + this.textBox8.Text + ".xml");
+            FileController.SaveInfo(keylist, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_DETAIL_INFO), FILE_PATH_TEMPMACRO + this.マクロ名_textBox.Text + ".xml");
 
             // リストに新規作成したマクロ名を挿入する
-            this.実行マクロ名_comboBox.Items.Add(this.textBox8.Text + ".xml");
+            this.実行マクロ名_comboBox.Items.Add(this.マクロ名_textBox.Text + ".xml");
 
             MessageBox.Show("作っちゃった☆", "例のあの人");
         }
@@ -1863,18 +1892,18 @@ namespace CrafterMacroExecution
                 // 対象マクロ情報を削除する
                 FileController.RemoveXMLInfo(this.Macro一覧.Text, FILE_PATH_MACROINFO);
                 // ファイルを削除する
-                File.Delete(ActGlobals.oFormActMain.AppDataFolder.FullName + "\\" + FILE_PATH_TEMPMACRO + this.textBox8.Text + ".xml");
+                File.Delete(ActGlobals.oFormActMain.AppDataFolder.FullName + "\\" + FILE_PATH_TEMPMACRO + this.マクロ名_textBox.Text + ".xml");
 
                 // 削除対象の子を一覧から消す
-                this.Macro一覧.Items.Remove(this.textBox8.Text);
-                this.実行マクロ名_comboBox.Items.Remove(this.textBox8.Text + ".xml");
+                this.Macro一覧.Items.Remove(this.マクロ名_textBox.Text);
+                this.実行マクロ名_comboBox.Items.Remove(this.マクロ名_textBox.Text + ".xml");
 
-                this.textBox8.Text = "";
-                this.textBox1.Text = "";
+                this.マクロ名_textBox.Text = "";
+                this.マクロ編集_listBox.Text = "";
                 // this.comboBox1.SelectedIndex = -1;
                 // this.textBox2.Text = "";
-                this.comboBox3.SelectedIndex = -1;
-                this.listBox1.Items.Clear();
+                this.作るもの_comboBox.SelectedIndex = -1;
+                this.選択中マクロ_listBox.Items.Clear();
 
 
             }
@@ -1889,11 +1918,11 @@ namespace CrafterMacroExecution
         {
 
             // 空だった場合、返却
-            if (String.IsNullOrWhiteSpace(this.textBox8.Text)
-                || String.IsNullOrWhiteSpace(this.textBox1.Text)
+            if (String.IsNullOrWhiteSpace(this.マクロ名_textBox.Text)
+                || String.IsNullOrWhiteSpace(this.マクロ編集_listBox.Text)
                 // || String.IsNullOrWhiteSpace(this.comboBox1.Text)
                 // || String.IsNullOrWhiteSpace(this.textBox2.Text)
-                || String.IsNullOrWhiteSpace(this.comboBox3.Text))
+                || String.IsNullOrWhiteSpace(this.作るもの_comboBox.Text))
             {
                 MessageBox.Show("ちゃんと入力終わってから押せな？");
                 return;
@@ -1913,7 +1942,7 @@ namespace CrafterMacroExecution
             string wait = null;
 
             // リストの中身分回す
-            foreach (string str in this.listBox1.Items)
+            foreach (string str in this.選択中マクロ_listBox.Items)
             {
                 keylist.Add("/ac " + str);
                 /*
@@ -1953,9 +1982,9 @@ namespace CrafterMacroExecution
             }
 
             // ファイルを削除する
-            File.Delete(@ActGlobals.oFormActMain.AppDataFolder.FullName + "\\" + FILE_PATH_TEMPMACRO + "\\" + this.textBox8.Text + ".xml");
+            File.Delete(@ActGlobals.oFormActMain.AppDataFolder.FullName + "\\" + FILE_PATH_TEMPMACRO + "\\" + this.マクロ名_textBox.Text + ".xml");
             // ファイルを保存する
-            FileController.SaveInfo(keylist, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_DETAIL_INFO), FILE_PATH_TEMPMACRO + this.textBox8.Text + ".xml");
+            FileController.SaveInfo(keylist, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_DETAIL_INFO), FILE_PATH_TEMPMACRO + this.マクロ名_textBox.Text + ".xml");
 
             MessageBox.Show("更新が完了しました。", "更新完了");
 
@@ -1983,18 +2012,18 @@ namespace CrafterMacroExecution
                 IMacroInfoBean macroInfoBean = FileController.ReadMacroInfo(listBox.Text);
 
                 // マクロ名
-                this.textBox8.Text = listBox.Text;
+                this.マクロ名_textBox.Text = listBox.Text;
                 // 必要工数
-                this.textBox1.Text = macroInfoBean.NecessaryManHours;
+                this.マクロ編集_listBox.Text = macroInfoBean.NecessaryManHours;
                 // 星数
                 // this.comboBox1.Text = macroInfoBean.StarCount;
                 // 必要品質
                 // this.textBox2.Text = macroInfoBean.CraftControlCount;
                 // 作るもの
-                this.comboBox3.Text = macroInfoBean.WhatMakes;
+                this.作るもの_comboBox.Text = macroInfoBean.WhatMakes;
 
                 // リストを一度削除する
-                this.listBox1.Items.Clear();
+                this.選択中マクロ_listBox.Items.Clear();
 
                 // マクロ情報を取得する
                 List<IPlayMacroInfoBean> list = FileController.GetTempMacroInfo(FILE_PATH_TEMPMACRO + listBox.Text + ".xml");
@@ -2004,7 +2033,7 @@ namespace CrafterMacroExecution
                 {
                     // スキル名のみトリムした名前を、リストに格納する
                     string Skill = playMacroInfoBean.Text.Substring(4);
-                    this.listBox1.Items.Add(Skill);
+                    this.選択中マクロ_listBox.Items.Add(Skill);
                 }
             }
             catch
@@ -2017,21 +2046,21 @@ namespace CrafterMacroExecution
                 {
 
                     // マクロ名
-                    this.textBox8.Text = listBox.Text;
+                    this.マクロ名_textBox.Text = listBox.Text;
                     // 作るもの
-                    this.comboBox3.Text = "HQ";
+                    this.作るもの_comboBox.Text = "HQ";
 
                     // リストを一時作成する
                     List<string[]> dclist = new List<string[]>();
                     // dclist.Add(new string[] { this.textBox1.Text, this.comboBox1.Text, this.textBox2.Text, this.comboBox3.Text });
 
                     // マクロ情報を保存する
-                    FileController.SaveInfo(new List<string> { this.textBox8.Text }, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_INFO), FILE_PATH_MACROINFO);
+                    FileController.SaveInfo(new List<string> { this.マクロ名_textBox.Text }, Utils.Utils.CreateDictionary(dclist, SAVE_MACRO_INFO), FILE_PATH_MACROINFO);
                     // 作成終了アラート
-                    MessageBox.Show("新しくマクロ情報を作成しました。\r\n「" + this.textBox8.Text + "」");
+                    MessageBox.Show("新しくマクロ情報を作成しました。\r\n「" + this.マクロ名_textBox.Text + "」");
 
                     // リストを一度削除する
-                    this.listBox1.Items.Clear();
+                    this.選択中マクロ_listBox.Items.Clear();
 
                     // マクロ情報を取得する
                     List<IPlayMacroInfoBean> list = FileController.GetTempMacroInfo(FILE_PATH_TEMPMACRO + listBox.Text + ".xml");
@@ -2041,7 +2070,7 @@ namespace CrafterMacroExecution
                     {
                         // スキル名のみトリムした名前を、リストに格納する
                         string Skill = playMacroInfoBean.Text.Substring(4);
-                        this.listBox1.Items.Add(Skill);
+                        this.選択中マクロ_listBox.Items.Add(Skill);
                     }
 
                 }
