@@ -293,5 +293,28 @@ namespace CrafterMacroExecution.Events
                 formInfo.選択中マクロ_listBox.Items.Clear();
             }
         }
+
+        public static void マクロ編集_listBox_textEdit(CrafterMacroExecution formInfo)
+        {
+            string[] del = { "\r\n" };
+            string[] マクロリスト = formInfo.マクロ編集_listBox.Text.Split(del, StringSplitOptions.None);
+
+            int i = 0;
+            foreach (string str in formInfo.選択中マクロ_listBox.Items)
+            {
+                // 一致していた場合
+                if (str.Equals(マクロリスト[i]))
+                {
+                    // 全削除
+                    formInfo.選択中マクロ_listBox.Items.Clear();
+                    foreach (string マクロ in マクロリスト)
+                    {
+                        formInfo.選択中マクロ_listBox.Items.Add(マクロ);
+                    }
+                }
+                i++;
+            }
+
+        }
     }
 }
