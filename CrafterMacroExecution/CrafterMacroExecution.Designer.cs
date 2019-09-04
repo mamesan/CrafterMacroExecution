@@ -927,7 +927,6 @@
             this.マクロ編集_listBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.マクロ編集_listBox.Size = new System.Drawing.Size(280, 208);
             this.マクロ編集_listBox.TabIndex = 19;
-            this.マクロ編集_listBox.Text = "ゲーム内マクロ入力\r\nor\r\n編集";
             // 
             // 選択中マクロ_listBox
             // 

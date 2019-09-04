@@ -390,19 +390,11 @@ namespace CrafterMacroExecution
             {
                 MacroImpl.マクロ編集ボタン_click(this);
             };
-            マクロ編集_listBox.TextChanged += (s1, e1) =>
-            {
-                string[] del = { "\r\n" };
-                string[] マクロリスト = マクロ編集_listBox.Text.Split(del, StringSplitOptions.None);
-            };
         }
 
-        private void マクロ追加ボタン_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
-  
+
+
         /// <summary>
         /// チョコボリストに、必要な情報を格納していくクラス
         /// </summary>

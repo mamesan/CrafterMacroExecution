@@ -73,6 +73,9 @@ namespace CrafterMacroExecution.Events
                     // マクロ情報を取得する
                     List<IPlayMacroInfoBean> list = FileController.GetTempMacroInfo(FILE_PATH_TEMPMACRO + ListBoxText + ".xml");
 
+                    // 一度中身を空にする
+                    formInfo.マクロ編集_listBox.Text = "";
+
                     // 指定されたマクロリストの内容を、チェックリストに格納する
                     foreach (IPlayMacroInfoBean playMacroInfoBean in list)
                     {
