@@ -264,6 +264,7 @@
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
+            this.label48 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -906,6 +907,7 @@
             // 
             this.タブ_詳細.AutoScroll = true;
             this.タブ_詳細.BackColor = System.Drawing.Color.SkyBlue;
+            this.タブ_詳細.Controls.Add(this.label48);
             this.タブ_詳細.Controls.Add(this.tabControl1);
             this.タブ_詳細.Controls.Add(this.label47);
             this.タブ_詳細.Controls.Add(this.マクロ編集_listBox);
@@ -2815,6 +2817,16 @@
             this.listBox5.Size = new System.Drawing.Size(273, 184);
             this.listBox5.TabIndex = 1;
             // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label48.Location = new System.Drawing.Point(333, 263);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(59, 14);
+            this.label48.TabIndex = 22;
+            this.label48.Text = "スキルリスト";
+            // 
             // CrafterMacroExecution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3138,5 +3150,6 @@
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.Label label48;
     }
 }
