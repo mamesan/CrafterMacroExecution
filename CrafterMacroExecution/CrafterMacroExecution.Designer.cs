@@ -253,6 +253,17 @@
             this.飯Y座標_初期読込 = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
             this.キャラリストボックス = new System.Windows.Forms.ComboBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.listBox5 = new System.Windows.Forms.ListBox();
             this.groupBox4.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -282,6 +293,12 @@
             this.groupBox34.SuspendLayout();
             this.groupBox35.SuspendLayout();
             this.groupBox36.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // 作成座標用button1
@@ -889,6 +906,7 @@
             // 
             this.タブ_詳細.AutoScroll = true;
             this.タブ_詳細.BackColor = System.Drawing.Color.SkyBlue;
+            this.タブ_詳細.Controls.Add(this.tabControl1);
             this.タブ_詳細.Controls.Add(this.label47);
             this.タブ_詳細.Controls.Add(this.マクロ編集_listBox);
             this.タブ_詳細.Controls.Add(this.選択中マクロ_listBox);
@@ -913,7 +931,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label47.Location = new System.Drawing.Point(329, 240);
+            this.label47.Location = new System.Drawing.Point(17, 263);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(56, 14);
             this.label47.TabIndex = 20;
@@ -921,7 +939,7 @@
             // 
             // マクロ編集_listBox
             // 
-            this.マクロ編集_listBox.Location = new System.Drawing.Point(332, 262);
+            this.マクロ編集_listBox.Location = new System.Drawing.Point(20, 285);
             this.マクロ編集_listBox.Multiline = true;
             this.マクロ編集_listBox.Name = "マクロ編集_listBox";
             this.マクロ編集_listBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -943,7 +961,7 @@
             // 
             this.マクロ編集ボタン.Enabled = false;
             this.マクロ編集ボタン.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.マクロ編集ボタン.Location = new System.Drawing.Point(424, 499);
+            this.マクロ編集ボタン.Location = new System.Drawing.Point(414, 520);
             this.マクロ編集ボタン.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.マクロ編集ボタン.Name = "マクロ編集ボタン";
             this.マクロ編集ボタン.Size = new System.Drawing.Size(90, 36);
@@ -961,7 +979,7 @@
             "ろえな",
             "作るだけ",
             "自分で編集"});
-            this.作るもの_comboBox.Location = new System.Drawing.Point(103, 297);
+            this.作るもの_comboBox.Location = new System.Drawing.Point(103, 199);
             this.作るもの_comboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.作るもの_comboBox.Name = "作るもの_comboBox";
             this.作るもの_comboBox.Size = new System.Drawing.Size(124, 23);
@@ -971,7 +989,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(17, 301);
+            this.label7.Location = new System.Drawing.Point(17, 203);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 14);
             this.label7.TabIndex = 16;
@@ -980,7 +998,7 @@
             // マクロ名_textBox
             // 
             this.マクロ名_textBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.マクロ名_textBox.Location = new System.Drawing.Point(103, 256);
+            this.マクロ名_textBox.Location = new System.Drawing.Point(103, 158);
             this.マクロ名_textBox.Name = "マクロ名_textBox";
             this.マクロ名_textBox.Size = new System.Drawing.Size(124, 19);
             this.マクロ名_textBox.TabIndex = 5;
@@ -988,7 +1006,7 @@
             // マクロ追加ボタン
             // 
             this.マクロ追加ボタン.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.マクロ追加ボタン.Location = new System.Drawing.Point(522, 499);
+            this.マクロ追加ボタン.Location = new System.Drawing.Point(512, 520);
             this.マクロ追加ボタン.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.マクロ追加ボタン.Name = "マクロ追加ボタン";
             this.マクロ追加ボタン.Size = new System.Drawing.Size(90, 36);
@@ -1021,7 +1039,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(16, 262);
+            this.label9.Location = new System.Drawing.Point(16, 164);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 14);
             this.label9.TabIndex = 4;
@@ -2684,6 +2702,119 @@
             this.キャラリストボックス.Size = new System.Drawing.Size(219, 23);
             this.キャラリストボックス.TabIndex = 130;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(332, 285);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(280, 208);
+            this.tabControl1.TabIndex = 21;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(272, 182);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "作業系";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(272, 182);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "加工系";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.listBox3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(272, 182);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "バフ系";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.listBox4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(272, 182);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "マイスター系";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.listBox5);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(272, 182);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "アート";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(0, -1);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(273, 184);
+            this.listBox1.TabIndex = 1;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 12;
+            this.listBox2.Location = new System.Drawing.Point(0, -1);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(273, 184);
+            this.listBox2.TabIndex = 1;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 12;
+            this.listBox3.Location = new System.Drawing.Point(0, -1);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(273, 184);
+            this.listBox3.TabIndex = 1;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 12;
+            this.listBox4.Location = new System.Drawing.Point(0, -1);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(273, 184);
+            this.listBox4.TabIndex = 1;
+            // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 12;
+            this.listBox5.Location = new System.Drawing.Point(0, -1);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(273, 184);
+            this.listBox5.TabIndex = 1;
+            // 
             // CrafterMacroExecution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2759,6 +2890,12 @@
             this.groupBox35.PerformLayout();
             this.groupBox36.ResumeLayout(false);
             this.groupBox36.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2990,5 +3127,16 @@
         public System.Windows.Forms.ListBox 選択中マクロ_listBox;
         public System.Windows.Forms.ListBox Macro一覧;
         public System.Windows.Forms.TextBox マクロ編集_listBox;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.ListBox listBox5;
     }
 }
