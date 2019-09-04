@@ -393,7 +393,388 @@ namespace CrafterMacroExecution
         }
 
 
+        /// <summary>
+        /// マクロを実施するメソッド
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="str"></param>
+        /// <param name="delay"></param>
+        /// <returns></returns>
+        private async Task GoMacro()
+        {
+            // ログを拾うイベント
+            ActGlobals.oFormActMain.OnLogLineRead += this.OFormActMain_OnLogLineRead;
 
+            int chocoboCount = 0;
+            this.RepairingFlg = false;
+            this.roenaFlg = false;
+
+            // 一度ろえな処理を無条件で行う
+            List<IPlayMacroInfoBean> roenaList = new List<IPlayMacroInfoBean>();
+            IPlayMacroInfoBean roenaPlayMacroInfoBean = new PlayMacroInfoBean();
+            roenaPlayMacroInfoBean.No = "ろえな";
+            roenaPlayMacroInfoBean.Wait = "0";
+            roenaPlayMacroInfoBean.Text = "/ac 蒐集品製作";
+
+            roenaList.Add(roenaPlayMacroInfoBean);
+            // キーを送信する
+            SendKeys.SendWait("{ENTER}");
+            WaitTime(30);
+            // キーを送信する(ろえな実行)
+            SendKeyAction(roenaList);
+
+
+            // 格納されているマクロの数だけ実施する
+            foreach (ChocoboInfoBean chocoboInfoBean in this.chocoboInfoBeanList)
+            {
+
+                // 一度チョコボリストの内容を、全て取得する
+                string MacroName = chocoboInfoBean.XMLName;
+                this._count = int.Parse(chocoboInfoBean.Count);
+                int delay = int.Parse(CreateDley(chocoboInfoBean.WhatMakes));
+                int GsKey = this.JobInfo(chocoboInfoBean.Job, this.キャラリストボックス.Text);
+
+                if (GsKey != -1)
+                {
+                    // ジョブ変更用のインスタンスを生成
+                    List<IPlayMacroInfoBean> JobList = new List<IPlayMacroInfoBean>();
+                    IPlayMacroInfoBean playMacroInfoBean = new PlayMacroInfoBean();
+                    // キーを送信する
+                    SendKeys.SendWait("{ENTER}");
+
+                    playMacroInfoBean.Wait = "0";
+                    playMacroInfoBean.No = "Job";
+                    playMacroInfoBean.Text = "/gs change " + GsKey;
+
+                    JobList.Add(playMacroInfoBean);
+
+                    // キーを送信する
+                    this.SendKeyAction(JobList);
+                }
+
+                // マクロ情報を取得する
+                List<IPlayMacroInfoBean> list = FileController.GetTempMacroInfo(FILE_PATH_TEMPMACRO + MacroName);
+
+                // 1秒停止する
+                this.WaitTime(1000);
+
+                /**
+                // アディッショナルの設定有無を判定する
+                if (this.checkBox5.Checked)
+                {
+                    // キーを送信する
+                    SendKeys.SendWait("{ENTER}");
+
+                    // アディッショナルマクロ用インスタンスを生成する
+                    List<IPlayMacroInfoBean> AdditionalList = new List<IPlayMacroInfoBean>();
+                    IPlayMacroInfoBean playMacroInfoBean = new PlayMacroInfoBean();
+
+                    playMacroInfoBean.Wait = "0";
+                    playMacroInfoBean.No = "アディ";
+                    playMacroInfoBean.Text = "/aaction clear";
+                    AdditionalList.Add(playMacroInfoBean);
+
+                    // いれたアディを格納しておく
+                    List<string> addAdiList = new List<string>();
+
+                    // アディッショナルの入替を実施する
+                    foreach (IPlayMacroInfoBean targetBean in list)
+                    {
+                        // 初期化する
+                        playMacroInfoBean = new PlayMacroInfoBean();
+
+                        // マクロ名を一度取得する
+                        string temp = targetBean.Text.Substring(4);
+                        if (AdditionalListEdit.ConfirmCode(temp))
+                        {
+                            // リストに格納してないアディを設定させる
+                            if (!addAdiList.Contains(temp))
+                            {
+                                playMacroInfoBean.Wait = "0";
+                                playMacroInfoBean.No = "アディ";
+                                playMacroInfoBean.Text = "/aaction " + temp + " on";
+
+                                // リストに格納する
+                                addAdiList.Add(temp);
+                                AdditionalList.Add(playMacroInfoBean);
+                            }
+                        }
+                    }
+
+                    // キーを送信する
+                    this.SendKeyAction(AdditionalList);
+
+                    // 中断処理
+                    this.StopAndInterruptionAction();
+                }
+                */
+
+                /*
+                // FF14プラグイン取得処理
+                // ACT.FF14プラグインを変数に格納する
+                var plugin = ActGlobals.oFormActMain.ActPlugins.FirstOrDefault(x =>
+                                x.pluginFile.Name.ToUpper().Contains(ACTPLUGIN_NAME.ToUpper()));
+
+                // FF14オブジェクトを生成する
+                var ffxivPlugin = plugin.pluginObj;
+
+                // dynamicによるSettingsフィールドの取り出し
+                this.ffxivPluginAsDynamic = (dynamic)ffxivPlugin;
+                */
+
+                // ろえな処理
+                if (chocoboInfoBean.WhatMakes.Equals("ろえな"))
+                {
+                    while (!this.roenaFlg)
+                    {
+                        //this.WaitTime(1000);
+                        // えろな用の値を格納する
+                        roenaList = new List<IPlayMacroInfoBean>();
+                        roenaPlayMacroInfoBean = new PlayMacroInfoBean();
+                        roenaPlayMacroInfoBean.No = "ろえな";
+                        roenaPlayMacroInfoBean.Wait = "0";
+                        roenaPlayMacroInfoBean.Text = "/ac 蒐集品製作";
+
+                        roenaList.Add(roenaPlayMacroInfoBean);
+                        // キーを送信する(ろえな実行)
+                        this.SendKeyAction(roenaList);
+                        this.WaitTime(1000);
+                    }
+                }
+                else
+                {
+                    while (this.roenaFlg)
+                    {
+                        //this.WaitTime(1000);
+                        // えろな用の値を格納する
+                        roenaList = new List<IPlayMacroInfoBean>();
+                        roenaPlayMacroInfoBean = new PlayMacroInfoBean();
+                        roenaPlayMacroInfoBean.No = "ろえな";
+                        roenaPlayMacroInfoBean.Wait = "1";
+                        roenaPlayMacroInfoBean.Text = "/ac 蒐集品製作";
+
+                        roenaList.Add(roenaPlayMacroInfoBean);
+                        // キーを送信する(ろえな実行)
+                        this.SendKeyAction(roenaList);
+                        this.WaitTime(1000);
+                    }
+                }
+
+
+                /**
+                // 飯
+                if (this.checkBox3.Checked)
+                {
+                    // ご飯を食べるイベント
+                    this.FoodStartEvent();
+                    // 現在日時を取得し、ごはんの秒数を加算する
+                    this.FoodDateTime = DateTime.Now.AddSeconds(this.FoodTime - 120);
+                }
+
+                // 薬
+                if (this.checkBox4.Checked)
+                {
+                    // 薬を飲むイベント
+                    this.MedicineStartEvent();
+                    // 現在日時を取得し、薬の秒数を加算する
+                    this.MedicineDateTime = DateTime.Now.AddSeconds(this.MedicineTime - 120);
+                }
+                */
+
+                // チョコボを押下する
+                this.SendChocoboExecutionKey(chocoboInfoBean);
+
+                // this._count の回数文ループする
+                while (this._count != 0 && this.EndFlg)
+                {
+                    // 作成実行キーを押下する
+                    this.SendCreatingExecutionKey();
+
+                    // 中断処理
+                    this.StopAndInterruptionAction();
+
+                    // 実行回数表示 
+                    this.label27.Text = "残り" + this._count + "回";
+
+                    // キーを送信する
+                    SendKeys.SendWait("{ENTER}");
+
+                    // キーを送信する(macro実行)
+                    this.SendKeyAction(list);
+
+                    // 中断処理
+                    this.StopAndInterruptionAction();
+
+                    // ろえな処理
+                    if (chocoboInfoBean.WhatMakes.Equals("ろえな"))
+                    {
+                        this.WaitTime(1000);
+                        // ESCを押下する
+                        Utils.Utils.KeySim(VK_ESCAPE);
+                    }
+
+                    // 残り回数が1回ではなかった場合、ディレイをスキップする
+                    if (this._count != 1 && !chocoboInfoBean.WhatMakes.Equals("ろえな"))
+                    {
+                        // ディレイ秒待機する
+                        this.WaitTime(delay * 1000);
+                    }
+                    else
+                    {
+                        // 2.5秒待機する
+                        this.WaitTime(2500);
+
+                    }
+
+                    //this.WaitTime(1000);
+
+                    // ここで、修理中断フラグを確認する
+                    if (this._AllCount > 3 && this.RepairingFlg)
+                    {
+                        // 待機する
+                        this.WaitTime(1000);
+
+                        string str = this.label27.Text;
+                        this.label27.Text = "-- 修理休憩 --";
+
+                        // ここで処理をよぶ
+                        this.RepairingEvent(chocoboInfoBean);
+
+                        this.WaitTime(2000);
+
+                        // 修理フラグを戻す
+                        this.RepairingFlg = false;
+                        this.label27.Text = str;
+                    }
+
+                    // 中断処理
+                    this.StopAndInterruptionAction();
+
+                    /**
+                    // ここで、飯の中断フラグを確認する
+                    if (this.checkBox3.Checked)
+                    {
+                        if (this._AllCount != 1 && checkDateTime(this.FoodDateTime))
+                        {
+                            // 待機する
+                            this.WaitTime(1000);
+
+                            string str = this.label27.Text;
+                            this.label27.Text = "-- 飯休憩 --";
+
+                            // ここで処理をよぶ
+                            this.FoodEvent(chocoboInfoBean);
+
+                            this.WaitTime(2000);
+
+                            // 現在日時を取得し、飯の秒数を加算する
+                            this.FoodDateTime = DateTime.Now.AddSeconds(this.FoodTime - 120);
+
+                            // フラグを戻す
+                            this.label27.Text = str;
+                        }
+                    }
+                    */
+
+                    // 中断処理
+                    this.StopAndInterruptionAction();
+
+                    /**
+                    // ここで、薬の中断フラグを確認する 
+                    if (this.checkBox4.Checked)
+                    {
+                        if (this._AllCount != 1 && checkDateTime(this.MedicineDateTime))
+                        {
+                            // 待機する
+                            this.WaitTime(1000);
+
+                            string str = this.label27.Text;
+                            this.label27.Text = "-- 薬休憩 --";
+
+                            // ここで処理をよぶ
+                            this.MedicineEvent(chocoboInfoBean);
+
+                            this.WaitTime(2000);
+
+                            // 現在日時を取得し、薬の秒数を加算する
+                            this.MedicineDateTime = DateTime.Now.AddSeconds(this.MedicineTime - 120);
+
+                            // フラグを戻す
+                            this.label27.Text = str;
+                        }
+                    }
+                    */
+                    this._count--;
+                    this._AllCount--;
+                }
+
+                chocoboCount++;
+
+                // ここで、次のリストの格納の確認を実施する
+                if (this.chocoboInfoBeanList.Count != chocoboCount)
+                {
+                    // 待機する
+                    this.WaitTime(7000);
+                    // キーを送信する
+                    Utils.Utils.KeySim(VK_ESCAPE);
+                    // 待機する
+                    this.WaitTime(1000);
+                }
+            }
+
+            // ****************  以下アディ入替処理  ****************　//
+            // 待機する
+            this.WaitTime(7000);
+
+            // キーを送信する
+            Utils.Utils.KeySim(VK_ESCAPE);
+
+            // 待機する
+            this.WaitTime(500);
+
+            /**
+            // アディッショナルの設定有無を判定する
+            if (this.checkBox5.Checked == true)
+            {
+
+                // 終了用設定アディッショナルを取得する
+                List<IPlayMacroInfoBean> tempAdiMacroList = FileController.GetAdditionalInfo(FILE_PATH_ADDITIONAL);
+
+                // いったんアディリストを作成しなおす
+                List<IPlayMacroInfoBean> adiMacroList = new List<IPlayMacroInfoBean>();
+
+                // Npを全てアディに置き換える
+                foreach (IPlayMacroInfoBean playMacroInfoBean in tempAdiMacroList)
+                {
+                    playMacroInfoBean.No = "アディ";
+                    adiMacroList.Add(playMacroInfoBean);
+                }
+
+                // キーを送信する
+                SendKeys.SendWait("{ENTER}");
+
+                // アディッショナル入替
+                this.label27.Text = "アディ入替なう";
+                this.SendKeyAction(adiMacroList);
+
+                // 中断処理
+                this.StopAndInterruptionAction();
+            }
+            */
+
+            // 終了処理
+            this.実行ボタン.Enabled = true;
+            // フラグを設定しなおす
+            this.loopFlg = true;
+            this.EndFlg = true;
+            // 中断、再開ボタンを非活性化させる
+            this.終了ボタン.Enabled = false;
+            this.中断ボタン.Enabled = false;
+            this.label27.Text = "おわっちゃった";
+
+            throw new StopInterruptionException("スレッド停止のために、強制的にExceptionを発生させる");
+
+        }
 
         /// <summary>
         /// チョコボリストに、必要な情報を格納していくクラス
@@ -1305,389 +1686,7 @@ namespace CrafterMacroExecution
             */
         }
 
-        /// <summary>
-        /// マクロを実施するメソッド
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="str"></param>
-        /// <param name="delay"></param>
-        /// <returns></returns>
-        private async Task GoMacro()
-        {
-            // ログを拾うイベント
-            ActGlobals.oFormActMain.OnLogLineRead += this.OFormActMain_OnLogLineRead;
 
-            int chocoboCount = 0;
-            this.RepairingFlg = false;
-            this.roenaFlg = false;
-
-            // 一度ろえな処理を無条件で行う
-            List<IPlayMacroInfoBean> roenaList = new List<IPlayMacroInfoBean>();
-            IPlayMacroInfoBean roenaPlayMacroInfoBean = new PlayMacroInfoBean();
-            roenaPlayMacroInfoBean.No = "ろえな";
-            roenaPlayMacroInfoBean.Wait = "0";
-            roenaPlayMacroInfoBean.Text = "/ac 蒐集品製作";
-
-            roenaList.Add(roenaPlayMacroInfoBean);
-            // キーを送信する
-            SendKeys.SendWait("{ENTER}");
-            this.WaitTime(30);
-            // キーを送信する(ろえな実行)
-            this.SendKeyAction(roenaList);
-            //this.WaitTime(200);
-
-
-            // 格納されているマクロの数だけ実施する
-            foreach (ChocoboInfoBean chocoboInfoBean in this.chocoboInfoBeanList)
-            {
-
-                // 一度チョコボリストの内容を、全て取得する
-                string MacroName = chocoboInfoBean.XMLName;
-                this._count = int.Parse(chocoboInfoBean.Count);
-                int delay = int.Parse(CreateDley(chocoboInfoBean.WhatMakes));
-                int GsKey = this.JobInfo(chocoboInfoBean.Job, this.キャラリストボックス.Text);
-
-                if (GsKey != -1)
-                {
-                    // ジョブ変更用のインスタンスを生成
-                    List<IPlayMacroInfoBean> JobList = new List<IPlayMacroInfoBean>();
-                    IPlayMacroInfoBean playMacroInfoBean = new PlayMacroInfoBean();
-                    // キーを送信する
-                    SendKeys.SendWait("{ENTER}");
-
-                    playMacroInfoBean.Wait = "0";
-                    playMacroInfoBean.No = "Job";
-                    playMacroInfoBean.Text = "/gs change " + GsKey;
-
-                    JobList.Add(playMacroInfoBean);
-
-                    // キーを送信する
-                    this.SendKeyAction(JobList);
-                }
-
-                // マクロ情報を取得する
-                List<IPlayMacroInfoBean> list = FileController.GetTempMacroInfo(FILE_PATH_TEMPMACRO + MacroName);
-
-                // 1秒停止する
-                this.WaitTime(1000);
-
-                /**
-                // アディッショナルの設定有無を判定する
-                if (this.checkBox5.Checked)
-                {
-                    // キーを送信する
-                    SendKeys.SendWait("{ENTER}");
-
-                    // アディッショナルマクロ用インスタンスを生成する
-                    List<IPlayMacroInfoBean> AdditionalList = new List<IPlayMacroInfoBean>();
-                    IPlayMacroInfoBean playMacroInfoBean = new PlayMacroInfoBean();
-
-                    playMacroInfoBean.Wait = "0";
-                    playMacroInfoBean.No = "アディ";
-                    playMacroInfoBean.Text = "/aaction clear";
-                    AdditionalList.Add(playMacroInfoBean);
-
-                    // いれたアディを格納しておく
-                    List<string> addAdiList = new List<string>();
-
-                    // アディッショナルの入替を実施する
-                    foreach (IPlayMacroInfoBean targetBean in list)
-                    {
-                        // 初期化する
-                        playMacroInfoBean = new PlayMacroInfoBean();
-
-                        // マクロ名を一度取得する
-                        string temp = targetBean.Text.Substring(4);
-                        if (AdditionalListEdit.ConfirmCode(temp))
-                        {
-                            // リストに格納してないアディを設定させる
-                            if (!addAdiList.Contains(temp))
-                            {
-                                playMacroInfoBean.Wait = "0";
-                                playMacroInfoBean.No = "アディ";
-                                playMacroInfoBean.Text = "/aaction " + temp + " on";
-
-                                // リストに格納する
-                                addAdiList.Add(temp);
-                                AdditionalList.Add(playMacroInfoBean);
-                            }
-                        }
-                    }
-
-                    // キーを送信する
-                    this.SendKeyAction(AdditionalList);
-
-                    // 中断処理
-                    this.StopAndInterruptionAction();
-                }
-                */
-
-                /*
-                // FF14プラグイン取得処理
-                // ACT.FF14プラグインを変数に格納する
-                var plugin = ActGlobals.oFormActMain.ActPlugins.FirstOrDefault(x =>
-                                x.pluginFile.Name.ToUpper().Contains(ACTPLUGIN_NAME.ToUpper()));
-
-                // FF14オブジェクトを生成する
-                var ffxivPlugin = plugin.pluginObj;
-
-                // dynamicによるSettingsフィールドの取り出し
-                this.ffxivPluginAsDynamic = (dynamic)ffxivPlugin;
-                */
-
-                // ろえな処理
-                if (chocoboInfoBean.WhatMakes.Equals("ろえな"))
-                {
-                    while (!this.roenaFlg)
-                    {
-                        //this.WaitTime(1000);
-                        // えろな用の値を格納する
-                        roenaList = new List<IPlayMacroInfoBean>();
-                        roenaPlayMacroInfoBean = new PlayMacroInfoBean();
-                        roenaPlayMacroInfoBean.No = "ろえな";
-                        roenaPlayMacroInfoBean.Wait = "0";
-                        roenaPlayMacroInfoBean.Text = "/ac 蒐集品製作";
-
-                        roenaList.Add(roenaPlayMacroInfoBean);
-                        // キーを送信する(ろえな実行)
-                        this.SendKeyAction(roenaList);
-                        this.WaitTime(1000);
-                    }
-                }
-                else
-                {
-                    while (this.roenaFlg)
-                    {
-                        //this.WaitTime(1000);
-                        // えろな用の値を格納する
-                        roenaList = new List<IPlayMacroInfoBean>();
-                        roenaPlayMacroInfoBean = new PlayMacroInfoBean();
-                        roenaPlayMacroInfoBean.No = "ろえな";
-                        roenaPlayMacroInfoBean.Wait = "1";
-                        roenaPlayMacroInfoBean.Text = "/ac 蒐集品製作";
-
-                        roenaList.Add(roenaPlayMacroInfoBean);
-                        // キーを送信する(ろえな実行)
-                        this.SendKeyAction(roenaList);
-                        this.WaitTime(1000);
-                    }
-                }
-
-
-                /**
-                // 飯
-                if (this.checkBox3.Checked)
-                {
-                    // ご飯を食べるイベント
-                    this.FoodStartEvent();
-                    // 現在日時を取得し、ごはんの秒数を加算する
-                    this.FoodDateTime = DateTime.Now.AddSeconds(this.FoodTime - 120);
-                }
-
-                // 薬
-                if (this.checkBox4.Checked)
-                {
-                    // 薬を飲むイベント
-                    this.MedicineStartEvent();
-                    // 現在日時を取得し、薬の秒数を加算する
-                    this.MedicineDateTime = DateTime.Now.AddSeconds(this.MedicineTime - 120);
-                }
-                */
-
-                // チョコボを押下する
-                this.SendChocoboExecutionKey(chocoboInfoBean);
-
-                // this._count の回数文ループする
-                while (this._count != 0 && this.EndFlg)
-                {
-                    // 作成実行キーを押下する
-                    this.SendCreatingExecutionKey();
-
-                    // 中断処理
-                    this.StopAndInterruptionAction();
-
-                    // 実行回数表示 
-                    this.label27.Text = "残り" + this._count + "回";
-
-                    // キーを送信する
-                    SendKeys.SendWait("{ENTER}");
-
-                    // キーを送信する(macro実行)
-                    this.SendKeyAction(list);
-
-                    // 中断処理
-                    this.StopAndInterruptionAction();
-
-                    // ろえな処理
-                    if (chocoboInfoBean.WhatMakes.Equals("ろえな"))
-                    {
-                        this.WaitTime(1000);
-                        // ESCを押下する
-                        Utils.Utils.KeySim(VK_ESCAPE);
-                    }
-
-                    // 残り回数が1回ではなかった場合、ディレイをスキップする
-                    if (this._count != 1 && !chocoboInfoBean.WhatMakes.Equals("ろえな"))
-                    {
-                        // ディレイ秒待機する
-                        this.WaitTime(delay * 1000);
-                    }
-                    else
-                    {
-                        // 2.5秒待機する
-                        this.WaitTime(2500);
-
-                    }
-
-                    //this.WaitTime(1000);
-
-                    // ここで、修理中断フラグを確認する
-                    if (this._AllCount > 3 && this.RepairingFlg)
-                    {
-                        // 待機する
-                        this.WaitTime(1000);
-
-                        string str = this.label27.Text;
-                        this.label27.Text = "-- 修理休憩 --";
-
-                        // ここで処理をよぶ
-                        this.RepairingEvent(chocoboInfoBean);
-
-                        this.WaitTime(2000);
-
-                        // 修理フラグを戻す
-                        this.RepairingFlg = false;
-                        this.label27.Text = str;
-                    }
-
-                    // 中断処理
-                    this.StopAndInterruptionAction();
-
-                    /**
-                    // ここで、飯の中断フラグを確認する
-                    if (this.checkBox3.Checked)
-                    {
-                        if (this._AllCount != 1 && checkDateTime(this.FoodDateTime))
-                        {
-                            // 待機する
-                            this.WaitTime(1000);
-
-                            string str = this.label27.Text;
-                            this.label27.Text = "-- 飯休憩 --";
-
-                            // ここで処理をよぶ
-                            this.FoodEvent(chocoboInfoBean);
-
-                            this.WaitTime(2000);
-
-                            // 現在日時を取得し、飯の秒数を加算する
-                            this.FoodDateTime = DateTime.Now.AddSeconds(this.FoodTime - 120);
-
-                            // フラグを戻す
-                            this.label27.Text = str;
-                        }
-                    }
-                    */
-
-                    // 中断処理
-                    this.StopAndInterruptionAction();
-
-                    /**
-                    // ここで、薬の中断フラグを確認する 
-                    if (this.checkBox4.Checked)
-                    {
-                        if (this._AllCount != 1 && checkDateTime(this.MedicineDateTime))
-                        {
-                            // 待機する
-                            this.WaitTime(1000);
-
-                            string str = this.label27.Text;
-                            this.label27.Text = "-- 薬休憩 --";
-
-                            // ここで処理をよぶ
-                            this.MedicineEvent(chocoboInfoBean);
-
-                            this.WaitTime(2000);
-
-                            // 現在日時を取得し、薬の秒数を加算する
-                            this.MedicineDateTime = DateTime.Now.AddSeconds(this.MedicineTime - 120);
-
-                            // フラグを戻す
-                            this.label27.Text = str;
-                        }
-                    }
-                    */
-                    this._count--;
-                    this._AllCount--;
-                }
-
-                chocoboCount++;
-
-                // ここで、次のリストの格納の確認を実施する
-                if (this.chocoboInfoBeanList.Count != chocoboCount)
-                {
-                    // 待機する
-                    this.WaitTime(7000);
-                    // キーを送信する
-                    Utils.Utils.KeySim(VK_ESCAPE);
-                    // 待機する
-                    this.WaitTime(1000);
-                }
-            }
-
-            // ****************  以下アディ入替処理  ****************　//
-            // 待機する
-            this.WaitTime(7000);
-
-            // キーを送信する
-            Utils.Utils.KeySim(VK_ESCAPE);
-
-            // 待機する
-            this.WaitTime(500);
-
-            /**
-            // アディッショナルの設定有無を判定する
-            if (this.checkBox5.Checked == true)
-            {
-
-                // 終了用設定アディッショナルを取得する
-                List<IPlayMacroInfoBean> tempAdiMacroList = FileController.GetAdditionalInfo(FILE_PATH_ADDITIONAL);
-
-                // いったんアディリストを作成しなおす
-                List<IPlayMacroInfoBean> adiMacroList = new List<IPlayMacroInfoBean>();
-
-                // Npを全てアディに置き換える
-                foreach (IPlayMacroInfoBean playMacroInfoBean in tempAdiMacroList)
-                {
-                    playMacroInfoBean.No = "アディ";
-                    adiMacroList.Add(playMacroInfoBean);
-                }
-
-                // キーを送信する
-                SendKeys.SendWait("{ENTER}");
-
-                // アディッショナル入替
-                this.label27.Text = "アディ入替なう";
-                this.SendKeyAction(adiMacroList);
-
-                // 中断処理
-                this.StopAndInterruptionAction();
-            }
-            */
-
-            // 終了処理
-            this.実行ボタン.Enabled = true;
-            // フラグを設定しなおす
-            this.loopFlg = true;
-            this.EndFlg = true;
-            // 中断、再開ボタンを非活性化させる
-            this.終了ボタン.Enabled = false;
-            this.中断ボタン.Enabled = false;
-            this.label27.Text = "おわっちゃった";
-
-            throw new StopInterruptionException("スレッド停止のために、強制的にExceptionを発生させる");
-
-        }
 
         /// <summary>
         /// ログを取得した際に発生するイベント
@@ -1763,17 +1762,17 @@ namespace CrafterMacroExecution
                     // 貼り付け実施
                     SendKeys.SendWait(c.ToString());
                     // 
-                    this.WaitTime(50);
+                    WaitTime(50);
                 }
 
                 // ちょっとだけ待機する
-                this.WaitTime(500);
+                WaitTime(500);
 
                 // 4文字以下の場合、すこし待機時間を長くする
                 if (bean.Text.Length <= 4)
                 {
                     // ちょっとだけ待機する
-                    this.WaitTime(500);
+                    WaitTime(500);
                 }
 
                 // キーを送信する
@@ -1784,19 +1783,19 @@ namespace CrafterMacroExecution
                     if ("2".Equals(bean.Wait) && !string.IsNullOrWhiteSpace(bean.Wait))
                     {
                         // 停止する
-                        this.WaitTime((int.Parse(bean.Wait) * 1000) - 1430);
+                        WaitTime((int.Parse(bean.Wait) * 1000) - 1430);
                     }
                     else if (!string.IsNullOrWhiteSpace(bean.Wait))
                     {
                         // 停止する
-                        this.WaitTime((int.Parse(bean.Wait) * 1000) - 1430);
+                        WaitTime((int.Parse(bean.Wait) * 1000) - 1430);
                     }
 
                 }
                 else
                 {
                     // アディの場合
-                    this.WaitTime(40);
+                    WaitTime(40);
                 }
             }
         }

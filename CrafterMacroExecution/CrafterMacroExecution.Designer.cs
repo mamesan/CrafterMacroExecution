@@ -553,12 +553,12 @@
             // 実行マクロ名_comboBox
             // 
             this.実行マクロ名_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.実行マクロ名_comboBox.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.実行マクロ名_comboBox.Font = new System.Drawing.Font("Meiryo UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.実行マクロ名_comboBox.FormattingEnabled = true;
             this.実行マクロ名_comboBox.Location = new System.Drawing.Point(155, 28);
             this.実行マクロ名_comboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.実行マクロ名_comboBox.Name = "実行マクロ名_comboBox";
-            this.実行マクロ名_comboBox.Size = new System.Drawing.Size(141, 23);
+            this.実行マクロ名_comboBox.Size = new System.Drawing.Size(141, 22);
             this.実行マクロ名_comboBox.TabIndex = 24;
             // 
             // アディチェックボックス_init
@@ -941,7 +941,8 @@
             // 
             // マクロ編集_listBox
             // 
-            this.マクロ編集_listBox.Location = new System.Drawing.Point(20, 285);
+            this.マクロ編集_listBox.Font = new System.Drawing.Font("Meiryo UI", 9F);
+            this.マクロ編集_listBox.Location = new System.Drawing.Point(332, 262);
             this.マクロ編集_listBox.Multiline = true;
             this.マクロ編集_listBox.Name = "マクロ編集_listBox";
             this.マクロ編集_listBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -950,13 +951,13 @@
             // 
             // 選択中マクロ_listBox
             // 
-            this.選択中マクロ_listBox.Font = new System.Drawing.Font("Meiryo UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.選択中マクロ_listBox.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.選択中マクロ_listBox.FormattingEnabled = true;
-            this.選択中マクロ_listBox.ItemHeight = 18;
+            this.選択中マクロ_listBox.ItemHeight = 15;
             this.選択中マクロ_listBox.Location = new System.Drawing.Point(332, 50);
             this.選択中マクロ_listBox.Name = "選択中マクロ_listBox";
             this.選択中マクロ_listBox.ScrollAlwaysVisible = true;
-            this.選択中マクロ_listBox.Size = new System.Drawing.Size(280, 166);
+            this.選択中マクロ_listBox.Size = new System.Drawing.Size(280, 154);
             this.選択中マクロ_listBox.TabIndex = 18;
             // 
             // マクロ編集ボタン

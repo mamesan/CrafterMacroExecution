@@ -39,6 +39,9 @@ namespace CrafterMacroExecution.Events
                 // マクロ情報を取得する
                 List<IPlayMacroInfoBean> list = FileController.GetTempMacroInfo(FILE_PATH_TEMPMACRO + ListBoxText + ".xml");
 
+                // 一度中身を空にする
+                formInfo.マクロ編集_listBox.Text = "";
+
                 // 指定されたマクロリストの内容を、チェックリストに格納する
                 foreach (IPlayMacroInfoBean playMacroInfoBean in list)
                 {
@@ -124,6 +127,17 @@ namespace CrafterMacroExecution.Events
                 }
             }
 
+            string[] del = { "\r\n" };
+            string[] temp = formInfo.マクロ編集_listBox.Text.Split(del, StringSplitOptions.None);
+
+            // 工程の中身を洗い変える
+            formInfo.選択中マクロ_listBox.Items.Clear();
+
+            foreach (string str in temp)
+            {
+                formInfo.選択中マクロ_listBox.Items.Add(str);
+            }
+
             // リストを一時作成する
             List<string[]> dclist = new List<string[]>();
             dclist.Add(new string[] { マクロ名, formInfo.作るもの_comboBox.Text });
@@ -142,7 +156,6 @@ namespace CrafterMacroExecution.Events
             List<string> keylist = new List<string>();
             int i = 1;
             string wait = null;
-            string[] del = { "\r\n" };
             string[] MacroList = formInfo.マクロ編集_listBox.Text.Split(del, StringSplitOptions.None);
 
             // リストの中身分回す
@@ -208,6 +221,16 @@ namespace CrafterMacroExecution.Events
                 return;
             }
 
+            string[] del = { "\r\n" };
+            string[] temp = formInfo.マクロ編集_listBox.Text.Split(del, StringSplitOptions.None);
+
+            // 工程の中身を洗い変える
+            formInfo.選択中マクロ_listBox.Items.Clear();
+
+            foreach (string str in temp)
+            {
+                formInfo.選択中マクロ_listBox.Items.Add(str);
+            }
 
             // 対象マクロ情報を修正する
             FileController.EditMacroInfo(マクロ名, formInfo.作るもの_comboBox.Text);
