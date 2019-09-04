@@ -87,12 +87,12 @@
             this.タブALL = new System.Windows.Forms.TabControl();
             this.タブ_詳細 = new System.Windows.Forms.TabPage();
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.マクロ編集_listBox = new System.Windows.Forms.TextBox();
+            this.選択中マクロ_listBox = new System.Windows.Forms.ListBox();
             this.マクロ編集ボタン = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.作るもの_comboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.マクロ名_textBox = new System.Windows.Forms.TextBox();
             this.マクロ追加ボタン = new System.Windows.Forms.Button();
             this.マクロ削除ボタン = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -890,12 +890,12 @@
             this.タブ_詳細.AutoScroll = true;
             this.タブ_詳細.BackColor = System.Drawing.Color.SkyBlue;
             this.タブ_詳細.Controls.Add(this.label47);
-            this.タブ_詳細.Controls.Add(this.textBox1);
-            this.タブ_詳細.Controls.Add(this.listBox1);
+            this.タブ_詳細.Controls.Add(this.マクロ編集_listBox);
+            this.タブ_詳細.Controls.Add(this.選択中マクロ_listBox);
             this.タブ_詳細.Controls.Add(this.マクロ編集ボタン);
-            this.タブ_詳細.Controls.Add(this.comboBox3);
+            this.タブ_詳細.Controls.Add(this.作るもの_comboBox);
             this.タブ_詳細.Controls.Add(this.label7);
-            this.タブ_詳細.Controls.Add(this.textBox8);
+            this.タブ_詳細.Controls.Add(this.マクロ名_textBox);
             this.タブ_詳細.Controls.Add(this.マクロ追加ボタン);
             this.タブ_詳細.Controls.Add(this.マクロ削除ボタン);
             this.タブ_詳細.Controls.Add(this.label14);
@@ -919,26 +919,25 @@
             this.label47.TabIndex = 20;
             this.label47.Text = "マクロ編集";
             // 
-            // textBox1
+            // マクロ編集_listBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(332, 262);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(280, 208);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.Text = "ゲーム内マクロ入力\r\nor\r\n編集";
+            this.マクロ編集_listBox.Location = new System.Drawing.Point(332, 262);
+            this.マクロ編集_listBox.Multiline = true;
+            this.マクロ編集_listBox.Name = "マクロ編集_listBox";
+            this.マクロ編集_listBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.マクロ編集_listBox.Size = new System.Drawing.Size(280, 208);
+            this.マクロ編集_listBox.TabIndex = 19;
             // 
-            // listBox1
+            // 選択中マクロ_listBox
             // 
-            this.listBox1.Font = new System.Drawing.Font("Meiryo UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Location = new System.Drawing.Point(332, 50);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(280, 166);
-            this.listBox1.TabIndex = 18;
+            this.選択中マクロ_listBox.Font = new System.Drawing.Font("Meiryo UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.選択中マクロ_listBox.FormattingEnabled = true;
+            this.選択中マクロ_listBox.ItemHeight = 18;
+            this.選択中マクロ_listBox.Location = new System.Drawing.Point(332, 50);
+            this.選択中マクロ_listBox.Name = "選択中マクロ_listBox";
+            this.選択中マクロ_listBox.ScrollAlwaysVisible = true;
+            this.選択中マクロ_listBox.Size = new System.Drawing.Size(280, 166);
+            this.選択中マクロ_listBox.TabIndex = 18;
             // 
             // マクロ編集ボタン
             // 
@@ -952,21 +951,21 @@
             this.マクロ編集ボタン.Text = "マクロ更新";
             this.マクロ編集ボタン.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // 作るもの_comboBox
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.作るもの_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.作るもの_comboBox.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作るもの_comboBox.FormattingEnabled = true;
+            this.作るもの_comboBox.Items.AddRange(new object[] {
             "HQ",
             "ろえな",
             "作るだけ",
             "自分で編集"});
-            this.comboBox3.Location = new System.Drawing.Point(103, 297);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(124, 23);
-            this.comboBox3.TabIndex = 17;
+            this.作るもの_comboBox.Location = new System.Drawing.Point(103, 297);
+            this.作るもの_comboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.作るもの_comboBox.Name = "作るもの_comboBox";
+            this.作るもの_comboBox.Size = new System.Drawing.Size(124, 23);
+            this.作るもの_comboBox.TabIndex = 17;
             // 
             // label7
             // 
@@ -978,13 +977,13 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "作るもの";
             // 
-            // textBox8
+            // マクロ名_textBox
             // 
-            this.textBox8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox8.Location = new System.Drawing.Point(103, 256);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(124, 19);
-            this.textBox8.TabIndex = 5;
+            this.マクロ名_textBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.マクロ名_textBox.Location = new System.Drawing.Point(103, 256);
+            this.マクロ名_textBox.Name = "マクロ名_textBox";
+            this.マクロ名_textBox.Size = new System.Drawing.Size(124, 19);
+            this.マクロ名_textBox.TabIndex = 5;
             // 
             // マクロ追加ボタン
             // 
@@ -1005,7 +1004,7 @@
             this.マクロ削除ボタン.Name = "マクロ削除ボタン";
             this.マクロ削除ボタン.Size = new System.Drawing.Size(100, 33);
             this.マクロ削除ボタン.TabIndex = 3;
-            this.マクロ削除ボタン.Text = "ﾊﾞｲﾊﾞｲ ﾏｸﾛ!!!";
+            this.マクロ削除ボタン.Text = "マクロ削除";
             this.マクロ削除ボタン.UseVisualStyleBackColor = true;
             // 
             // label14
@@ -1077,7 +1076,7 @@
             this.キャラクタ情報削除ボタン.Name = "キャラクタ情報削除ボタン";
             this.キャラクタ情報削除ボタン.Size = new System.Drawing.Size(120, 33);
             this.キャラクタ情報削除ボタン.TabIndex = 94;
-            this.キャラクタ情報削除ボタン.Text = "ﾊﾞｲﾊﾞｲ 例のあの人!";
+            this.キャラクタ情報削除ボタン.Text = "キャラクタ情報削除";
             this.キャラクタ情報削除ボタン.UseVisualStyleBackColor = true;
             // 
             // キャラクター情報更新ボタン
@@ -2817,17 +2816,13 @@
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.TabControl タブALL;
         private System.Windows.Forms.TabPage タブ_詳細;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button マクロ編集ボタン;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button マクロ追加ボタン;
         private System.Windows.Forms.Button マクロ削除ボタン;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox Macro一覧;
         private System.Windows.Forms.TabPage タブ_キャラクター;
         private System.Windows.Forms.Button キャラクタ情報削除ボタン;
         private System.Windows.Forms.Label label10;
@@ -2838,7 +2833,6 @@
         private System.Windows.Forms.TabPage タブ_作成品設定;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.ComboBox キャラリストボックス;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label28;
@@ -2991,5 +2985,10 @@
         public System.Windows.Forms.Button キャラクター追加ボタン;
         public System.Windows.Forms.TextBox キャラクターのお名前;
         public System.Windows.Forms.ListBox キャラ一覧;
+        public System.Windows.Forms.TextBox マクロ名_textBox;
+        public System.Windows.Forms.ComboBox 作るもの_comboBox;
+        public System.Windows.Forms.ListBox 選択中マクロ_listBox;
+        public System.Windows.Forms.ListBox Macro一覧;
+        public System.Windows.Forms.TextBox マクロ編集_listBox;
     }
 }

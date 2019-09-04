@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Advanced Combat Tracker">
-      <HintPath>..\..\Advanced Combat Tracker.exe</HintPath>
+      <HintPath>.\Advanced Combat Tracker.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,12 +61,10 @@
       <DependentUpon>CrafterMacroExecution.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\KeyCodeList.cs" />
-    <Compile Include="Events\FormEvents.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Events\ReadLogEvents.cs" />
     <Compile Include="Exceptions\StopInterruptionException.cs" />
     <Compile Include="Impl\EditCharacter.cs" />
+    <Compile Include="Impl\MacroImpl.cs" />
     <Compile Include="Model\Coordinate.cs">
       <SubType>Form</SubType>
     </Compile>
