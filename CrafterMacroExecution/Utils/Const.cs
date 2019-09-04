@@ -260,5 +260,11 @@
         /// 背景表示用のパス
         /// </summary>
         public static readonly string FILE_PATH_IMAGE = "ACT_CrafterSimulator\\Config\\chocobo\\設定.png";
+
+        /// <summary>
+        /// クラフタスキル一覧のファイルパス
+        /// </summary>
+        public static readonly string FILE_PATH_SKILLISTL = "ACT_CrafterSimulator\\Config\\crafterskill.txt";
     }
+
 }
