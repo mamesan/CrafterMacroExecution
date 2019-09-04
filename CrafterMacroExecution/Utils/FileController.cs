@@ -583,7 +583,7 @@ namespace CrafterMacroExecution.Utils
         /// <param name="StarCount">星数</param>
         /// <param name="CraftControlCount">必要品質</param>
         /// <param name="filePath">ファイルパス</param>
-        public static void EditMacroInfo(string key, string NecessaryManHours, string StarCount, string CraftControlCount, string WhatMakes)
+        public static void EditMacroInfo(string key, string WhatMakes)
         {
             // 設定ファイル保存先パス
             string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, FILE_PATH_MACROINFO);
@@ -595,14 +595,8 @@ namespace CrafterMacroExecution.Utils
 
             // xml情報を取得する
             int i = getXmlNodeInfo(key, settingsFile, xml);
-            // 必要工数
-            xml.ChildNodes[1].ChildNodes[i].Attributes[0].InnerText = NecessaryManHours;
-            // 星数
-            xml.ChildNodes[1].ChildNodes[i].Attributes[1].InnerText = StarCount;
-            // 必要品質
-            xml.ChildNodes[1].ChildNodes[i].Attributes[2].InnerText = CraftControlCount;
             // 作るもの
-            xml.ChildNodes[1].ChildNodes[i].Attributes[3].InnerText = WhatMakes;
+            xml.ChildNodes[1].ChildNodes[i].Attributes[0].InnerText = WhatMakes;
 
             // 対象xmlを保存する
             xml.Save(settingsFile);
