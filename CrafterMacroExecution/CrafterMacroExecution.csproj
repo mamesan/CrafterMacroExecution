@@ -54,13 +54,15 @@
     <Compile Include="Bean\PlayMacroInfoBean.cs" />
     <Compile Include="Bean\SkilInfoBean.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
-    <Compile Include="CrafterMacroExecution.cs">
+    <Compile Include="CME.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CrafterMacroExecution.Designer.cs">
-      <DependentUpon>CrafterMacroExecution.cs</DependentUpon>
+    <Compile Include="CME.Designer.cs">
+      <DependentUpon>CME.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\AdditionalList.cs" />
     <Compile Include="Data\KeyCodeList.cs" />
+    <Compile Include="Events\OptionEvents.cs" />
     <Compile Include="Events\ReadLogEvents.cs" />
     <Compile Include="Exceptions\StopInterruptionException.cs" />
     <Compile Include="Impl\EditCharacter.cs" />
@@ -102,8 +104,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CrafterMacroExecution.resx">
-      <DependentUpon>CrafterMacroExecution.cs</DependentUpon>
+    <EmbeddedResource Include="CME.resx">
+      <DependentUpon>CME.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\Coordinate.resx">
       <DependentUpon>Coordinate.cs</DependentUpon>
