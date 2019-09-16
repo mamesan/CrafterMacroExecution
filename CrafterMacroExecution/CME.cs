@@ -12,14 +12,16 @@ using CrafterMacroExecution.Bean;
 using CrafterMacroExecution.Exceptions;
 using static CrafterMacroExecution.Data.KeyCodeList;
 using static CrafterMacroExecution.Utils.Const;
+using static CrafterMacroExecution.Utils.MessageProperty;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using CrafterMacroExecution.Impl;
 using CrafterMacroExecution.Events;
+using CrafterMacroExecution.Data;
 
 namespace CrafterMacroExecution
 {
-    public partial class CrafterMacroExecution : UserControl, IActPluginV1
+    public partial class CME : UserControl, IActPluginV1
     {
         // ACTFF14プラグインを取得する
         private SettingsSerializer xmlSettings;
@@ -80,7 +82,7 @@ namespace CrafterMacroExecution
         /// <summary>
         /// 初期処理
         /// </summary>
-        public CrafterMacroExecution()
+        public CME()
         {
             InitializeComponent();
         }
@@ -390,6 +392,14 @@ namespace CrafterMacroExecution
             {
                 MacroImpl.マクロ編集ボタン_click(this);
             };
+            実行ボタン.Click += (s1, e1) =>
+             {
+                 実行ボタンクリック();
+             };
+            実行マクロ名_comboBox.SelectedIndexChanged += (s1, e1) =>
+            {
+
+            };
         }
 
 
@@ -458,9 +468,8 @@ namespace CrafterMacroExecution
                 // 1秒停止する
                 this.WaitTime(1000);
 
-                /**
                 // アディッショナルの設定有無を判定する
-                if (this.checkBox5.Checked)
+                if (アディチェックボックス_init.Checked)
                 {
                     // キーを送信する
                     SendKeys.SendWait("{ENTER}");
@@ -507,25 +516,11 @@ namespace CrafterMacroExecution
                     // 中断処理
                     this.StopAndInterruptionAction();
                 }
-                */
-
-                /*
-                // FF14プラグイン取得処理
-                // ACT.FF14プラグインを変数に格納する
-                var plugin = ActGlobals.oFormActMain.ActPlugins.FirstOrDefault(x =>
-                                x.pluginFile.Name.ToUpper().Contains(ACTPLUGIN_NAME.ToUpper()));
-
-                // FF14オブジェクトを生成する
-                var ffxivPlugin = plugin.pluginObj;
-
-                // dynamicによるSettingsフィールドの取り出し
-                this.ffxivPluginAsDynamic = (dynamic)ffxivPlugin;
-                */
 
                 // ろえな処理
                 if (chocoboInfoBean.WhatMakes.Equals("ろえな"))
                 {
-                    while (!this.roenaFlg)
+                    while (!roenaFlg)
                     {
                         //this.WaitTime(1000);
                         // えろな用の値を格納する
@@ -537,8 +532,8 @@ namespace CrafterMacroExecution
 
                         roenaList.Add(roenaPlayMacroInfoBean);
                         // キーを送信する(ろえな実行)
-                        this.SendKeyAction(roenaList);
-                        this.WaitTime(1000);
+                        SendKeyAction(roenaList);
+                        WaitTime(1000);
                     }
                 }
                 else
@@ -555,186 +550,178 @@ namespace CrafterMacroExecution
 
                         roenaList.Add(roenaPlayMacroInfoBean);
                         // キーを送信する(ろえな実行)
-                        this.SendKeyAction(roenaList);
-                        this.WaitTime(1000);
+                        SendKeyAction(roenaList);
+                        WaitTime(1000);
                     }
                 }
 
-
-                /**
                 // 飯
-                if (this.checkBox3.Checked)
+                if (飯チェックボックス_init.Checked)
                 {
                     // ご飯を食べるイベント
-                    this.FoodStartEvent();
+                    FoodStartEvent();
                     // 現在日時を取得し、ごはんの秒数を加算する
-                    this.FoodDateTime = DateTime.Now.AddSeconds(this.FoodTime - 120);
+                    FoodDateTime = DateTime.Now.AddSeconds(FoodTime - 120);
                 }
 
                 // 薬
-                if (this.checkBox4.Checked)
+                if (薬チェックボックス_init.Checked)
                 {
                     // 薬を飲むイベント
-                    this.MedicineStartEvent();
+                    MedicineStartEvent();
                     // 現在日時を取得し、薬の秒数を加算する
-                    this.MedicineDateTime = DateTime.Now.AddSeconds(this.MedicineTime - 120);
+                    MedicineDateTime = DateTime.Now.AddSeconds(MedicineTime - 120);
                 }
-                */
 
                 // チョコボを押下する
-                this.SendChocoboExecutionKey(chocoboInfoBean);
+                SendChocoboExecutionKey(chocoboInfoBean);
 
                 // this._count の回数文ループする
-                while (this._count != 0 && this.EndFlg)
+                while (_count != 0 && this.EndFlg)
                 {
                     // 作成実行キーを押下する
-                    this.SendCreatingExecutionKey();
+                    SendCreatingExecutionKey();
 
                     // 中断処理
-                    this.StopAndInterruptionAction();
+                    StopAndInterruptionAction();
 
                     // 実行回数表示 
-                    this.label27.Text = "残り" + this._count + "回";
+                    残り回数テキスト.Text = "残り" + this._count + "回";
 
                     // キーを送信する
                     SendKeys.SendWait("{ENTER}");
 
                     // キーを送信する(macro実行)
-                    this.SendKeyAction(list);
+                    SendKeyAction(list);
 
                     // 中断処理
-                    this.StopAndInterruptionAction();
+                    StopAndInterruptionAction();
 
                     // ろえな処理
                     if (chocoboInfoBean.WhatMakes.Equals("ろえな"))
                     {
-                        this.WaitTime(1000);
+                        WaitTime(1000);
                         // ESCを押下する
                         Utils.Utils.KeySim(VK_ESCAPE);
                     }
 
                     // 残り回数が1回ではなかった場合、ディレイをスキップする
-                    if (this._count != 1 && !chocoboInfoBean.WhatMakes.Equals("ろえな"))
+                    if (_count != 1 && !chocoboInfoBean.WhatMakes.Equals("ろえな"))
                     {
                         // ディレイ秒待機する
-                        this.WaitTime(delay * 1000);
+                        WaitTime(delay * 1000);
                     }
                     else
                     {
                         // 2.5秒待機する
-                        this.WaitTime(2500);
+                        WaitTime(2500);
 
                     }
 
                     //this.WaitTime(1000);
 
                     // ここで、修理中断フラグを確認する
-                    if (this._AllCount > 3 && this.RepairingFlg)
+                    if (_AllCount > 3 && this.RepairingFlg)
                     {
                         // 待機する
-                        this.WaitTime(1000);
+                        WaitTime(1000);
 
-                        string str = this.label27.Text;
-                        this.label27.Text = "-- 修理休憩 --";
+                        string str = 残り回数テキスト.Text;
+                        残り回数テキスト.Text = "-- 修理休憩 --";
 
                         // ここで処理をよぶ
-                        this.RepairingEvent(chocoboInfoBean);
+                        RepairingEvent(chocoboInfoBean);
 
-                        this.WaitTime(2000);
+                        WaitTime(2000);
 
                         // 修理フラグを戻す
-                        this.RepairingFlg = false;
-                        this.label27.Text = str;
+                        RepairingFlg = false;
+                        残り回数テキスト.Text = str;
                     }
 
                     // 中断処理
-                    this.StopAndInterruptionAction();
+                    StopAndInterruptionAction();
 
-                    /**
                     // ここで、飯の中断フラグを確認する
-                    if (this.checkBox3.Checked)
+                    if (飯チェックボックス_init.Checked)
                     {
-                        if (this._AllCount != 1 && checkDateTime(this.FoodDateTime))
+                        if (_AllCount != 1 && checkDateTime(FoodDateTime))
                         {
                             // 待機する
-                            this.WaitTime(1000);
+                            WaitTime(1000);
 
-                            string str = this.label27.Text;
-                            this.label27.Text = "-- 飯休憩 --";
+                            string str = this.残り回数テキスト.Text;
+                            残り回数テキスト.Text = "-- 飯休憩 --";
 
                             // ここで処理をよぶ
-                            this.FoodEvent(chocoboInfoBean);
+                            FoodEvent(chocoboInfoBean);
 
-                            this.WaitTime(2000);
+                            WaitTime(2000);
 
                             // 現在日時を取得し、飯の秒数を加算する
-                            this.FoodDateTime = DateTime.Now.AddSeconds(this.FoodTime - 120);
+                            FoodDateTime = DateTime.Now.AddSeconds(this.FoodTime - 120);
 
                             // フラグを戻す
-                            this.label27.Text = str;
+                            残り回数テキスト.Text = str;
                         }
                     }
-                    */
 
                     // 中断処理
-                    this.StopAndInterruptionAction();
+                    StopAndInterruptionAction();
 
-                    /**
                     // ここで、薬の中断フラグを確認する 
-                    if (this.checkBox4.Checked)
+                    if (薬チェックボックス_init.Checked)
                     {
-                        if (this._AllCount != 1 && checkDateTime(this.MedicineDateTime))
+                        if (_AllCount != 1 && checkDateTime(MedicineDateTime))
                         {
                             // 待機する
-                            this.WaitTime(1000);
+                            WaitTime(1000);
 
-                            string str = this.label27.Text;
-                            this.label27.Text = "-- 薬休憩 --";
+                            string str = 残り回数テキスト.Text;
+                            残り回数テキスト.Text = "-- 薬休憩 --";
 
                             // ここで処理をよぶ
-                            this.MedicineEvent(chocoboInfoBean);
+                            MedicineEvent(chocoboInfoBean);
 
-                            this.WaitTime(2000);
+                            WaitTime(2000);
 
                             // 現在日時を取得し、薬の秒数を加算する
-                            this.MedicineDateTime = DateTime.Now.AddSeconds(this.MedicineTime - 120);
+                            MedicineDateTime = DateTime.Now.AddSeconds(MedicineTime - 120);
 
                             // フラグを戻す
-                            this.label27.Text = str;
+                            残り回数テキスト.Text = str;
                         }
                     }
-                    */
-                    this._count--;
-                    this._AllCount--;
+                    _count--;
+                    _AllCount--;
                 }
 
                 chocoboCount++;
 
                 // ここで、次のリストの格納の確認を実施する
-                if (this.chocoboInfoBeanList.Count != chocoboCount)
+                if (chocoboInfoBeanList.Count != chocoboCount)
                 {
                     // 待機する
-                    this.WaitTime(7000);
+                    WaitTime(7000);
                     // キーを送信する
                     Utils.Utils.KeySim(VK_ESCAPE);
                     // 待機する
-                    this.WaitTime(1000);
+                    WaitTime(1000);
                 }
             }
 
             // ****************  以下アディ入替処理  ****************　//
             // 待機する
-            this.WaitTime(7000);
+            WaitTime(7000);
 
             // キーを送信する
             Utils.Utils.KeySim(VK_ESCAPE);
 
             // 待機する
-            this.WaitTime(500);
+            WaitTime(500);
 
-            /**
             // アディッショナルの設定有無を判定する
-            if (this.checkBox5.Checked == true)
+            if (アディチェックボックス_init.Checked)
             {
 
                 // 終了用設定アディッショナルを取得する
@@ -754,23 +741,22 @@ namespace CrafterMacroExecution
                 SendKeys.SendWait("{ENTER}");
 
                 // アディッショナル入替
-                this.label27.Text = "アディ入替なう";
-                this.SendKeyAction(adiMacroList);
+                残り回数テキスト.Text = "アディ入替なう";
+                SendKeyAction(adiMacroList);
 
                 // 中断処理
-                this.StopAndInterruptionAction();
+                StopAndInterruptionAction();
             }
-            */
 
             // 終了処理
-            this.実行ボタン.Enabled = true;
+            実行ボタン.Enabled = true;
             // フラグを設定しなおす
-            this.loopFlg = true;
-            this.EndFlg = true;
+            loopFlg = true;
+            EndFlg = true;
             // 中断、再開ボタンを非活性化させる
-            this.終了ボタン.Enabled = false;
-            this.中断ボタン.Enabled = false;
-            this.label27.Text = "おわっちゃった";
+            終了ボタン.Enabled = false;
+            中断ボタン.Enabled = false;
+            残り回数テキスト.Text = "おわっちゃった";
 
             throw new StopInterruptionException("スレッド停止のために、強制的にExceptionを発生させる");
 
@@ -917,148 +903,38 @@ namespace CrafterMacroExecution
         /// </summary>
         private void setInitOption()
         {
-            /*
             // 飯
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.飯Key_初期読込,
-                this.飯座標ボタン,
-                this.飯X座標_初期読込,
-                this.飯Y座標_初期読込,
-                this.飯KeyRadio_初期読込.Checked
+            CrafterMacroExecution.Events.OptionEvents.setOptionActivity(
+                飯キー設定_init,
+                飯座標用button,
+                飯X座標_init,
+                飯Y座標_init,
+                飯KeyRadio_init.Checked
                );
 
             // 薬
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.薬Key_初期読込,
-                this.薬座標ボタン,
-                this.薬X座標_初期読込,
-                this.薬Y座標_初期読込,
-                this.薬KeyRadio_初期読込.Checked
+            CrafterMacroExecution.Events.OptionEvents.setOptionActivity(
+                薬キー設定_init,
+                薬座標用button,
+                薬X座標_init,
+                薬Y座標_init,
+                薬KeyRadio_init.Checked
                );
 
             // 修理
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.修理Key_初期読込,
-                this.修理座標ボタン,
-                this.修理X座標_初期読込,
-                this.修理Y座標_初期読込,
-                this.修理_全部座標ボタン,
-                this.修理_全部X座標_初期読込,
-                this.修理_全部Y座標_初期読込,
-                this.修理_はい座標ボタン,
-                this.修理_はいX座標_初期読込,
-                this.修理_はいY座標_初期読込,
-                this.修理KeyRadio_初期読込.Checked
-               );
-
-            // 修理
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.作成開始Key_初期読込,
-                this.作成開始座標ボタン,
-                this.作成開始X座標_初期読込,
-                this.作成開始Y座標_初期読込,
-                this.作成開始KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ1
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ1Key_初期読込,
-                this.ちょこぼ1座標ボタン,
-                this.ちょこぼ1X座標_初期読込,
-                this.ちょこぼ1Y座標_初期読込,
-                this.ちょこぼ1KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ2
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ2Key_初期読込,
-                this.ちょこぼ2座標ボタン,
-                this.ちょこぼ2X座標_初期読込,
-                this.ちょこぼ2Y座標_初期読込,
-                this.ちょこぼ2KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ3
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ3Key_初期読込,
-                this.ちょこぼ3座標ボタン,
-                this.ちょこぼ3X座標_初期読込,
-                this.ちょこぼ3Y座標_初期読込,
-                this.ちょこぼ3KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ4
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ4Key_初期読込,
-                this.ちょこぼ4座標ボタン,
-                this.ちょこぼ4X座標_初期読込,
-                this.ちょこぼ4Y座標_初期読込,
-                this.ちょこぼ4KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ5
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ5Key_初期読込,
-                this.ちょこぼ5座標ボタン,
-                this.ちょこぼ5X座標_初期読込,
-                this.ちょこぼ5Y座標_初期読込,
-                this.ちょこぼ5KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ6
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ6Key_初期読込,
-                this.ちょこぼ6座標ボタン,
-                this.ちょこぼ6X座標_初期読込,
-                this.ちょこぼ6Y座標_初期読込,
-                this.ちょこぼ6KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ7
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ7Key_初期読込,
-                this.ちょこぼ7座標ボタン,
-                this.ちょこぼ7X座標_初期読込,
-                this.ちょこぼ7Y座標_初期読込,
-                this.ちょこぼ7KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ8
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ8Key_初期読込,
-                this.ちょこぼ8座標ボタン,
-                this.ちょこぼ8X座標_初期読込,
-                this.ちょこぼ8Y座標_初期読込,
-                this.ちょこぼ8KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ9
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ9Key_初期読込,
-                this.ちょこぼ9座標ボタン,
-                this.ちょこぼ9X座標_初期読込,
-                this.ちょこぼ9Y座標_初期読込,
-                this.ちょこぼ9KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ10
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ10Key_初期読込,
-                this.ちょこぼ10座標ボタン,
-                this.ちょこぼ10X座標_初期読込,
-                this.ちょこぼ10Y座標_初期読込,
-                this.ちょこぼ10KeyRadio_初期読込.Checked
-               );
-
-            // ちょこぼ11
-            ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                this.ちょこぼ11Key_初期読込,
-                this.ちょこぼ11座標ボタン,
-                this.ちょこぼ11X座標_初期読込,
-                this.ちょこぼ11Y座標_初期読込,
-                this.ちょこぼ11KeyRadio_初期読込.Checked
-               );
-               */
+            CrafterMacroExecution.Events.OptionEvents.setOptionActivity(
+                修理Key_init,
+                修理座標用button1,
+                修理1X座標_init,
+                修理1Y座標_init,
+                修理座標用button2,
+                修理2X座標_init,
+                修理2Y座標_init,
+                修理座標用button3,
+                修理3X座標_init,
+                修理3Y座標_init,
+                修理KeyRadio_init.Checked
+                );
         }
 
         /// <summary>
@@ -1066,346 +942,195 @@ namespace CrafterMacroExecution
         /// </summary>
         private void OptionEvents()
         {
-            /*
             // オプションボタンのイベントを生成する
             // 飯ボタン
-            this.飯座標ボタン.Click += (s1, e1) =>
+            飯座標用button.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.飯X座標_初期読込,
-                   this.飯Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   飯X座標_init,
+                   飯Y座標_init
                    );
             };
 
             // 薬ボタン
-            this.薬座標ボタン.Click += (s1, e1) =>
+            薬座標用button.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.薬X座標_初期読込,
-                   this.薬Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   薬X座標_init,
+                   薬Y座標_init
                    );
             };
 
             // 修理ボタン
-            this.修理座標ボタン.Click += (s1, e1) =>
+            修理座標用button1.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.修理X座標_初期読込,
-                   this.修理Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   修理1X座標_init,
+                   修理1Y座標_init
                    );
             };
 
             // 修理_全部ボタン
-            this.修理_全部座標ボタン.Click += (s1, e1) =>
+            修理座標用button2.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.修理_全部X座標_初期読込,
-                   this.修理_全部Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   修理2X座標_init,
+                   修理2Y座標_init
                    );
             };
 
             // 修理_はいボタン
-            this.修理_はい座標ボタン.Click += (s1, e1) =>
+            修理座標用button3.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.修理_はいX座標_初期読込,
-                   this.修理_はいY座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   修理3X座標_init,
+                   修理3Y座標_init
                    );
             };
 
             // 作成開始ボタン
-            this.作成開始座標ボタン.Click += (s1, e1) =>
+            作成開始座標用button.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.作成開始X座標_初期読込,
-                   this.作成開始Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成開始X座標_init,
+                   作成開始Y座標_init
                    );
             };
 
             // ちょこぼ1ボタン
-            this.ちょこぼ1座標ボタン.Click += (s1, e1) =>
+            作成座標用button1.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ1X座標_初期読込,
-                   this.ちょこぼ1Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成1X座標_初期読込,
+                   作成1Y座標_初期読込
                    );
             };
 
             // ちょこぼ2ボタン
-            this.ちょこぼ2座標ボタン.Click += (s1, e1) =>
+            作成座標用button2.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ2X座標_初期読込,
-                   this.ちょこぼ2Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成2X座標_初期読込,
+                   作成2Y座標_初期読込
                    );
             };
 
             // ちょこぼ3ボタン
-            this.ちょこぼ3座標ボタン.Click += (s1, e1) =>
+            作成座標用button3.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ3X座標_初期読込,
-                   this.ちょこぼ3Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成3X座標_初期読込,
+                   作成3Y座標_初期読込
                    );
             };
+
 
             // ちょこぼ4ボタン
-            this.ちょこぼ4座標ボタン.Click += (s1, e1) =>
+            作成座標用button4.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ4X座標_初期読込,
-                   this.ちょこぼ4Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成4X座標_初期読込,
+                   作成4Y座標_初期読込
                    );
             };
+
 
             // ちょこぼ5ボタン
-            this.ちょこぼ5座標ボタン.Click += (s1, e1) =>
+            作成座標用button5.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ5X座標_初期読込,
-                   this.ちょこぼ5Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成5X座標_初期読込,
+                   作成5Y座標_初期読込
                    );
             };
 
+
             // ちょこぼ6ボタン
-            this.ちょこぼ6座標ボタン.Click += (s1, e1) =>
+            作成座標用button6.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ6X座標_初期読込,
-                   this.ちょこぼ6Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成6X座標_初期読込,
+                   作成6Y座標_初期読込
                    );
             };
 
             // ちょこぼ7ボタン
-            this.ちょこぼ7座標ボタン.Click += (s1, e1) =>
+            作成座標用button7.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ7X座標_初期読込,
-                   this.ちょこぼ7Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成7X座標_初期読込,
+                   作成7Y座標_初期読込
                    );
             };
 
             // ちょこぼ8ボタン
-            this.ちょこぼ8座標ボタン.Click += (s1, e1) =>
+            作成座標用button8.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ8X座標_初期読込,
-                   this.ちょこぼ8Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成8X座標_初期読込,
+                   作成8Y座標_初期読込
                    );
             };
 
             // ちょこぼ9ボタン
-            this.ちょこぼ9座標ボタン.Click += (s1, e1) =>
+            作成座標用button9.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ9X座標_初期読込,
-                   this.ちょこぼ9Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成9X座標_初期読込,
+                   作成9Y座標_初期読込
                    );
             };
 
             // ちょこぼ10ボタン
-            this.ちょこぼ10座標ボタン.Click += (s1, e1) =>
+            作成座標用button10.Click += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ10X座標_初期読込,
-                   this.ちょこぼ10Y座標_初期読込
+                CrafterMacroExecution.Events.OptionEvents.OptionEventCoordinateClick(
+                   作成10X座標_初期読込,
+                   作成10Y座標_初期読込
                    );
             };
 
-            // ちょこぼ11ボタン
-            this.ちょこぼ11座標ボタン.Click += (s1, e1) =>
+            // 薬ラジオボタン
+            飯KeyRadio_init.CheckedChanged += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.OptionEventCoordinateClick(
-                   this.ちょこぼ11X座標_初期読込,
-                   this.ちょこぼ11Y座標_初期読込
-                   );
-            };
-
-            // 飯ラジオボタン
-            this.飯KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.飯Key_初期読込,
-                    this.飯座標ボタン,
-                    this.飯X座標_初期読込,
-                    this.飯Y座標_初期読込,
-                    this.飯KeyRadio_初期読込.Checked
+                CrafterMacroExecution.Events.OptionEvents.setOptionActivity(
+                    飯キー設定_init,
+                    飯座標用button,
+                    飯X座標_init,
+                    飯Y座標_init,
+                    飯KeyRadio_init.Checked
                     );
             };
 
             // 薬ラジオボタン
-            this.薬KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
+            薬KeyRadio_init.CheckedChanged += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.薬Key_初期読込,
-                    this.薬座標ボタン,
-                    this.薬X座標_初期読込,
-                    this.薬Y座標_初期読込,
-                    this.薬KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // 修理ラジオボタン
-            this.修理KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.修理Key_初期読込,
-                    this.修理座標ボタン,
-                    this.修理X座標_初期読込,
-                    this.修理Y座標_初期読込,
-                    this.修理_全部座標ボタン,
-                    this.修理_全部X座標_初期読込,
-                    this.修理_全部Y座標_初期読込,
-                    this.修理_はい座標ボタン,
-                    this.修理_はいX座標_初期読込,
-                    this.修理_はいY座標_初期読込,
-                    this.修理KeyRadio_初期読込.Checked
+                CrafterMacroExecution.Events.OptionEvents.setOptionActivity(
+                    薬キー設定_init,
+                    薬座標用button,
+                    薬X座標_init,
+                    薬Y座標_init,
+                    薬KeyRadio_init.Checked
                    );
             };
 
-            // 作成開始ラジオボタン
-            this.作成開始KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
+            // 修理ラジオボタン
+            this.修理KeyRadio_init.CheckedChanged += (s1, e1) =>
             {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.作成開始Key_初期読込,
-                    this.作成開始座標ボタン,
-                    this.作成開始X座標_初期読込,
-                    this.作成開始Y座標_初期読込,
-                    this.作成開始KeyRadio_初期読込.Checked
+                CrafterMacroExecution.Events.OptionEvents.setOptionActivity(
+                    修理Key_init,
+                    修理座標用button1,
+                    修理1X座標_init,
+                    修理1Y座標_init,
+                    修理座標用button2,
+                    修理2X座標_init,
+                    修理2Y座標_init,
+                    修理座標用button3,
+                    修理3X座標_init,
+                    修理3Y座標_init,
+                    修理KeyRadio_init.Checked
                     );
             };
-            // ちょこぼ1ラジオボタン
-            this.ちょこぼ1KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ1Key_初期読込,
-                    this.ちょこぼ1座標ボタン,
-                    this.ちょこぼ1X座標_初期読込,
-                    this.ちょこぼ1Y座標_初期読込,
-                    this.ちょこぼ1KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ2ラジオボタン
-            this.ちょこぼ2KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ2Key_初期読込,
-                    this.ちょこぼ2座標ボタン,
-                    this.ちょこぼ2X座標_初期読込,
-                    this.ちょこぼ2Y座標_初期読込,
-                    this.ちょこぼ2KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ3ラジオボタン
-            this.ちょこぼ3KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ3Key_初期読込,
-                    this.ちょこぼ3座標ボタン,
-                    this.ちょこぼ3X座標_初期読込,
-                    this.ちょこぼ3Y座標_初期読込,
-                    this.ちょこぼ3KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ4ラジオボタン
-            this.ちょこぼ4KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ4Key_初期読込,
-                    this.ちょこぼ4座標ボタン,
-                    this.ちょこぼ4X座標_初期読込,
-                    this.ちょこぼ4Y座標_初期読込,
-                    this.ちょこぼ4KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ5ラジオボタン
-            this.ちょこぼ5KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ5Key_初期読込,
-                    this.ちょこぼ5座標ボタン,
-                    this.ちょこぼ5X座標_初期読込,
-                    this.ちょこぼ5Y座標_初期読込,
-                    this.ちょこぼ5KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ6ラジオボタン
-            this.ちょこぼ6KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ6Key_初期読込,
-                    this.ちょこぼ6座標ボタン,
-                    this.ちょこぼ6X座標_初期読込,
-                    this.ちょこぼ6Y座標_初期読込,
-                    this.ちょこぼ6KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ7ラジオボタン
-            this.ちょこぼ7KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ7Key_初期読込,
-                    this.ちょこぼ7座標ボタン,
-                    this.ちょこぼ7X座標_初期読込,
-                    this.ちょこぼ7Y座標_初期読込,
-                    this.ちょこぼ7KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ8ラジオボタン
-            this.ちょこぼ8KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ8Key_初期読込,
-                    this.ちょこぼ8座標ボタン,
-                    this.ちょこぼ8X座標_初期読込,
-                    this.ちょこぼ8Y座標_初期読込,
-                    this.ちょこぼ8KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ9ラジオボタン
-            this.ちょこぼ9KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ9Key_初期読込,
-                    this.ちょこぼ9座標ボタン,
-                    this.ちょこぼ9X座標_初期読込,
-                    this.ちょこぼ9Y座標_初期読込,
-                    this.ちょこぼ9KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ10ラジオボタン
-            this.ちょこぼ10KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ10Key_初期読込,
-                    this.ちょこぼ10座標ボタン,
-                    this.ちょこぼ10X座標_初期読込,
-                    this.ちょこぼ10Y座標_初期読込,
-                    this.ちょこぼ10KeyRadio_初期読込.Checked
-                    );
-            };
-
-            // ちょこぼ11ラジオボタン
-            this.ちょこぼ11KeyRadio_初期読込.CheckedChanged += (s1, e1) =>
-            {
-                ACT_CrafterSimulator.Events.OptionEvents.setOptionActivity(
-                    this.ちょこぼ11Key_初期読込,
-                    this.ちょこぼ11座標ボタン,
-                    this.ちょこぼ11X座標_初期読込,
-                    this.ちょこぼ11Y座標_初期読込,
-                    this.ちょこぼ11KeyRadio_初期読込.Checked
-                    );
-            };
-            */
         }
 
         /// <summary>
@@ -1462,30 +1187,50 @@ namespace CrafterMacroExecution
 
         }
 
+
+        /// <summary>
+        /// マクロを指定した際に実施されるイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 実行マクロ名_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // senderをキャストする
+            ComboBox tempbox = (ComboBox)sender;
+
+            // 何も選択されていない場合は、返却を行う
+            if (String.IsNullOrWhiteSpace(tempbox.Text))
+            {
+                return;
+            }
+
+            // 対象マクロ情報を取得する
+            IMacroInfoBean macroInfoBean = FileController.ReadMacroInfo(tempbox.Text.Substring(0, tempbox.Text.Length - 4));
+
+            // 作るものに、対象のものを入れる
+            this.作るものcomboBox.Text = macroInfoBean.WhatMakes;
+        }
+
         /// <summary>
         /// 入力されている情報を元に、マクロを実施する
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void button7_Click(object sender, EventArgs e)
+        private async void 実行ボタンクリック()
         {
-            /**
+
             // 空白チェック
             if (String.IsNullOrWhiteSpace(this.実行回数_textBox.Text) && this.マクロ一回実行_radioButton.Checked)
             {
-                MessageBox.Show("回数指定してね！\r\n10回以下がおすすめだよ！100回とか間違って指定するとめんどくさいからやめようね！");
-            }
-            else if (String.IsNullOrWhiteSpace(this.ディレイ_textBox.Text) && this.マクロ一回実行_radioButton.Checked)
-            {
-                MessageBox.Show("ディレイ指定してね！\r\n10秒くらいがおすすめだよ？");
+                MessageBox.Show(EXECUTION_MACRO_ERROR_NUM);
             }
             else if (String.IsNullOrWhiteSpace(this.実行マクロ名_comboBox.Text) && this.マクロ一回実行_radioButton.Checked)
             {
-                MessageBox.Show("実行するマクロを指定してね！");
+                MessageBox.Show(EXECUTION_MACRO_ERROR_NAME);
             }
             else if (String.IsNullOrWhiteSpace(this.キャラリストボックス.Text))
             {
-                MessageBox.Show("キャラ名を指定してね！");
+                MessageBox.Show(EXECUTION_MACRO_ERROR_CAR_NAME);
             }
             else
             {
@@ -1495,13 +1240,13 @@ namespace CrafterMacroExecution
                     // 実行構成にチェックが入っていた場合、中身のチェックを実施する
                     if (this.chocoboInfoBeanList.Count == 0)
                     {
-                        MessageBox.Show("例のあの人が一人も存在していません。", "ERROR");
+                        MessageBox.Show(EXECUTION_MACRO_ERROR_SEC, "ERROR");
                         // 返却を行う
                         return;
                     }
                     else
                     {
-                        string message = "以下内容で実行します。よろしいですか？\r\n \r\n";
+                        string message = EXECUTION_MACRO_GO_CHECK;
                         int i = 1;
                         foreach (ChocoboInfoBean chocoboInfoBean in this.chocoboInfoBeanList)
                         {
@@ -1522,14 +1267,14 @@ namespace CrafterMacroExecution
                         //何が選択されたか調べる
                         if (result == DialogResult.No)
                         {
-                            MessageBox.Show("処理を中断しました。", "中断");
+                            MessageBox.Show(EXECUTION_MACRO_STOP, "中断");
                             return;
                         }
                     }
                 }
                 else
                 {
-                    string message = "以下内容で実行します。よろしいですか？\r\n \r\n";
+                    string message = EXECUTION_MACRO_GO_CHECK;
                     message += "●例のあの人";
                     message += "\r\n　マクロ名：" + this.実行マクロ名_comboBox.Text;
                     message += "\r\n　回数：" + this.実行回数_textBox.Text + "回";
@@ -1540,7 +1285,7 @@ namespace CrafterMacroExecution
                     //何が選択されたか調べる
                     if (result == DialogResult.No)
                     {
-                        MessageBox.Show("処理を中断しました。", "中断");
+                        MessageBox.Show(EXECUTION_MACRO_STOP, "中断");
                         return;
                     }
 
@@ -1554,22 +1299,15 @@ namespace CrafterMacroExecution
                     // 実行回数の合計を取得する
                     this._AllCount = int.Parse(chocoboInfoBean.Count);
 
-                    if (this.ちょこぼ1KeyRadio_初期読込.Checked)
-                    {
-                        chocoboInfoBean.Key = this.ちょこぼ1Key_初期読込.Text;
-                    }
-                    else
-                    {
-                        chocoboInfoBean.X = this.ちょこぼ1X座標_初期読込.Text;
-                        chocoboInfoBean.Y = this.ちょこぼ1Y座標_初期読込.Text;
-                    }
+                    chocoboInfoBean.X = 作成1X座標_初期読込.Text;
+                    chocoboInfoBean.Y = 作成1Y座標_初期読込.Text;
                     chocoboInfoBean.Job = "変えませーん";
 
                     this.chocoboInfoBeanList.Add(chocoboInfoBean);
                 }
 
                 // フラグを設定する
-                Boolean flg = true;
+                bool flg = true;
 
                 // FF14をアクティベート化する
                 flg = Utils.Utils.ActivateFF14();
@@ -1579,7 +1317,7 @@ namespace CrafterMacroExecution
                 // FF14起動判定
                 if (!flg)
                 {
-                    MessageBox.Show("FF14が起動してません。");
+                    MessageBox.Show(EXECUTION_MACRO_EOORO_NON_FFPRO);
                     return;
                 }
                 else
@@ -1620,73 +1358,8 @@ namespace CrafterMacroExecution
                     }
                 }
             }
-            */
+
         }
-
-        /// <summary>
-        /// マクロを指定した際に実施されるイベント
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // senderをキャストする
-            ComboBox tempbox = (ComboBox)sender;
-
-            // 何も選択されていない場合は、返却を行う
-            if (String.IsNullOrWhiteSpace(tempbox.Text))
-            {
-                return;
-            }
-
-            // 対象マクロ情報を取得する
-            IMacroInfoBean macroInfoBean = FileController.ReadMacroInfo(tempbox.Text.Substring(0, tempbox.Text.Length - 4));
-
-            // 作るものに、対象のものを入れる
-            this.作るものcomboBox.Text = macroInfoBean.WhatMakes;
-
-            /**
-            // HQ作成
-            if ("HQ".Equals(macroInfoBean.WhatMakes))
-            {
-                this.ディレイ_textBox.Enabled = false;
-                this.作るものcomboBox.Enabled = false;
-                this.ディレイ_textBox.Text = "5";
-            }
-
-            // ろえな作成
-            if ("ろえな".Equals(macroInfoBean.WhatMakes))
-            {
-                this.ディレイ_textBox.Enabled = false;
-                this.作るものcomboBox.Enabled = false;
-                this.ディレイ_textBox.Text = "6";
-            }
-
-            // 作るだけ作成
-            if ("作るだけ".Equals(macroInfoBean.WhatMakes))
-            {
-                this.ディレイ_textBox.Enabled = false;
-                this.作るものcomboBox.Enabled = false;
-                this.ディレイ_textBox.Text = "5";
-            }
-
-            // 自分で作成
-            if ("自分で編集".Equals(macroInfoBean.WhatMakes))
-            {
-                this.作るものcomboBox.Enabled = true;
-                this.ディレイ_textBox.Text = "";
-            }
-
-            // 空白を選択された時
-            if ("".Equals(macroInfoBean.WhatMakes))
-            {
-                this.ディレイ_textBox.Enabled = true;
-                this.ディレイ_textBox.Text = "";
-            }
-            */
-        }
-
-
 
         /// <summary>
         /// ログを取得した際に発生するイベント
@@ -1849,18 +1522,18 @@ namespace CrafterMacroExecution
             {
                 // ホットキーが押されたときの処理
                 Debug.WriteLine("Ctrl+A");
-                if (!this.loopFlg)
+                if (!loopFlg)
                 {
-                    this.中断ボタン.Text = "中断";
-                    this.中断ボタン.Enabled = false;
-                    this.loopFlg_Go = true;
+                    中断ボタン.Text = "中断";
+                    中断ボタン.Enabled = false;
+                    loopFlg_Go = true;
                 }
                 else
                 {
-                    this.中断ボタン.Text = "再開";
-                    this.中断ボタン.Enabled = false;
-                    this.loopFlg = false;
-                    this.loopFlg_Go = false;
+                    中断ボタン.Text = "再開";
+                    中断ボタン.Enabled = false;
+                    loopFlg = false;
+                    loopFlg_Go = false;
                 }
 
             }
@@ -2002,26 +1675,10 @@ namespace CrafterMacroExecution
         /// </summary>
         private void SendCreatingExecutionKey()
         {
-            /**
-            // 作成実行キーを押下するか判定を行う
-            if (this.作成開始KeyRadio_初期読込.Checked)
-            {
-
-                // Num0を押下する(いったんDef)
-                Utils.Utils.KeySim(NUMPAD0);
-                this.WaitTime(1000);
-                // Num0を押下する
-                Utils.Utils.KeySim(NUMPAD0);
-            }
-            else
-            {
-                // マウスイベントを実施する
-                Utils.Utils.mouse_Click(this.作成開始X座標_初期読込.Text, this.作成開始Y座標_初期読込.Text);
-            }
-            */
-
+            // マウスイベントを実施する
+            Utils.Utils.mouse_Click(作成開始X座標_init.Text, 作成開始Y座標_init.Text);
             // 作成を少しだけ待つ
-            this.WaitTime(1500);
+            WaitTime(1500);
         }
 
         /// <summary>
@@ -2043,17 +1700,6 @@ namespace CrafterMacroExecution
 
             // 遅延を挿入する
             this.WaitTime(1000);
-
-            /**
-            // 作成実行キーを押下するか判定を行う
-            if (this.作成開始KeyRadio_初期読込.Checked)
-            {
-                // Num0を押下する(いったん暫定デフォルトNum0)
-                Utils.Utils.KeySim(NUMPAD0);
-                // 遅延を挿入する
-                this.WaitTime(1000);
-            }
-            */
         }
 
         /// <summary>
@@ -2061,39 +1707,37 @@ namespace CrafterMacroExecution
         /// </summary>
         private void RepairingEvent(ChocoboInfoBean chocoboInfoBean)
         {
-            this.WaitTime(1000);
+            WaitTime(1000);
             // キーを送信する
             // ESC
             Utils.Utils.KeySim(VK_ESCAPE);
-            this.WaitTime(2000);
-            /**
+            WaitTime(2000);
             // 作成実行キーを押下するか判定を行う
-            if (this.修理KeyRadio_初期読込.Checked)
+            if (修理KeyRadio_init.Checked)
             {
-                SendKeys.SendWait(this.修理Key_初期読込.Text);
-                this.WaitTime(1000);
+                SendKeys.SendWait(修理Key_init.Text);
+                WaitTime(1000);
                 // Num6を押下する
                 Utils.Utils.KeySim(NUMPAD6);
-                this.WaitTime(1000);
+                WaitTime(1000);
                 // Num0を押下する
                 Utils.Utils.KeySim(NUMPAD0);
-                this.WaitTime(1000);
+                WaitTime(1000);
                 // Num6を押下する
                 Utils.Utils.KeySim(NUMPAD6);
-                this.WaitTime(1000);
+                WaitTime(1000);
                 // Num0を押下する
                 Utils.Utils.KeySim(NUMPAD0);
             }
             else
             {
                 // マウスイベントを実施する
-                Utils.Utils.mouse_Click(this.修理X座標_初期読込.Text, this.修理Y座標_初期読込.Text);
-                this.WaitTime(1000);
-                Utils.Utils.mouse_Click(this.修理_全部X座標_初期読込.Text, this.修理_全部Y座標_初期読込.Text);
-                this.WaitTime(1000);
-                Utils.Utils.mouse_Click(this.修理_はいX座標_初期読込.Text, this.修理_はいY座標_初期読込.Text);
+                Utils.Utils.mouse_Click(修理1X座標_init.Text, 修理1Y座標_init.Text);
+                WaitTime(1000);
+                Utils.Utils.mouse_Click(修理2X座標_init.Text, 修理2Y座標_init.Text);
+                WaitTime(1000);
+                Utils.Utils.mouse_Click(修理3X座標_init.Text, 修理3Y座標_init.Text);
             }
-            */
             // 修理中の待機時間
             this.WaitTime(4000);
             // ESCキーを送信する
@@ -2121,20 +1765,18 @@ namespace CrafterMacroExecution
         /// </summary>
         private void MedicineStartEvent()
         {
-            /**
-            this.WaitTime(1000);
-            if (this.薬KeyRadio_初期読込.Checked)
+            WaitTime(1000);
+            if (薬KeyRadio_init.Checked)
             {
                 // キーを送信する
-                SendKeys.SendWait(this.薬Key_初期読込.Text);
+                SendKeys.SendWait(薬キー設定_init.Text);
             }
             else
             {
                 // マウスイベントを実施する
-                Utils.Utils.mouse_Click(this.薬X座標_初期読込.Text, this.薬Y座標_初期読込.Text);
+                Utils.Utils.mouse_Click(薬X座標_init.Text, 薬Y座標_init.Text);
             }
-            this.WaitTime(4000);
-            */
+            WaitTime(4000);
         }
 
         /// <summary>
@@ -2143,28 +1785,26 @@ namespace CrafterMacroExecution
         private void MedicineEvent(ChocoboInfoBean chocoboInfoBean)
         {
 
-            this.WaitTime(1000);
+            WaitTime(1000);
             // キーを送信する
             // ESC
             Utils.Utils.KeySim(VK_ESCAPE);
-            this.WaitTime(2000);
-            /**
-            if (this.薬KeyRadio_初期読込.Checked)
+            WaitTime(2000);
+            if (薬KeyRadio_init.Checked)
             {
                 // キーを送信する
-                SendKeys.SendWait(this.薬Key_初期読込.Text);
+                SendKeys.SendWait(薬キー設定_init.Text);
             }
             else
             {
                 // マウスイベントを実施する
-                Utils.Utils.mouse_Click(this.薬X座標_初期読込.Text, this.薬Y座標_初期読込.Text);
+                Utils.Utils.mouse_Click(薬X座標_init.Text, 薬Y座標_init.Text);
             }
-            */
             // 停止処理を挿入する
-            this.WaitTime(4000);
+            WaitTime(4000);
             // 作成実行に移行する
             // 作成実行キーを押下するか判定を行う
-            if (!String.IsNullOrWhiteSpace(chocoboInfoBean.Key))
+            if (!string.IsNullOrWhiteSpace(chocoboInfoBean.Key))
             {
                 // キーを送信する
                 SendKeys.SendWait(chocoboInfoBean.Key);
@@ -2174,7 +1814,7 @@ namespace CrafterMacroExecution
                 // マウスイベントを実施する
                 Utils.Utils.mouse_Click(chocoboInfoBean.X, chocoboInfoBean.Y);
             }
-            this.WaitTime(1000);
+            WaitTime(1000);
             // Num0を押下する
             Utils.Utils.KeySim(NUMPAD0);
 
@@ -2185,20 +1825,18 @@ namespace CrafterMacroExecution
         /// </summary>
         private void FoodStartEvent()
         {
-            this.WaitTime(1000);
-            /**
-            if (this.飯KeyRadio_初期読込.Checked)
+            WaitTime(1000);
+            if (飯KeyRadio_init.Checked)
             {
                 // キーを送信する
-                SendKeys.SendWait(this.飯Key_初期読込.Text);
+                SendKeys.SendWait(飯キー設定_init.Text);
             }
             else
             {
                 // マウスイベントを実施する
-                Utils.Utils.mouse_Click(this.飯X座標_初期読込.Text, this.飯Y座標_初期読込.Text);
+                Utils.Utils.mouse_Click(飯X座標_init.Text, 飯Y座標_init.Text);
             }
-            */
-            this.WaitTime(4000);
+            WaitTime(4000);
         }
 
         /// <summary>
@@ -2210,20 +1848,18 @@ namespace CrafterMacroExecution
             // キーを送信する
             // ESC
             Utils.Utils.KeySim(VK_ESCAPE);
-            this.WaitTime(2000);
-            /**
-            if (this.飯KeyRadio_初期読込.Checked)
+            WaitTime(2000);
+            if (飯KeyRadio_init.Checked)
             {
                 // キーを送信する
-                SendKeys.SendWait(this.飯Key_初期読込.Text);
+                SendKeys.SendWait(飯キー設定_init.Text);
             }
             else
             {
                 // マウスイベントを実施する
-                Utils.Utils.mouse_Click(this.飯X座標_初期読込.Text, this.飯Y座標_初期読込.Text);
+                Utils.Utils.mouse_Click(飯X座標_init.Text, 飯Y座標_init.Text);
             }
-            */
-            this.WaitTime(4000);
+            WaitTime(4000);
             // 作成実行に移行する
             // 作成実行キーを押下するか判定を行う
             if (!String.IsNullOrWhiteSpace(chocoboInfoBean.Key))
@@ -2236,7 +1872,7 @@ namespace CrafterMacroExecution
                 // マウスイベントを実施する
                 Utils.Utils.mouse_Click(chocoboInfoBean.X, chocoboInfoBean.Y);
             }
-            this.WaitTime(1000);
+            WaitTime(1000);
             // Num0を押下する
             Utils.Utils.KeySim(NUMPAD0);
         }
@@ -2248,7 +1884,7 @@ namespace CrafterMacroExecution
         {
             Thread.Sleep(Time);
             // 中断処理をいったん入れてみる
-            this.StopAndInterruptionAction();
+            StopAndInterruptionAction();
         }
 
         /// <summary>
@@ -2257,71 +1893,71 @@ namespace CrafterMacroExecution
         public void StopAndInterruptionAction()
         {
             // 終了処理
-            if (!this.EndFlg)
+            if (!EndFlg)
             {
                 // 終了処理
-                this.実行ボタン.Enabled = true;
+                実行ボタン.Enabled = true;
                 // フラグを設定しなおす
-                this.loopFlg = true;
-                this.EndFlg = true;
+                loopFlg = true;
+                EndFlg = true;
                 // 中断、再開ボタンを非活性化させる
-                this.終了ボタン.Enabled = false;
-                this.中断ボタン.Enabled = false;
-                this.label27.Text = "残り***回";
+                終了ボタン.Enabled = false;
+                中断ボタン.Enabled = false;
+                残り回数テキスト.Text = "残り***回";
 
                 // 終了する
                 throw new StopInterruptionException();
             }
 
             // 中断処理
-            while (!this.loopFlg)
+            while (!loopFlg)
             {
-                if (!this.loopFlg_Go)
+                if (!loopFlg_Go)
                 {
-                    this.中断ボタン.Enabled = true;
+                    中断ボタン.Enabled = true;
                 }
-                this.label27.Text = "残り" + this._count + "回" + " --- 中断 ---";
+                残り回数テキスト.Text = "残り" + this._count + "回" + " --- 中断 ---";
                 // 停止処理を確認
-                if (!this.EndFlg)
+                if (!EndFlg)
                 {
                     // 終了処理
-                    this.実行ボタン.Enabled = true;
+                    実行ボタン.Enabled = true;
                     // フラグを設定しなおす
-                    this.loopFlg = true;
-                    this.EndFlg = true;
+                    loopFlg = true;
+                    EndFlg = true;
                     // 中断、再開ボタンを非活性化させる
-                    this.終了ボタン.Enabled = false;
-                    this.中断ボタン.Enabled = false;
-                    this.label27.Text = "残り***回";
+                    終了ボタン.Enabled = false;
+                    中断ボタン.Enabled = false;
+                    残り回数テキスト.Text = "残り***回";
 
                     // 終了する
                     throw new StopInterruptionException();
                 }
-                if (this.loopFlg_Go)
+                if (loopFlg_Go)
                 {
-                    this.label27.Text = "残り" + this._count + "回\r\n5秒後に処理が再開します。";
+                    残り回数テキスト.Text = "残り" + _count + "回\r\n5秒後に処理が再開します。";
 
-                    // CraSimu.AutoClosingMessageBox.Show("5秒後に処理が再開します。", "再開", 5000);
-                    this.中断ボタン.Enabled = true;
-                    this.loopFlg = true;
+                    AutoClosingMessageBox.Show("5秒後に処理が再開します。", "再開", 5000);
+                    中断ボタン.Enabled = true;
+                    loopFlg = true;
                     // 停止処理を確認
-                    if (!this.EndFlg)
+                    if (!EndFlg)
                     {
                         // 終了処理
-                        this.実行ボタン.Enabled = true;
+                        実行ボタン.Enabled = true;
                         // フラグを設定しなおす
-                        this.loopFlg = true;
-                        this.EndFlg = true;
+                        loopFlg = true;
+                        EndFlg = true;
                         // 中断、再開ボタンを非活性化させる
-                        this.終了ボタン.Enabled = false;
-                        this.中断ボタン.Enabled = false;
-                        this.label27.Text = "残り***回";
+                        終了ボタン.Enabled = false;
+                        中断ボタン.Enabled = false;
+                        残り回数テキスト.Text = "残り***回";
 
                         // 終了する
                         throw new StopInterruptionException();
                     }
                     Utils.Utils.ActivateFF14();
-                    this.label27.Text = "残り" + this._count + "回";
+                    残り回数テキスト.Text = "残り" + _count + "回";
                 }
 
             }
@@ -2342,7 +1978,6 @@ namespace CrafterMacroExecution
                 {
                     text = text.Substring(0, text_max_length);
                 }
-                //text = ( text.length > text_max_length ) ? text.Substring( 0, text_max_length ) : text; //三項目演算での記述方法　? の左側が true の時 : の左側が代入されます。 falseの時は右側
                 _caption = caption;
                 _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null, timeout, Timeout.Infinite);
                 MessageBox.Show(text, caption);
@@ -2361,9 +1996,9 @@ namespace CrafterMacroExecution
                 _timeoutTimer.Dispose();
             }
             const int WM_CLOSE = 0x0010;
-            [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+            [DllImport("user32.dll", SetLastError = true)]
             static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-            [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+            [DllImport("user32.dll", CharSet = CharSet.Auto)]
             static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
         }
 

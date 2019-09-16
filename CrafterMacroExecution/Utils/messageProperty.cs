@@ -20,5 +20,18 @@
         public static readonly string CREATE_MACRO_INFO_NAME_ERROR = "マクロ名が重複しております。";
         public static readonly string CREATE_MACRO_INFO_SUCCESS = "マクロの作成が完了しました。";
         public static readonly string EDIT_MACRO_INFO_SUCCESS = "更新が完了しました。";
+
+        public static readonly string EXECUTION_MACRO_ERROR_NUM = "作成回数を指定して下さい。";
+        public static readonly string EXECUTION_MACRO_ERROR_NAME = "実行するマクロを指定して下さい。";
+        public static readonly string EXECUTION_MACRO_ERROR_CAR_NAME = "キャラ名を指定して下さい。";
+
+        public static readonly string EXECUTION_MACRO_ERROR_SEC = "実行構成を作成して下さい。";
+        public static readonly string EXECUTION_MACRO_STOP = "処理を中断しました。";
+        public static readonly string EXECUTION_MACRO_EOORO_NON_FFPRO = "FF14が起動してません。";
+
+
+
+        public static readonly string EXECUTION_MACRO_GO_CHECK = "以下内容で実行します。よろしいですか？\r\n \r\n。";
+
     }
 }

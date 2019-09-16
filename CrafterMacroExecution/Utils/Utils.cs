@@ -118,9 +118,6 @@ namespace CrafterMacroExecution.Utils
         {
             // 実行中のすべてのプロセスを取得する
             System.Diagnostics.Process[] hProcesses = System.Diagnostics.Process.GetProcesses();
-
-            string stPrompt = string.Empty;
-
             // 取得できたプロセスからプロセス名を取得する
             foreach (System.Diagnostics.Process hProcess in hProcesses)
             {
@@ -129,11 +126,8 @@ namespace CrafterMacroExecution.Utils
                 {
                     // アクティブ化
                     SetForegroundWindow(hProcess.MainWindowHandle);
-                    // Microsoft.VisualBasic.Interaction.AppActivate(ps[0].Id);
                     return true;
                 }
-
-
             }
             return false;
         }

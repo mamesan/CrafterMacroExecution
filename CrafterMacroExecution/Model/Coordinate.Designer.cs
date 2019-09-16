@@ -1,6 +1,6 @@
-﻿namespace CrafterMacroExecution
+﻿namespace CrafterMacroExecution.Model
 {
-    partial class tyokobo1
+    partial class Coordinate
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
             // panel1
@@ -41,24 +41,25 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(905, 494);
+            this.panel1.TabIndex = 0;
             // 
-            // tyokobo1
+            // Coordinate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FloralWhite;
+            this.ClientSize = new System.Drawing.Size(905, 494);
             this.Controls.Add(this.panel1);
-            this.Name = "tyokobo1";
-            this.Text = "tyokobo1";
+            this.Name = "Coordinate";
+            this.Text = "Coordinate";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }

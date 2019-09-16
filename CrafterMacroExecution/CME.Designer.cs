@@ -1,6 +1,6 @@
 ﻿namespace CrafterMacroExecution
 {
-    partial class CrafterMacroExecution
+    partial class CME
     {
         /// <summary> 
         /// 必要なデザイナー変数です。
@@ -47,7 +47,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.中断ボタン = new System.Windows.Forms.Button();
             this.終了ボタン = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
+            this.残り回数テキスト = new System.Windows.Forms.Label();
             this.実行ボタン = new System.Windows.Forms.Button();
             this.作るものcomboBox = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -86,6 +86,18 @@
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.タブALL = new System.Windows.Forms.TabControl();
             this.タブ_詳細 = new System.Windows.Forms.TabPage();
+            this.label48 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.listBox5 = new System.Windows.Forms.ListBox();
             this.label47 = new System.Windows.Forms.Label();
             this.マクロ編集_listBox = new System.Windows.Forms.TextBox();
             this.選択中マクロ_listBox = new System.Windows.Forms.ListBox();
@@ -209,8 +221,8 @@
             this.作成開始座標用button = new System.Windows.Forms.Button();
             this.label73 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
-            this.作成開始X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.作成開始Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.作成開始X座標_init = new System.Windows.Forms.TextBox();
+            this.作成開始Y座標_init = new System.Windows.Forms.TextBox();
             this.groupBox34 = new System.Windows.Forms.GroupBox();
             this.label89 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
@@ -218,58 +230,52 @@
             this.修理座標用button3 = new System.Windows.Forms.Button();
             this.label92 = new System.Windows.Forms.Label();
             this.label93 = new System.Windows.Forms.Label();
-            this.修理3X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.修理3Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.修理3X座標_init = new System.Windows.Forms.TextBox();
+            this.修理3Y座標_init = new System.Windows.Forms.TextBox();
             this.修理座標用button2 = new System.Windows.Forms.Button();
             this.label94 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
-            this.修理2X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.修理2Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.修理2X座標_init = new System.Windows.Forms.TextBox();
+            this.修理2Y座標_init = new System.Windows.Forms.TextBox();
+            this.修理座標Radio_init = new System.Windows.Forms.RadioButton();
+            this.修理KeyRadio_init = new System.Windows.Forms.RadioButton();
             this.修理座標用button1 = new System.Windows.Forms.Button();
             this.label96 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
-            this.修理1X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.修理1Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.修理キー設定 = new System.Windows.Forms.TextBox();
+            this.修理1X座標_init = new System.Windows.Forms.TextBox();
+            this.修理1Y座標_init = new System.Windows.Forms.TextBox();
+            this.修理Key_init = new System.Windows.Forms.TextBox();
             this.groupBox35 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.薬座標Radio_init = new System.Windows.Forms.RadioButton();
+            this.薬KeyRadio_init = new System.Windows.Forms.RadioButton();
             this.薬座標用button = new System.Windows.Forms.Button();
             this.label98 = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
-            this.薬X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.薬Y座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.薬キー設定 = new System.Windows.Forms.TextBox();
+            this.薬X座標_init = new System.Windows.Forms.TextBox();
+            this.薬Y座標_init = new System.Windows.Forms.TextBox();
+            this.薬キー設定_init = new System.Windows.Forms.TextBox();
             this.groupBox36 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.飯座標Radio_init = new System.Windows.Forms.RadioButton();
+            this.飯KeyRadio_init = new System.Windows.Forms.RadioButton();
             this.飯座標用button = new System.Windows.Forms.Button();
             this.label100 = new System.Windows.Forms.Label();
-            this.飯キー設定 = new System.Windows.Forms.TextBox();
+            this.飯キー設定_init = new System.Windows.Forms.TextBox();
             this.label101 = new System.Windows.Forms.Label();
-            this.飯X座標_初期読込 = new System.Windows.Forms.TextBox();
-            this.飯Y座標_初期読込 = new System.Windows.Forms.TextBox();
+            this.飯X座標_init = new System.Windows.Forms.TextBox();
+            this.飯Y座標_init = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
             this.キャラリストボックス = new System.Windows.Forms.ComboBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.label48 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.タブALL.SuspendLayout();
             this.タブ_詳細.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.タブ_キャラクター.SuspendLayout();
             this.panel1.SuspendLayout();
             this.タブ_作成品設定.SuspendLayout();
@@ -294,12 +300,6 @@
             this.groupBox34.SuspendLayout();
             this.groupBox35.SuspendLayout();
             this.groupBox36.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // 作成座標用button1
@@ -503,15 +503,15 @@
             this.終了ボタン.Text = "終了";
             this.終了ボタン.UseVisualStyleBackColor = true;
             // 
-            // label27
+            // 残り回数テキスト
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label27.Location = new System.Drawing.Point(173, 445);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(57, 14);
-            this.label27.TabIndex = 125;
-            this.label27.Text = "残り***回";
+            this.残り回数テキスト.AutoSize = true;
+            this.残り回数テキスト.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.残り回数テキスト.Location = new System.Drawing.Point(173, 445);
+            this.残り回数テキスト.Name = "残り回数テキスト";
+            this.残り回数テキスト.Size = new System.Drawing.Size(57, 14);
+            this.残り回数テキスト.TabIndex = 125;
+            this.残り回数テキスト.Text = "残り***回";
             // 
             // 実行ボタン
             // 
@@ -929,6 +929,129 @@
             this.タブ_詳細.TabIndex = 0;
             this.タブ_詳細.Text = "詳細";
             // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label48.Location = new System.Drawing.Point(333, 263);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(59, 14);
+            this.label48.TabIndex = 22;
+            this.label48.Text = "スキルリスト";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(332, 285);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(280, 208);
+            this.tabControl1.TabIndex = 21;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(272, 182);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "作業系";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(0, -1);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(273, 184);
+            this.listBox1.TabIndex = 1;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.listBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(272, 182);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "加工系";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 12;
+            this.listBox2.Location = new System.Drawing.Point(0, -1);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(273, 184);
+            this.listBox2.TabIndex = 1;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.listBox3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(272, 182);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "バフ系";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 12;
+            this.listBox3.Location = new System.Drawing.Point(0, -1);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(273, 184);
+            this.listBox3.TabIndex = 1;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.listBox4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(272, 182);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "マイスター系";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 12;
+            this.listBox4.Location = new System.Drawing.Point(0, -1);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(273, 184);
+            this.listBox4.TabIndex = 1;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.listBox5);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(272, 182);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "アート";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 12;
+            this.listBox5.Location = new System.Drawing.Point(0, -1);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(273, 184);
+            this.listBox5.TabIndex = 1;
+            // 
             // label47
             // 
             this.label47.AutoSize = true;
@@ -946,7 +1069,7 @@
             this.マクロ編集_listBox.Multiline = true;
             this.マクロ編集_listBox.Name = "マクロ編集_listBox";
             this.マクロ編集_listBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.マクロ編集_listBox.Size = new System.Drawing.Size(280, 208);
+            this.マクロ編集_listBox.Size = new System.Drawing.Size(280, 231);
             this.マクロ編集_listBox.TabIndex = 19;
             // 
             // 選択中マクロ_listBox
@@ -2203,8 +2326,8 @@
             this.groupBox26.Controls.Add(this.作成開始座標用button);
             this.groupBox26.Controls.Add(this.label73);
             this.groupBox26.Controls.Add(this.label74);
-            this.groupBox26.Controls.Add(this.作成開始X座標_初期読込);
-            this.groupBox26.Controls.Add(this.作成開始Y座標_初期読込);
+            this.groupBox26.Controls.Add(this.作成開始X座標_init);
+            this.groupBox26.Controls.Add(this.作成開始Y座標_init);
             this.groupBox26.Location = new System.Drawing.Point(335, 148);
             this.groupBox26.Name = "groupBox26";
             this.groupBox26.Size = new System.Drawing.Size(213, 67);
@@ -2244,21 +2367,21 @@
             this.label74.TabIndex = 97;
             this.label74.Text = "X";
             // 
-            // 作成開始X座標_初期読込
+            // 作成開始X座標_init
             // 
-            this.作成開始X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成開始X座標_初期読込.Location = new System.Drawing.Point(104, 25);
-            this.作成開始X座標_初期読込.Name = "作成開始X座標_初期読込";
-            this.作成開始X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.作成開始X座標_初期読込.TabIndex = 95;
+            this.作成開始X座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成開始X座標_init.Location = new System.Drawing.Point(104, 25);
+            this.作成開始X座標_init.Name = "作成開始X座標_init";
+            this.作成開始X座標_init.Size = new System.Drawing.Size(35, 18);
+            this.作成開始X座標_init.TabIndex = 95;
             // 
-            // 作成開始Y座標_初期読込
+            // 作成開始Y座標_init
             // 
-            this.作成開始Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.作成開始Y座標_初期読込.Location = new System.Drawing.Point(161, 25);
-            this.作成開始Y座標_初期読込.Name = "作成開始Y座標_初期読込";
-            this.作成開始Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.作成開始Y座標_初期読込.TabIndex = 96;
+            this.作成開始Y座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作成開始Y座標_init.Location = new System.Drawing.Point(161, 25);
+            this.作成開始Y座標_init.Name = "作成開始Y座標_init";
+            this.作成開始Y座標_init.Size = new System.Drawing.Size(35, 18);
+            this.作成開始Y座標_init.TabIndex = 96;
             // 
             // groupBox34
             // 
@@ -2268,21 +2391,21 @@
             this.groupBox34.Controls.Add(this.修理座標用button3);
             this.groupBox34.Controls.Add(this.label92);
             this.groupBox34.Controls.Add(this.label93);
-            this.groupBox34.Controls.Add(this.修理3X座標_初期読込);
-            this.groupBox34.Controls.Add(this.修理3Y座標_初期読込);
+            this.groupBox34.Controls.Add(this.修理3X座標_init);
+            this.groupBox34.Controls.Add(this.修理3Y座標_init);
             this.groupBox34.Controls.Add(this.修理座標用button2);
             this.groupBox34.Controls.Add(this.label94);
             this.groupBox34.Controls.Add(this.label95);
-            this.groupBox34.Controls.Add(this.修理2X座標_初期読込);
-            this.groupBox34.Controls.Add(this.修理2Y座標_初期読込);
-            this.groupBox34.Controls.Add(this.radioButton1);
-            this.groupBox34.Controls.Add(this.radioButton2);
+            this.groupBox34.Controls.Add(this.修理2X座標_init);
+            this.groupBox34.Controls.Add(this.修理2Y座標_init);
+            this.groupBox34.Controls.Add(this.修理座標Radio_init);
+            this.groupBox34.Controls.Add(this.修理KeyRadio_init);
             this.groupBox34.Controls.Add(this.修理座標用button1);
             this.groupBox34.Controls.Add(this.label96);
             this.groupBox34.Controls.Add(this.label97);
-            this.groupBox34.Controls.Add(this.修理1X座標_初期読込);
-            this.groupBox34.Controls.Add(this.修理1Y座標_初期読込);
-            this.groupBox34.Controls.Add(this.修理キー設定);
+            this.groupBox34.Controls.Add(this.修理1X座標_init);
+            this.groupBox34.Controls.Add(this.修理1Y座標_init);
+            this.groupBox34.Controls.Add(this.修理Key_init);
             this.groupBox34.Location = new System.Drawing.Point(26, 145);
             this.groupBox34.Name = "groupBox34";
             this.groupBox34.Size = new System.Drawing.Size(213, 215);
@@ -2352,21 +2475,21 @@
             this.label93.TabIndex = 109;
             this.label93.Text = "X";
             // 
-            // 修理3X座標_初期読込
+            // 修理3X座標_init
             // 
-            this.修理3X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.修理3X座標_初期読込.Location = new System.Drawing.Point(104, 175);
-            this.修理3X座標_初期読込.Name = "修理3X座標_初期読込";
-            this.修理3X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.修理3X座標_初期読込.TabIndex = 107;
+            this.修理3X座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.修理3X座標_init.Location = new System.Drawing.Point(104, 175);
+            this.修理3X座標_init.Name = "修理3X座標_init";
+            this.修理3X座標_init.Size = new System.Drawing.Size(35, 18);
+            this.修理3X座標_init.TabIndex = 107;
             // 
-            // 修理3Y座標_初期読込
+            // 修理3Y座標_init
             // 
-            this.修理3Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.修理3Y座標_初期読込.Location = new System.Drawing.Point(161, 175);
-            this.修理3Y座標_初期読込.Name = "修理3Y座標_初期読込";
-            this.修理3Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.修理3Y座標_初期読込.TabIndex = 108;
+            this.修理3Y座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.修理3Y座標_init.Location = new System.Drawing.Point(161, 175);
+            this.修理3Y座標_init.Name = "修理3Y座標_init";
+            this.修理3Y座標_init.Size = new System.Drawing.Size(35, 18);
+            this.修理3Y座標_init.TabIndex = 108;
             // 
             // 修理座標用button2
             // 
@@ -2400,42 +2523,42 @@
             this.label95.TabIndex = 104;
             this.label95.Text = "X";
             // 
-            // 修理2X座標_初期読込
+            // 修理2X座標_init
             // 
-            this.修理2X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.修理2X座標_初期読込.Location = new System.Drawing.Point(104, 130);
-            this.修理2X座標_初期読込.Name = "修理2X座標_初期読込";
-            this.修理2X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.修理2X座標_初期読込.TabIndex = 102;
+            this.修理2X座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.修理2X座標_init.Location = new System.Drawing.Point(104, 130);
+            this.修理2X座標_init.Name = "修理2X座標_init";
+            this.修理2X座標_init.Size = new System.Drawing.Size(35, 18);
+            this.修理2X座標_init.TabIndex = 102;
             // 
-            // 修理2Y座標_初期読込
+            // 修理2Y座標_init
             // 
-            this.修理2Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.修理2Y座標_初期読込.Location = new System.Drawing.Point(161, 130);
-            this.修理2Y座標_初期読込.Name = "修理2Y座標_初期読込";
-            this.修理2Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.修理2Y座標_初期読込.TabIndex = 103;
+            this.修理2Y座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.修理2Y座標_init.Location = new System.Drawing.Point(161, 130);
+            this.修理2Y座標_init.Name = "修理2Y座標_init";
+            this.修理2Y座標_init.Size = new System.Drawing.Size(35, 18);
+            this.修理2Y座標_init.TabIndex = 103;
             // 
-            // radioButton1
+            // 修理座標Radio_init
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(9, 57);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 100;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.修理座標Radio_init.AutoSize = true;
+            this.修理座標Radio_init.Location = new System.Drawing.Point(9, 57);
+            this.修理座標Radio_init.Name = "修理座標Radio_init";
+            this.修理座標Radio_init.Size = new System.Drawing.Size(14, 13);
+            this.修理座標Radio_init.TabIndex = 100;
+            this.修理座標Radio_init.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // 修理KeyRadio_init
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(9, 26);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 16);
-            this.radioButton2.TabIndex = 99;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "　Key";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.修理KeyRadio_init.AutoSize = true;
+            this.修理KeyRadio_init.Checked = true;
+            this.修理KeyRadio_init.Location = new System.Drawing.Point(9, 26);
+            this.修理KeyRadio_init.Name = "修理KeyRadio_init";
+            this.修理KeyRadio_init.Size = new System.Drawing.Size(50, 16);
+            this.修理KeyRadio_init.TabIndex = 99;
+            this.修理KeyRadio_init.TabStop = true;
+            this.修理KeyRadio_init.Text = "　Key";
+            this.修理KeyRadio_init.UseVisualStyleBackColor = true;
             // 
             // 修理座標用button1
             // 
@@ -2469,41 +2592,41 @@
             this.label97.TabIndex = 97;
             this.label97.Text = "X";
             // 
-            // 修理1X座標_初期読込
+            // 修理1X座標_init
             // 
-            this.修理1X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.修理1X座標_初期読込.Location = new System.Drawing.Point(104, 80);
-            this.修理1X座標_初期読込.Name = "修理1X座標_初期読込";
-            this.修理1X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.修理1X座標_初期読込.TabIndex = 95;
+            this.修理1X座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.修理1X座標_init.Location = new System.Drawing.Point(104, 80);
+            this.修理1X座標_init.Name = "修理1X座標_init";
+            this.修理1X座標_init.Size = new System.Drawing.Size(35, 18);
+            this.修理1X座標_init.TabIndex = 95;
             // 
-            // 修理1Y座標_初期読込
+            // 修理1Y座標_init
             // 
-            this.修理1Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.修理1Y座標_初期読込.Location = new System.Drawing.Point(161, 80);
-            this.修理1Y座標_初期読込.Name = "修理1Y座標_初期読込";
-            this.修理1Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.修理1Y座標_初期読込.TabIndex = 96;
+            this.修理1Y座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.修理1Y座標_init.Location = new System.Drawing.Point(161, 80);
+            this.修理1Y座標_init.Name = "修理1Y座標_init";
+            this.修理1Y座標_init.Size = new System.Drawing.Size(35, 18);
+            this.修理1Y座標_init.TabIndex = 96;
             // 
-            // 修理キー設定
+            // 修理Key_init
             // 
-            this.修理キー設定.Font = new System.Drawing.Font("Meiryo UI", 6F);
-            this.修理キー設定.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.修理キー設定.Location = new System.Drawing.Point(104, 26);
-            this.修理キー設定.Name = "修理キー設定";
-            this.修理キー設定.Size = new System.Drawing.Size(35, 18);
-            this.修理キー設定.TabIndex = 15;
+            this.修理Key_init.Font = new System.Drawing.Font("Meiryo UI", 6F);
+            this.修理Key_init.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.修理Key_init.Location = new System.Drawing.Point(104, 26);
+            this.修理Key_init.Name = "修理Key_init";
+            this.修理Key_init.Size = new System.Drawing.Size(35, 18);
+            this.修理Key_init.TabIndex = 15;
             // 
             // groupBox35
             // 
-            this.groupBox35.Controls.Add(this.radioButton3);
-            this.groupBox35.Controls.Add(this.radioButton4);
+            this.groupBox35.Controls.Add(this.薬座標Radio_init);
+            this.groupBox35.Controls.Add(this.薬KeyRadio_init);
             this.groupBox35.Controls.Add(this.薬座標用button);
             this.groupBox35.Controls.Add(this.label98);
             this.groupBox35.Controls.Add(this.label99);
-            this.groupBox35.Controls.Add(this.薬X座標_初期読込);
-            this.groupBox35.Controls.Add(this.薬Y座標_初期読込);
-            this.groupBox35.Controls.Add(this.薬キー設定);
+            this.groupBox35.Controls.Add(this.薬X座標_init);
+            this.groupBox35.Controls.Add(this.薬Y座標_init);
+            this.groupBox35.Controls.Add(this.薬キー設定_init);
             this.groupBox35.Location = new System.Drawing.Point(335, 44);
             this.groupBox35.Name = "groupBox35";
             this.groupBox35.Size = new System.Drawing.Size(213, 81);
@@ -2511,26 +2634,26 @@
             this.groupBox35.TabStop = false;
             this.groupBox35.Text = "薬ボタン";
             // 
-            // radioButton3
+            // 薬座標Radio_init
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(9, 57);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(14, 13);
-            this.radioButton3.TabIndex = 100;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.薬座標Radio_init.AutoSize = true;
+            this.薬座標Radio_init.Location = new System.Drawing.Point(9, 57);
+            this.薬座標Radio_init.Name = "薬座標Radio_init";
+            this.薬座標Radio_init.Size = new System.Drawing.Size(14, 13);
+            this.薬座標Radio_init.TabIndex = 100;
+            this.薬座標Radio_init.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // 薬KeyRadio_init
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.Location = new System.Drawing.Point(9, 26);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(50, 16);
-            this.radioButton4.TabIndex = 99;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "　Key";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.薬KeyRadio_init.AutoSize = true;
+            this.薬KeyRadio_init.Checked = true;
+            this.薬KeyRadio_init.Location = new System.Drawing.Point(9, 26);
+            this.薬KeyRadio_init.Name = "薬KeyRadio_init";
+            this.薬KeyRadio_init.Size = new System.Drawing.Size(50, 16);
+            this.薬KeyRadio_init.TabIndex = 99;
+            this.薬KeyRadio_init.TabStop = true;
+            this.薬KeyRadio_init.Text = "　Key";
+            this.薬KeyRadio_init.UseVisualStyleBackColor = true;
             // 
             // 薬座標用button
             // 
@@ -2564,41 +2687,41 @@
             this.label99.TabIndex = 97;
             this.label99.Text = "X";
             // 
-            // 薬X座標_初期読込
+            // 薬X座標_init
             // 
-            this.薬X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.薬X座標_初期読込.Location = new System.Drawing.Point(104, 54);
-            this.薬X座標_初期読込.Name = "薬X座標_初期読込";
-            this.薬X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.薬X座標_初期読込.TabIndex = 95;
+            this.薬X座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.薬X座標_init.Location = new System.Drawing.Point(104, 54);
+            this.薬X座標_init.Name = "薬X座標_init";
+            this.薬X座標_init.Size = new System.Drawing.Size(35, 18);
+            this.薬X座標_init.TabIndex = 95;
             // 
-            // 薬Y座標_初期読込
+            // 薬Y座標_init
             // 
-            this.薬Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.薬Y座標_初期読込.Location = new System.Drawing.Point(161, 54);
-            this.薬Y座標_初期読込.Name = "薬Y座標_初期読込";
-            this.薬Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.薬Y座標_初期読込.TabIndex = 96;
+            this.薬Y座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.薬Y座標_init.Location = new System.Drawing.Point(161, 54);
+            this.薬Y座標_init.Name = "薬Y座標_init";
+            this.薬Y座標_init.Size = new System.Drawing.Size(35, 18);
+            this.薬Y座標_init.TabIndex = 96;
             // 
-            // 薬キー設定
+            // 薬キー設定_init
             // 
-            this.薬キー設定.Font = new System.Drawing.Font("Meiryo UI", 6F);
-            this.薬キー設定.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.薬キー設定.Location = new System.Drawing.Point(104, 26);
-            this.薬キー設定.Name = "薬キー設定";
-            this.薬キー設定.Size = new System.Drawing.Size(35, 18);
-            this.薬キー設定.TabIndex = 15;
+            this.薬キー設定_init.Font = new System.Drawing.Font("Meiryo UI", 6F);
+            this.薬キー設定_init.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.薬キー設定_init.Location = new System.Drawing.Point(104, 26);
+            this.薬キー設定_init.Name = "薬キー設定_init";
+            this.薬キー設定_init.Size = new System.Drawing.Size(35, 18);
+            this.薬キー設定_init.TabIndex = 15;
             // 
             // groupBox36
             // 
-            this.groupBox36.Controls.Add(this.radioButton5);
-            this.groupBox36.Controls.Add(this.radioButton6);
+            this.groupBox36.Controls.Add(this.飯座標Radio_init);
+            this.groupBox36.Controls.Add(this.飯KeyRadio_init);
             this.groupBox36.Controls.Add(this.飯座標用button);
             this.groupBox36.Controls.Add(this.label100);
-            this.groupBox36.Controls.Add(this.飯キー設定);
+            this.groupBox36.Controls.Add(this.飯キー設定_init);
             this.groupBox36.Controls.Add(this.label101);
-            this.groupBox36.Controls.Add(this.飯X座標_初期読込);
-            this.groupBox36.Controls.Add(this.飯Y座標_初期読込);
+            this.groupBox36.Controls.Add(this.飯X座標_init);
+            this.groupBox36.Controls.Add(this.飯Y座標_init);
             this.groupBox36.Location = new System.Drawing.Point(26, 44);
             this.groupBox36.Name = "groupBox36";
             this.groupBox36.Size = new System.Drawing.Size(213, 81);
@@ -2606,26 +2729,26 @@
             this.groupBox36.TabStop = false;
             this.groupBox36.Text = "飯ボタン";
             // 
-            // radioButton5
+            // 飯座標Radio_init
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(9, 57);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(14, 13);
-            this.radioButton5.TabIndex = 100;
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.飯座標Radio_init.AutoSize = true;
+            this.飯座標Radio_init.Location = new System.Drawing.Point(9, 57);
+            this.飯座標Radio_init.Name = "飯座標Radio_init";
+            this.飯座標Radio_init.Size = new System.Drawing.Size(14, 13);
+            this.飯座標Radio_init.TabIndex = 100;
+            this.飯座標Radio_init.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // 飯KeyRadio_init
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Checked = true;
-            this.radioButton6.Location = new System.Drawing.Point(9, 26);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(50, 16);
-            this.radioButton6.TabIndex = 99;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "　Key";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.飯KeyRadio_init.AutoSize = true;
+            this.飯KeyRadio_init.Checked = true;
+            this.飯KeyRadio_init.Location = new System.Drawing.Point(9, 26);
+            this.飯KeyRadio_init.Name = "飯KeyRadio_init";
+            this.飯KeyRadio_init.Size = new System.Drawing.Size(50, 16);
+            this.飯KeyRadio_init.TabIndex = 99;
+            this.飯KeyRadio_init.TabStop = true;
+            this.飯KeyRadio_init.Text = "　Key";
+            this.飯KeyRadio_init.UseVisualStyleBackColor = true;
             // 
             // 飯座標用button
             // 
@@ -2649,14 +2772,14 @@
             this.label100.TabIndex = 98;
             this.label100.Text = "Y";
             // 
-            // 飯キー設定
+            // 飯キー設定_init
             // 
-            this.飯キー設定.Font = new System.Drawing.Font("Meiryo UI", 6F);
-            this.飯キー設定.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.飯キー設定.Location = new System.Drawing.Point(104, 26);
-            this.飯キー設定.Name = "飯キー設定";
-            this.飯キー設定.Size = new System.Drawing.Size(35, 18);
-            this.飯キー設定.TabIndex = 13;
+            this.飯キー設定_init.Font = new System.Drawing.Font("Meiryo UI", 6F);
+            this.飯キー設定_init.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.飯キー設定_init.Location = new System.Drawing.Point(104, 26);
+            this.飯キー設定_init.Name = "飯キー設定_init";
+            this.飯キー設定_init.Size = new System.Drawing.Size(35, 18);
+            this.飯キー設定_init.TabIndex = 13;
             // 
             // label101
             // 
@@ -2668,21 +2791,21 @@
             this.label101.TabIndex = 97;
             this.label101.Text = "X";
             // 
-            // 飯X座標_初期読込
+            // 飯X座標_init
             // 
-            this.飯X座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.飯X座標_初期読込.Location = new System.Drawing.Point(104, 54);
-            this.飯X座標_初期読込.Name = "飯X座標_初期読込";
-            this.飯X座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.飯X座標_初期読込.TabIndex = 95;
+            this.飯X座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.飯X座標_init.Location = new System.Drawing.Point(104, 54);
+            this.飯X座標_init.Name = "飯X座標_init";
+            this.飯X座標_init.Size = new System.Drawing.Size(35, 18);
+            this.飯X座標_init.TabIndex = 95;
             // 
-            // 飯Y座標_初期読込
+            // 飯Y座標_init
             // 
-            this.飯Y座標_初期読込.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.飯Y座標_初期読込.Location = new System.Drawing.Point(161, 54);
-            this.飯Y座標_初期読込.Name = "飯Y座標_初期読込";
-            this.飯Y座標_初期読込.Size = new System.Drawing.Size(35, 18);
-            this.飯Y座標_初期読込.TabIndex = 96;
+            this.飯Y座標_init.Font = new System.Drawing.Font("Meiryo UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.飯Y座標_init.Location = new System.Drawing.Point(161, 54);
+            this.飯Y座標_init.Name = "飯Y座標_init";
+            this.飯Y座標_init.Size = new System.Drawing.Size(35, 18);
+            this.飯Y座標_init.TabIndex = 96;
             // 
             // label102
             // 
@@ -2705,129 +2828,6 @@
             this.キャラリストボックス.Size = new System.Drawing.Size(219, 23);
             this.キャラリストボックス.TabIndex = 130;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(332, 285);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(280, 208);
-            this.tabControl1.TabIndex = 21;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.listBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(272, 182);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "作業系";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.listBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(272, 182);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "加工系";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.listBox3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(272, 182);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "バフ系";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.listBox4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(272, 182);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "マイスター系";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.listBox5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(272, 182);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "アート";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(0, -1);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(273, 184);
-            this.listBox1.TabIndex = 1;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(0, -1);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(273, 184);
-            this.listBox2.TabIndex = 1;
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 12;
-            this.listBox3.Location = new System.Drawing.Point(0, -1);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(273, 184);
-            this.listBox3.TabIndex = 1;
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 12;
-            this.listBox4.Location = new System.Drawing.Point(0, -1);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(273, 184);
-            this.listBox4.TabIndex = 1;
-            // 
-            // listBox5
-            // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 12;
-            this.listBox5.Location = new System.Drawing.Point(0, -1);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(273, 184);
-            this.listBox5.TabIndex = 1;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Meiryo UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label48.Location = new System.Drawing.Point(333, 263);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(59, 14);
-            this.label48.TabIndex = 22;
-            this.label48.Text = "スキルリスト";
-            // 
             // CrafterMacroExecution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2840,7 +2840,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.中断ボタン);
             this.Controls.Add(this.終了ボタン);
-            this.Controls.Add(this.label27);
+            this.Controls.Add(this.残り回数テキスト);
             this.Controls.Add(this.実行ボタン);
             this.Controls.Add(this.アディチェックボックス_init);
             this.Controls.Add(this.groupBox16);
@@ -2857,6 +2857,12 @@
             this.タブALL.ResumeLayout(false);
             this.タブ_詳細.ResumeLayout(false);
             this.タブ_詳細.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.タブ_キャラクター.ResumeLayout(false);
             this.タブ_キャラクター.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -2903,12 +2909,6 @@
             this.groupBox35.PerformLayout();
             this.groupBox36.ResumeLayout(false);
             this.groupBox36.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2934,7 +2934,7 @@
         private System.Windows.Forms.Label label26;
         public System.Windows.Forms.Button 中断ボタン;
         public System.Windows.Forms.Button 終了ボタン;
-        public System.Windows.Forms.Label label27;
+        public System.Windows.Forms.Label 残り回数テキスト;
         public System.Windows.Forms.Button 実行ボタン;
         private System.Windows.Forms.ComboBox 作るものcomboBox;
         private System.Windows.Forms.Label label32;
@@ -3051,8 +3051,8 @@
         private System.Windows.Forms.Button 作成開始座標用button;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label74;
-        public System.Windows.Forms.TextBox 作成開始X座標_初期読込;
-        public System.Windows.Forms.TextBox 作成開始Y座標_初期読込;
+        public System.Windows.Forms.TextBox 作成開始X座標_init;
+        public System.Windows.Forms.TextBox 作成開始Y座標_init;
         private System.Windows.Forms.GroupBox groupBox34;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label90;
@@ -3060,39 +3060,39 @@
         private System.Windows.Forms.Button 修理座標用button3;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Label label93;
-        public System.Windows.Forms.TextBox 修理3X座標_初期読込;
-        public System.Windows.Forms.TextBox 修理3Y座標_初期読込;
+        public System.Windows.Forms.TextBox 修理3X座標_init;
+        public System.Windows.Forms.TextBox 修理3Y座標_init;
         private System.Windows.Forms.Button 修理座標用button2;
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.Label label95;
-        public System.Windows.Forms.TextBox 修理2X座標_初期読込;
-        public System.Windows.Forms.TextBox 修理2Y座標_初期読込;
-        public System.Windows.Forms.RadioButton radioButton1;
-        public System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.TextBox 修理2X座標_init;
+        public System.Windows.Forms.TextBox 修理2Y座標_init;
+        public System.Windows.Forms.RadioButton 修理座標Radio_init;
+        public System.Windows.Forms.RadioButton 修理KeyRadio_init;
         private System.Windows.Forms.Button 修理座標用button1;
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.Label label97;
-        public System.Windows.Forms.TextBox 修理1X座標_初期読込;
-        public System.Windows.Forms.TextBox 修理1Y座標_初期読込;
-        public System.Windows.Forms.TextBox 修理キー設定;
+        public System.Windows.Forms.TextBox 修理1X座標_init;
+        public System.Windows.Forms.TextBox 修理1Y座標_init;
+        public System.Windows.Forms.TextBox 修理Key_init;
         private System.Windows.Forms.GroupBox groupBox35;
-        public System.Windows.Forms.RadioButton radioButton3;
-        public System.Windows.Forms.RadioButton radioButton4;
+        public System.Windows.Forms.RadioButton 薬座標Radio_init;
+        public System.Windows.Forms.RadioButton 薬KeyRadio_init;
         private System.Windows.Forms.Button 薬座標用button;
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Label label99;
-        public System.Windows.Forms.TextBox 薬X座標_初期読込;
-        public System.Windows.Forms.TextBox 薬Y座標_初期読込;
-        public System.Windows.Forms.TextBox 薬キー設定;
+        public System.Windows.Forms.TextBox 薬X座標_init;
+        public System.Windows.Forms.TextBox 薬Y座標_init;
+        public System.Windows.Forms.TextBox 薬キー設定_init;
         private System.Windows.Forms.GroupBox groupBox36;
-        public System.Windows.Forms.RadioButton radioButton5;
-        public System.Windows.Forms.RadioButton radioButton6;
+        public System.Windows.Forms.RadioButton 飯座標Radio_init;
+        public System.Windows.Forms.RadioButton 飯KeyRadio_init;
         private System.Windows.Forms.Button 飯座標用button;
         private System.Windows.Forms.Label label100;
-        public System.Windows.Forms.TextBox 飯キー設定;
+        public System.Windows.Forms.TextBox 飯キー設定_init;
         private System.Windows.Forms.Label label101;
-        public System.Windows.Forms.TextBox 飯X座標_初期読込;
-        public System.Windows.Forms.TextBox 飯Y座標_初期読込;
+        public System.Windows.Forms.TextBox 飯X座標_init;
+        public System.Windows.Forms.TextBox 飯Y座標_init;
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.GroupBox HQ使用6Y座標_初期読込;
         private System.Windows.Forms.Button HQ座標用button6;
