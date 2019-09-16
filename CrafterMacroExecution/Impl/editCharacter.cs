@@ -20,7 +20,7 @@ namespace CrafterMacroExecution.Impl
         /// キャラクター情報を作成する
         /// </summary>
         /// <param name="forminfo"></param>
-        public static void createCharacterInfo(CrafterMacroExecution forminfo)
+        public static void createCharacterInfo(CME forminfo)
         {
             string キャラ名 = forminfo.キャラクターのお名前.Text;
 
@@ -87,7 +87,7 @@ namespace CrafterMacroExecution.Impl
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public static void editCharacterInfo(CrafterMacroExecution forminfo)
+        public static void editCharacterInfo(CME forminfo)
         {
             string キャラ名 = forminfo.キャラクターのお名前.Text;
 
@@ -151,7 +151,7 @@ namespace CrafterMacroExecution.Impl
         /// <summary>
         /// キャラ情報削除
         /// </summary>
-        public static void deleteCharacterInfo(CrafterMacroExecution forminfo)
+        public static void deleteCharacterInfo(CME forminfo)
         {
 
             string キャラ名 = forminfo.キャラ一覧.Text;

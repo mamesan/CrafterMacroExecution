@@ -21,7 +21,7 @@ namespace CrafterMacroExecution.Events
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public static void Macro一覧_click(CrafterMacroExecution formInfo, string ListBoxText)
+        public static void Macro一覧_click(CME formInfo, string ListBoxText)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace CrafterMacroExecution.Events
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public static void マクロ追加ボタン_click(CrafterMacroExecution formInfo)
+        public static void マクロ追加ボタン_click(CME formInfo)
         {
             string マクロ名 = formInfo.マクロ名_textBox.Text;
 
@@ -209,7 +209,7 @@ namespace CrafterMacroExecution.Events
         /// マクロ編集を行う
         /// </summary>
         /// <param name="formInfo"></param>
-        public static void マクロ編集ボタン_click(CrafterMacroExecution formInfo)
+        public static void マクロ編集ボタン_click(CME formInfo)
         {
             string マクロ名 = formInfo.Macro一覧.Text;
 
@@ -297,7 +297,7 @@ namespace CrafterMacroExecution.Events
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public static void マクロ削除ボタン_click(CrafterMacroExecution formInfo, string ListBoxText)
+        public static void マクロ削除ボタン_click(CME formInfo, string ListBoxText)
         {
             // メッセージボックスを生成する
             DialogResult result = MessageBox.Show(DELETE_MACRO_INFO + "\r\n「" + ListBoxText + "」", "質問", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
@@ -320,7 +320,7 @@ namespace CrafterMacroExecution.Events
             }
         }
 
-        public static void マクロ編集_listBox_textEdit(CrafterMacroExecution formInfo)
+        public static void マクロ編集_listBox_textEdit(CME formInfo)
         {
             string[] del = { "\r\n" };
             string[] マクロリスト = formInfo.マクロ編集_listBox.Text.Split(del, StringSplitOptions.None);
